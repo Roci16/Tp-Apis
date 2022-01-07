@@ -3,8 +3,19 @@ const seccionTarjetas = document.getElementById("seccion-tarjeta")
 const seccionDetalles = document.getElementById("tarjeta-detalles")
 
 
+// Botones de pagina
+const conteinerBotones = document.getElementById("botones")
+const numeroDePagina = document.getElementById("numero-pagina")
+const prev = document.getElementById("prev")
+const next = document.getElementById("next")
+const botonPrimeraPagina = document.getElementById("primera-pagina")
+const botonUltimaPagina = document.getElementById("ultima-pagina")
+
+let paginaActual = 1
+let ultimaPagina = 149
+
 const personajesDisney = () => {
-    fetch(`https://api.disneyapi.dev/characters`)
+    fetch(`https://api.disneyapi.dev/characters?page=${paginaActual}`)
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
@@ -13,6 +24,75 @@ const personajesDisney = () => {
         })
 }
 personajesDisney()
+
+const buscarPersonaje = (id) => {
+    fetch(`https://api.disneyapi.dev/characters/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            tarjetaDetalle(data)
+        })
+}
+
+
+const numeroActualizoPagina = () => {
+
+    const numeroPagina = `${paginaActual}`
+    numeroDePagina.innerHTML = numeroPagina
+
+}
+
+const paginaUnoDesabilitado = () => {
+    prev.disabled = true
+    next.disabled = false
+}
+const paginaUltimaDesabilitado = () => {
+    next.disabled = true
+    prev.disabled = false
+}
+
+prev.onclick = () => {
+    paginaActual--
+
+    if (paginaActual == 1) {
+        prev.disabled = true
+    }
+    if (paginaActual < ultimaPagina) {
+        next.disabled = false
+    }
+    numeroActualizoPagina()
+    personajesDisney()
+}
+
+next.onclick = () => {
+    paginaActual + 1
+
+    if (paginaActual == ultimaPagina) {
+        next.disabled = true
+    }
+
+    if (paginaActual == paginaActual++) {
+        prev.disabled = false
+    }
+    numeroActualizoPagina()
+    personajesDisney()
+
+}
+botonPrimeraPagina.onclick = () => {
+    paginaActual = 1
+    paginaUnoDesabilitado()
+    numeroActualizoPagina()
+    personajesDisney()
+}
+botonUltimaPagina.onclick = () => {
+    console.log("ultima pagina")
+    paginaActual = ultimaPagina
+    paginaUltimaDesabilitado()
+    numeroActualizoPagina()
+    personajesDisney()
+
+
+}
 
 const mostrarTarjetas = data => {
 
@@ -29,14 +109,6 @@ const mostrarTarjetas = data => {
     seccionTarjetas.innerHTML = html
 }
 
-const buscarPersonaje = (id) => {
-    fetch(`https://api.disneyapi.dev/characters/${id}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            tarjetaDetalle(data)
-        })
-}
 
 
 const clickPorTarjeta = () => {
