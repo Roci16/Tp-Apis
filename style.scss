@@ -1,20 +1,18 @@
-
 * {
     margin: 0;
 }
+
 $color-principal-modo-claro: #733f17;
 $color-secundario-modo-claro: #c88251;
 $color-terciario-modo-claro: #3f0000;
 $color-acento-modo-claro: #EDA01A;
 $color-tipografia-modo-claro: #f7d4bd;
 $color-cuarto-modo-claro: #d8aa6e;
-
-
-#hero{
+#hero {
     width: 100%;
 }
 
-nav{
+nav {
     width: 100%;
     background-color: $color-cuarto-modo-claro;
     color: $color-tipografia-modo-claro;
@@ -22,18 +20,17 @@ nav{
     padding: 2em;
 }
 
-main{
-   width: 100%;
-   background: rgb(63,94,251);
-   background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,135,1) 100%);
-   
+main {
+    width: 100%;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 135, 1) 100%);
 }
 
-#seccion-tarjeta{
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-padding: 2em;
+#seccion-tarjeta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2em;
 }
 
 #tarjeta-detalles {
