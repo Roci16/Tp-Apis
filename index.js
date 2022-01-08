@@ -157,32 +157,53 @@ const tarjetaDetalle = data => {
     }
 }
 
-formBusqueda.onsubmit = (e) => {
+formBusqueda.oninput = e => {
     e.preventDefault()
 
-    buscarInfo(inputBusqueda.value)
-    inputBusqueda.value = ""
+    let valorBusqueda = inputBusqueda.value
+    console.log(valorBusqueda)
+    buscarInfo(valorBusqueda)
     seccionTarjetas.style.display = "none"
     resultadoBusqueda.style.display = "block"
-}
-const tarjetaResultado = personajes => {
+    valorBusqueda = ""
 
-    const resultado = personajes.reduce((acc, curr) => {
-        return acc + `<div class="tarjetas-datos" data-id=${curr.id}>
-                <h2>
-                    ${curr.name}
-                </h2>
-                 <img src="${curr.image}">
-             </div>
-             `
-    }, "")
-    resultadoBusqueda.innerHTML = resultado
 }
+
+const mostrarResultado = personaje => {
+
+    const resultados = personaje.reduce((acc, curr) => {
+
+        return acc + `
+        <div class="tarjetas-datos" data-id=${curr.id}>
+                 <h2>
+                     ${curr.name}
+                 </h2>
+                  <img src="${curr.image}">
+            </div>
+        `
+
+    }, "")
+
+    resultadoBusqueda.innerHTML = resultados
+
+}
+
 const buscarInfo = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/character/?name=${nombre}`)
         .then(res => res.json())
         .then(data => {
-            tarjetaResultado(data.results)
+            mostrarResultado(data.results)
 
         })
+
 }
+
+
+// const buscarInfo = (nombre) => {
+//     fetch(`https://rickandmortyapi.com/api/character/?name=${nombre}`)
+//         .then(res => res.json())
+//         .then(data => {
+//             tarjetaResultado(data.results)
+
+//         })
+// }
