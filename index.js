@@ -10,6 +10,9 @@ const prev = document.getElementById("prev")
 const next = document.getElementById("next")
 const botonPrimeraPagina = document.getElementById("primera-pagina")
 const botonUltimaPagina = document.getElementById("ultima-pagina")
+const formBusqueda = document.getElementById("form-busqueda")
+const inputBusqueda = document.getElementById("input-busqueda")
+const resultadoBusqueda = document.getElementById("resultado-tarjetas")
 
 let paginaActual = 1
 let ultimaPagina = 0
@@ -152,4 +155,34 @@ const tarjetaDetalle = data => {
         seccionTarjetas.style.display = "flex"
         conteinerBotones.style.display = "block"
     }
+}
+
+formBusqueda.onsubmit = (e) => {
+    e.preventDefault()
+
+    buscarInfo(inputBusqueda.value)
+    inputBusqueda.value = ""
+    seccionTarjetas.style.display = "none"
+    resultadoBusqueda.style.display = "block"
+}
+const tarjetaResultado = personajes => {
+
+    const resultado = personajes.reduce((acc, curr) => {
+        return acc + `<div class="tarjetas-datos" data-id=${curr.id}>
+                <h2>
+                    ${curr.name}
+                </h2>
+                 <img src="${curr.image}">
+             </div>
+             `
+    }, "")
+    resultadoBusqueda.innerHTML = resultado
+}
+const buscarInfo = (nombre) => {
+    fetch(`https://rickandmortyapi.com/api/character/?name=${nombre}`)
+        .then(res => res.json())
+        .then(data => {
+            tarjetaResultado(data.results)
+
+        })
 }
