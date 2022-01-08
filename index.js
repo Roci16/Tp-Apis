@@ -4,7 +4,7 @@ const seccionDetalles = document.getElementById("tarjeta-detalles")
 
 
 // Botones de pagina
-const conteinerBotones = document.getElementById("botones")
+const conteinerBotonesPrincipales = document.getElementById("botones-paginado-principal")
 const numeroDePagina = document.getElementById("numero-pagina")
 const prev = document.getElementById("prev")
 const next = document.getElementById("next")
@@ -124,7 +124,7 @@ const clickPorTarjeta = () => {
             buscarPersonaje(idPersonaje)
 
             seccionTarjetas.style.display = "none"
-            conteinerBotones.style.display = "none"
+            conteinerBotonesPrincipales.style.display = "none"
         }
 
     }
@@ -153,36 +153,50 @@ const tarjetaDetalle = data => {
         seccionDetalles.style.display = "none"
         menuTimes.style.display = "none"
         seccionTarjetas.style.display = "flex"
-        conteinerBotones.style.display = "block"
+        conteinerBotonesPrincipales.style.display = "block"
     }
 }
+const botonesPaginaBusqueda = document.getElementById("botones-paginado-busqueda")
 
-formBusqueda.onsubmit = (e) => {
+
+formBusqueda.oninput = e => {
     e.preventDefault()
 
-    buscarInfo(inputBusqueda.value)
-    inputBusqueda.value = ""
+    let valorBusqueda = inputBusqueda.value
+    buscarInfo(valorBusqueda)
     seccionTarjetas.style.display = "none"
-    resultadoBusqueda.style.display = "block"
-}
-const tarjetaResultado = personajes => {
+    resultadoBusqueda.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "none"
+    botonesPaginaBusqueda.style.display = "flex"
+    valorBusqueda = ""
 
-    const resultado = personajes.reduce((acc, curr) => {
-        return acc + `<div class="tarjetas-datos" data-id=${curr.id}>
-                <h2>
-                    ${curr.name}
-                </h2>
-                 <img src="${curr.image}">
-             </div>
-             `
-    }, "")
-    resultadoBusqueda.innerHTML = resultado
 }
+
+const mostrarResultado = personaje => {
+
+    const resultados = personaje.reduce((acc, curr) => {
+
+        return acc + `
+        <div class="tarjetas-datos" data-id=${curr.id}>
+                 <h2>
+                     ${curr.name}
+                 </h2>
+                  <img src="${curr.image}">
+            </div>
+            
+        `
+
+    }, "")
+
+    resultadoBusqueda.innerHTML = resultados
+
+}
+
 const buscarInfo = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/character/?name=${nombre}`)
         .then(res => res.json())
         .then(data => {
-            tarjetaResultado(data.results)
-
+            mostrarResultado(data.results)
         })
+
 }
