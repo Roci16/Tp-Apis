@@ -34,8 +34,12 @@ main {
 }
 
 #tarjeta-detalles {
-display: flex;
-justify-content: center;
-flex-direction: row;
-margin: 1em;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1em;
+}
+
+#botones-paginado-busqueda {
+    display: none;
 }

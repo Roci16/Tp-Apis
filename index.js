@@ -4,7 +4,7 @@ const seccionDetalles = document.getElementById("tarjeta-detalles")
 
 
 // Botones de pagina
-const conteinerBotones = document.getElementById("botones")
+const conteinerBotonesPrincipales = document.getElementById("botones-paginado-principal")
 const numeroDePagina = document.getElementById("numero-pagina")
 const prev = document.getElementById("prev")
 const next = document.getElementById("next")
@@ -124,7 +124,7 @@ const clickPorTarjeta = () => {
             buscarPersonaje(idPersonaje)
 
             seccionTarjetas.style.display = "none"
-            conteinerBotones.style.display = "none"
+            conteinerBotonesPrincipales.style.display = "none"
         }
 
     }
@@ -153,18 +153,21 @@ const tarjetaDetalle = data => {
         seccionDetalles.style.display = "none"
         menuTimes.style.display = "none"
         seccionTarjetas.style.display = "flex"
-        conteinerBotones.style.display = "block"
+        conteinerBotonesPrincipales.style.display = "block"
     }
 }
+const botonesPaginaBusqueda = document.getElementById("botones-paginado-busqueda")
+
 
 formBusqueda.oninput = e => {
     e.preventDefault()
 
     let valorBusqueda = inputBusqueda.value
-    console.log(valorBusqueda)
     buscarInfo(valorBusqueda)
     seccionTarjetas.style.display = "none"
-    resultadoBusqueda.style.display = "block"
+    resultadoBusqueda.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "none"
+    botonesPaginaBusqueda.style.display = "flex"
     valorBusqueda = ""
 
 }
@@ -180,6 +183,7 @@ const mostrarResultado = personaje => {
                  </h2>
                   <img src="${curr.image}">
             </div>
+            
         `
 
     }, "")
@@ -193,17 +197,6 @@ const buscarInfo = (nombre) => {
         .then(res => res.json())
         .then(data => {
             mostrarResultado(data.results)
-
         })
 
 }
-
-
-// const buscarInfo = (nombre) => {
-//     fetch(`https://rickandmortyapi.com/api/character/?name=${nombre}`)
-//         .then(res => res.json())
-//         .then(data => {
-//             tarjetaResultado(data.results)
-
-//         })
-// }
