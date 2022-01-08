@@ -13,17 +13,19 @@ $color-cuarto-modo-claro: #d8aa6e;
 }
 
 nav {
-    width: 100%;
-    background-color: $color-cuarto-modo-claro;
+    width: auto;
+    background: rgb(145,200, 70);
+    background: radial-gradient(circle, rgba(145, 200, 70, 1) 0%, rgba(18, 176, 201, 1) 100%);
     color: $color-tipografia-modo-claro;
-    box-shadow: 10px 10px 10px 10px $color-terciario-modo-claro;
     padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    
 }
 
 main {
     width: 100%;
-    background: rgb(63, 94, 251);
-    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 135, 1) 100%);
+   
 }
 
 #seccion-tarjeta {
@@ -38,4 +40,23 @@ display: flex;
 justify-content: center;
 flex-direction: row;
 margin: 1em;
+}
+
+#botones{
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    
+}
+#botones button{
+    background-color: rgb(145,200, 70);
+    margin: 1em;
+}
+footer{
+    width: 100%;
+}
+
+footer img{
+    width:100% ;
+    z-index: 1;
 }
