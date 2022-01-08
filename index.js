@@ -10,23 +10,27 @@ const prev = document.getElementById("prev")
 const next = document.getElementById("next")
 const botonPrimeraPagina = document.getElementById("primera-pagina")
 const botonUltimaPagina = document.getElementById("ultima-pagina")
+const formBusqueda = document.getElementById("form-busqueda")
+const inputBusqueda = document.getElementById("input-busqueda")
+const resultadoBusqueda = document.getElementById("resultado-tarjetas")
 
 let paginaActual = 1
-let ultimaPagina = 149
+let ultimaPagina = 0
 
-const personajesDisney = () => {
-    fetch(`https://api.disneyapi.dev/characters?page=${paginaActual}`)
+const personajes = () => {
+    fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
-            mostrarTarjetas(data)
+            ultimaPagina = data.info.pages
+            mostrarTarjetas(data.results)
             clickPorTarjeta()
         })
 }
-personajesDisney()
+personajes()
 
 const buscarPersonaje = (id) => {
-    fetch(`https://api.disneyapi.dev/characters/${id}`)
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -57,17 +61,17 @@ prev.onclick = () => {
     if (paginaActual == 1) {
         prev.disabled = true
     }
-    if (paginaActual < ultimaPagina) {
+    if (paginaActual < 42) {
         next.disabled = false
     }
     numeroActualizoPagina()
-    personajesDisney()
+    personajes()
 }
 
 next.onclick = () => {
     paginaActual + 1
 
-    if (paginaActual == ultimaPagina) {
+    if (paginaActual == 41) {
         next.disabled = true
     }
 
@@ -75,34 +79,34 @@ next.onclick = () => {
         prev.disabled = false
     }
     numeroActualizoPagina()
-    personajesDisney()
+    personajes()
 
 }
 botonPrimeraPagina.onclick = () => {
     paginaActual = 1
     paginaUnoDesabilitado()
     numeroActualizoPagina()
-    personajesDisney()
+    personajes()
 }
 botonUltimaPagina.onclick = () => {
     console.log("ultima pagina")
     paginaActual = ultimaPagina
     paginaUltimaDesabilitado()
     numeroActualizoPagina()
-    personajesDisney()
+    personajes()
 
 
 }
 
-const mostrarTarjetas = data => {
+const mostrarTarjetas = personajes => {
 
-    const html = data.data.reduce((acc, curr) => {
+    const html = personajes.reduce((acc, curr) => {
         return acc + `
-<div class="tarjetas-datos" data-id=${curr._id}>
+<div class="tarjetas-datos" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
-                 <img src="${curr.imageUrl}">
+                 <img src="${curr.image}">
              </div>
 `
     }, "")
@@ -126,24 +130,23 @@ const clickPorTarjeta = () => {
     }
 
 }
-
 const tarjetaDetalle = data => {
 
     seccionDetalles.style.display = "flex"
+    menuTimes.style.display = "block"
 
     seccionDetalles.innerHTML = `
+    
     <article>
-    <div id="menu-times">
-    <i class="fas fa-times"></i>
-</div>
-    <img src="${data.imageUrl}">
+    <img src="${data.image}">
     <h2>${data.name}</h2>
-    <p>Films: ${data.films.length === 0 ? "No results":data.films.join(', ')}</p>
-    <p>Short Films: ${data.shortFilms.length === 0 ? "No results":data.shortFilms.join(', ')}</p> 
-    <p>Tv Shows: ${data.tvShows.length === 0 ? "No results":data.tvShows.join(', ')}</p>
-    <p>Videogames: ${data.videoGames.length === 0 ? "No results":data.videoGames.join(', ')}</p> 
-    <p>Park Attraction: ${data.parkAttractions.length === 0 ? "No results":data.parkAttractions.join(', ')}</p> 
-    </article> `
+    <p>Gender: ${data.gender}</p>
+    <p>Species: ${data.species}</p>
+    <p>Status: ${data.status}</p> 
+    </article>
+  `
+
+
 
     const menuTimes = document.getElementById("menu-times")
     menuTimes.onclick = () => {
@@ -152,4 +155,34 @@ const tarjetaDetalle = data => {
         seccionTarjetas.style.display = "flex"
         conteinerBotones.style.display = "block"
     }
+}
+
+formBusqueda.onsubmit = (e) => {
+    e.preventDefault()
+
+    buscarInfo(inputBusqueda.value)
+    inputBusqueda.value = ""
+    seccionTarjetas.style.display = "none"
+    resultadoBusqueda.style.display = "block"
+}
+const tarjetaResultado = personajes => {
+
+    const resultado = personajes.reduce((acc, curr) => {
+        return acc + `<div class="tarjetas-datos" data-id=${curr.id}>
+                <h2>
+                    ${curr.name}
+                </h2>
+                 <img src="${curr.image}">
+             </div>
+             `
+    }, "")
+    resultadoBusqueda.innerHTML = resultado
+}
+const buscarInfo = (nombre) => {
+    fetch(`https://rickandmortyapi.com/api/character/?name=${nombre}`)
+        .then(res => res.json())
+        .then(data => {
+            tarjetaResultado(data.results)
+
+        })
 }
