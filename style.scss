@@ -36,6 +36,7 @@ main {
 }
 
 #tarjeta-detalles {
+
 display: flex;
 justify-content: center;
 flex-direction: row;
@@ -59,4 +60,12 @@ footer{
 footer img{
     width:100% ;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1em;
+}
+
+#botones-paginado-busqueda {
+    display: none;
 }
