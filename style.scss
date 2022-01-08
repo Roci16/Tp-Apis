@@ -14,18 +14,16 @@ $color-cuarto-modo-claro: #d8aa6e;
 
 nav {
     width: auto;
-    background: rgb(145,200, 70);
+    background: rgb(145, 200, 70);
     background: radial-gradient(circle, rgba(145, 200, 70, 1) 0%, rgba(18, 176, 201, 1) 100%);
     color: $color-tipografia-modo-claro;
     padding: 2em;
     display: flex;
     justify-content: space-between;
-    
 }
 
 main {
     width: 100%;
-   
 }
 
 #seccion-tarjeta {
@@ -36,29 +34,29 @@ main {
 }
 
 #tarjeta-detalles {
-
-display: flex;
-justify-content: center;
-flex-direction: row;
-margin: 1em;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1em;
 }
 
-#botones{
+#botones {
     display: flex;
     justify-content: center;
     margin: 1em;
-    
 }
-#botones button{
-    background-color: rgb(145,200, 70);
+
+#botones button {
+    background-color: rgb(145, 200, 70);
     margin: 1em;
 }
-footer{
+
+footer {
     width: 100%;
 }
 
-footer img{
-    width:100% ;
+footer img {
+    width: 100%;
     z-index: 1;
     display: flex;
     justify-content: center;
