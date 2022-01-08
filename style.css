@@ -34,7 +34,6 @@ main {
   margin: 1em;
 }
 
-
 #botones {
   display: flex;
   justify-content: center;
@@ -53,11 +52,14 @@ footer {
 footer img {
   width: 100%;
   z-index: 1;
-
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 1em;
+}
 
 #botones-paginado-busqueda {
   display: none;
-
 }
 
 /*# sourceMappingURL=style.css.map */
