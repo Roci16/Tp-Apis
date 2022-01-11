@@ -59,6 +59,7 @@ body main #tarjeta-detalles {
   flex-direction: row;
   margin: 1em;
 }
+
 body main #botones {
   display: flex;
   justify-content: center;
@@ -82,6 +83,7 @@ body footer img {
   position: absolute;
   z-index: -1;
 }
+
 body #redes-footer {
   justify-content: center;
   font-family: "Titillium Web", sans-serif;
@@ -91,7 +93,11 @@ body #redes-footer {
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
 }
 body #botones-paginado-busqueda {
+  z-index: 1;
   display: none;
+  justify-content: center;
+  flex-direction: row;
+  margin: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */
