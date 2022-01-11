@@ -133,11 +133,14 @@ const clickPorTarjeta = () => {
 const tarjetaDetalle = data => {
 
     seccionDetalles.style.display = "flex"
-    menuTimes.style.display = "block"
+
 
     seccionDetalles.innerHTML = `
     
     <article>
+    <div id="menu-times">
+        <i class="fas fa-times"></i>
+    </div>
     <img src="${data.image}">
     <h2>${data.name}</h2>
     <p>Gender: ${data.gender}</p>
@@ -149,6 +152,8 @@ const tarjetaDetalle = data => {
 
 
     const menuTimes = document.getElementById("menu-times")
+    menuTimes.style.display = "block"
+
     menuTimes.onclick = () => {
         seccionDetalles.style.display = "none"
         menuTimes.style.display = "none"
