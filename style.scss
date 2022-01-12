@@ -15,6 +15,9 @@ $color-cuarto-modo-claro: #d8aa6e;
 body {
     background: rgb(60, 182, 64);
     background: linear-gradient(90deg, rgba(60, 182, 64, 1) 0%, rgba(145, 200, 70, 1) 35%, rgba(242, 236, 32, 1) 100%);
+    .detalles-fondo {
+        background-color: rgba(46, 46, 46, 0.294);
+    }
     #hero {
         width: 100%;
     }
@@ -47,6 +50,10 @@ body {
     }
     main {
         width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         background: transparent;
         font-family: 'Titillium Web', sans-serif;
         #vector-fondo-main {
@@ -65,6 +72,13 @@ body {
             justify-content: center;
             flex-direction: row;
             margin: 1em;
+        }
+        .detalles {
+            position: fixed;
+            top: 0;
+            box-shadow: 5px 5px 25px 20px black;
+            padding: 5px;
+            background-color: white;
         }
         #botones {
             display: flex;
