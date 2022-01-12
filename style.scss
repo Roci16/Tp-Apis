@@ -19,22 +19,39 @@ body{
     background: rgb(60,182,64);
     background: linear-gradient(90deg, rgba(60,182,64,1) 0%, rgba(145,200,70,1) 35%, rgba(242,236,32,1) 100%);
     
+    header{
+        display: flex;
+        justify-content: center;
+
+    }
+   
     #hero {
         width: 100%;
-        filter: drop-shadow(0 0 0.75rem rgb(16, 82, 18));
+       
     }
+
+    header h1{
+        position: absolute;
+        z-index: 1;
+        font-family: 'Titillium Web', sans-serif;
+        font-style: bold 700;
+        font-size: 7em;
+        color:rgb(18, 176, 201) ;
+        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206,89,55,0), 2px 2px 2px rgba(206,89,55,0);
+        
+    }
+
 
     nav {
         width: auto;
-        background: rgb(145,200, 70);
-        background: radial-gradient(circle, rgba(145, 200, 70, 1) 0%, rgba(18, 176, 201, 1) 100%);
+        background: rgb(31, 63, 22);
+        background: radial-gradient(circle, rgb(28, 122, 104) 0%, rgb(25, 46, 5) 100%);
         color: $color-tipografia-modo-claro;
         padding: 1em;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 1em;
-        margin-top: 1em;
-        border-radius: 40px;
+        margin: 1em;
+        border-radius: 20px;
        box-shadow: 6px 6px 6px 6px #000000, inset 10px 10px 10px 0px #000000;
         font-family: 'Titillium Web', sans-serif;
         font-style:bold 700;
@@ -62,10 +79,12 @@ body{
     }
 
     nav select {
-        border-radius: 50px;
+        
         background-color: transparent;
         box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-        width: 8em;
+        width: 7em;
+        height: 7em;
+         border-radius: 50%;
     }
 
 main {
@@ -104,12 +123,15 @@ main {
             
         }
         #botones button{
-            margin: 1em;
-            font-family: 'Titillium Web', sans-serif;
-            border-radius: 50px;
-            background-color: transparent;
-            box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-            width: 8em;
+            background-image: url("imagenes/fondo-botones.png") ;
+       width: 7em;
+       height: 7em;
+        border-radius: 50%;
+        text-align: center;
+        background-color:  rgb(145,200, 70);
+        box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
+        font-family: 'Titillium Web', sans-serif;
+        margin: 1em;
         }
     
 }
@@ -117,16 +139,15 @@ footer{
     width: 100%;
     display: flex;
     justify-content: center;
-    
   
+    
 }
 
    footer img{
-
+    width: 100%;
     position: absolute;
     z-index: -1;
     filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
-  
 
 }
 
