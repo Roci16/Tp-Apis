@@ -30,7 +30,7 @@ body nav {
   color: #f7d4bd;
   padding: 1em;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 1em;
   border-radius: 20px;
   box-shadow: 6px 6px 6px 6px #000000, inset 10px 10px 10px 0px #000000;
@@ -52,7 +52,7 @@ body nav input {
   background-color: transparent;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   border-radius: 50px;
-  width: 14em;
+  width: 18em;
   height: 7em;
 }
 body nav select {
