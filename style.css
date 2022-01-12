@@ -7,6 +7,9 @@ body {
   background: #3cb640;
   background: linear-gradient(90deg, #3cb640 0%, #91c846 35%, #f2ec20 100%);
 }
+body .detalles-fondo {
+  background-color: rgba(46, 46, 46, 0.294);
+}
 body #hero {
   width: 100%;
 }
@@ -39,6 +42,10 @@ body nav input {
 }
 body main {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background: transparent;
   font-family: "Titillium Web", sans-serif;
 }
@@ -58,6 +65,13 @@ body main #tarjeta-detalles {
   justify-content: center;
   flex-direction: row;
   margin: 1em;
+}
+body main .detalles {
+  position: fixed;
+  top: 0;
+  box-shadow: 5px 5px 25px 20px black;
+  padding: 5px;
+  background-color: white;
 }
 body main #botones {
   display: flex;

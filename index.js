@@ -1,7 +1,7 @@
 // Tarjetas
 const seccionTarjetas = document.getElementById("seccion-tarjeta")
 const seccionDetalles = document.getElementById("tarjeta-detalles")
-
+const baseOscura = document.getElementById("base-oscura")
 
 // Botones de pagina
 const conteinerBotonesPrincipales = document.getElementById("botones-paginado-principal")
@@ -101,6 +101,7 @@ botonUltimaPagina.onclick = () => {
 const mostrarTarjetas = personajes => {
 
     const html = personajes.reduce((acc, curr) => {
+
         return acc + `
 <div class="tarjetas-datos" data-id=${curr.id}>
                 <h2>
@@ -122,11 +123,9 @@ const clickPorTarjeta = () => {
         tarjetas[i].onclick = () => {
             const idPersonaje = tarjetas[i].dataset.id
             buscarPersonaje(idPersonaje)
-
-            seccionTarjetas.style.display = "none"
-            conteinerBotonesPrincipales.style.display = "none"
+            seccionDetalles.classList.add("detalles")
+            baseOscura.classList.add("detalles-fondo")
         }
-
     }
 
 }
@@ -143,9 +142,11 @@ const tarjetaDetalle = data => {
     </div>
     <img src="${data.image}">
     <h2>${data.name}</h2>
+    <p>ID: ${data.id}</p>
     <p>Gender: ${data.gender}</p>
     <p>Species: ${data.species}</p>
     <p>Status: ${data.status}</p> 
+    <p>Origin: ${data.origin.name}</p> 
     </article>
   `
 
@@ -159,6 +160,7 @@ const tarjetaDetalle = data => {
         menuTimes.style.display = "none"
         seccionTarjetas.style.display = "flex"
         conteinerBotonesPrincipales.style.display = "block"
+        baseOscura.classList.remove("detalles-fondo")
     }
 }
 const botonesPaginaBusqueda = document.getElementById("botones-paginado-busqueda")
