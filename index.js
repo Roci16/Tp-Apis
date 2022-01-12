@@ -200,7 +200,7 @@ const mostrarResultado = personaje => {
 }
 
 const buscarInfo = (nombre) => {
-    fetch(`https://rickandmortyapi.com/api/character/?name=${nombre}`)
+    fetch(`https://rickandmortyapi.com/api/character/?page=${paginaActual}&name=${nombre}`)
         .then(res => res.json())
         .then(data => {
             mostrarResultado(data.results)
