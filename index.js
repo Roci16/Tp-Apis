@@ -13,10 +13,35 @@ const botonUltimaPagina = document.getElementById("ultima-pagina")
 const formBusqueda = document.getElementById("form-busqueda")
 const inputBusqueda = document.getElementById("input-busqueda")
 const resultadoBusqueda = document.getElementById("resultado-tarjetas")
+const botonesPaginaBusqueda = document.getElementById("botones-paginado-busqueda")
+const numeroDePaginaBusqueda = document.getElementById("numero-pagina-busqueda")
+
 
 let paginaActual = 1
 let ultimaPagina = 0
 
+
+const numeroActualizoPagina = () => {
+    const numeroPagina = `${paginaActual}`
+    numeroDePagina.innerHTML = numeroPagina
+
+}
+const numeroActualizoPaginaBusqueda = () => {
+    const numeroPaginaBusqueda = `${paginaActual}`
+    numeroDePaginaBusqueda.innerHTML = numeroPaginaBusqueda
+
+}
+
+const paginaUnoDesabilitado = () => {
+    prev.disabled = true
+    next.disabled = false
+}
+const paginaUltimaDesabilitado = () => {
+    next.disabled = true
+    prev.disabled = false
+}
+
+// Personajes
 const personajes = () => {
     fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
         .then((res) => res.json())
@@ -39,22 +64,7 @@ const buscarPersonaje = (id) => {
 }
 
 
-const numeroActualizoPagina = () => {
-
-    const numeroPagina = `${paginaActual}`
-    numeroDePagina.innerHTML = numeroPagina
-
-}
-
-const paginaUnoDesabilitado = () => {
-    prev.disabled = true
-    next.disabled = false
-}
-const paginaUltimaDesabilitado = () => {
-    next.disabled = true
-    prev.disabled = false
-}
-
+//Paginas Personajes en pantalla principal
 prev.onclick = () => {
     paginaActual--
 
@@ -82,6 +92,7 @@ next.onclick = () => {
     personajes()
 
 }
+
 botonPrimeraPagina.onclick = () => {
     paginaActual = 1
     paginaUnoDesabilitado()
@@ -98,6 +109,7 @@ botonUltimaPagina.onclick = () => {
 
 }
 
+// Muestra de personajes en pantalla principal
 const mostrarTarjetas = personajes => {
 
     const html = personajes.reduce((acc, curr) => {
@@ -163,13 +175,13 @@ const tarjetaDetalle = data => {
         baseOscura.classList.remove("detalles-fondo")
     }
 }
-const botonesPaginaBusqueda = document.getElementById("botones-paginado-busqueda")
 
-
+let valorBusqueda = inputBusqueda.value
+    // Busqueda de personajes
 formBusqueda.oninput = e => {
     e.preventDefault()
 
-    let valorBusqueda = inputBusqueda.value
+
     buscarInfo(valorBusqueda)
     seccionTarjetas.style.display = "none"
     resultadoBusqueda.style.display = "flex"
@@ -203,7 +215,41 @@ const buscarInfo = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${paginaActual}&name=${nombre}`)
         .then(res => res.json())
         .then(data => {
+            ultimaPagina = data.info.pages
             mostrarResultado(data.results)
         })
+
+}
+
+//Paginado de buscar personaje
+const prevBusqueda = document.getElementById("prev-busqueda")
+const nextBusqueda = document.getElementById("next-busqueda")
+
+
+prevBusqueda.onclick = () => {
+    paginaActual--
+
+    if (paginaActual == 1) {
+        prevBusqueda.disabled = true
+    }
+    if (paginaActual < ultimaPagina) {
+        nextBusqueda.disabled = false
+    }
+    numeroActualizoPaginaBusqueda()
+    buscarInfo(valorBusqueda)
+}
+
+nextBusqueda.onclick = () => {
+    paginaActual + 1
+
+    if (paginaActual == ultimaPagina) {
+        nextBusqueda.disabled = true
+    }
+
+    if (paginaActual == paginaActual++) {
+        prevBusqueda.disabled = false
+    }
+    numeroActualizoPaginaBusqueda()
+    buscarInfo(valorBusqueda)
 
 }
