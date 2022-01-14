@@ -15,7 +15,8 @@ const inputBusqueda = document.getElementById("input-busqueda")
 const resultadoBusqueda = document.getElementById("resultado-tarjetas")
 const botonesPaginaBusqueda = document.getElementById("botones-paginado-busqueda")
 const numeroDePaginaBusqueda = document.getElementById("numero-pagina-busqueda")
-
+const prevBusqueda = document.getElementById("prev-busqueda")
+const nextBusqueda = document.getElementById("next-busqueda")
 
 let paginaActual = 1
 let ultimaPagina = 0
@@ -99,14 +100,13 @@ botonPrimeraPagina.onclick = () => {
     numeroActualizoPagina()
     personajes()
 }
+
 botonUltimaPagina.onclick = () => {
     console.log("ultima pagina")
     paginaActual = ultimaPagina
     paginaUltimaDesabilitado()
     numeroActualizoPagina()
     personajes()
-
-
 }
 
 // Muestra de personajes en pantalla principal
@@ -176,19 +176,18 @@ const tarjetaDetalle = data => {
     }
 }
 
-let valorBusqueda = inputBusqueda.value
-    // Busqueda de personajes
+
+// Busqueda de personajes
 formBusqueda.oninput = e => {
     e.preventDefault()
-
+    let valorBusqueda = inputBusqueda.value
 
     buscarInfo(valorBusqueda)
+    valorBusqueda = ""
     seccionTarjetas.style.display = "none"
     resultadoBusqueda.style.display = "flex"
     conteinerBotonesPrincipales.style.display = "none"
     botonesPaginaBusqueda.style.display = "flex"
-    valorBusqueda = ""
-
 }
 
 const mostrarResultado = personaje => {
@@ -215,16 +214,14 @@ const buscarInfo = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${paginaActual}&name=${nombre}`)
         .then(res => res.json())
         .then(data => {
+
             ultimaPagina = data.info.pages
             mostrarResultado(data.results)
         })
 
 }
 
-//Paginado de buscar personaje
-const prevBusqueda = document.getElementById("prev-busqueda")
-const nextBusqueda = document.getElementById("next-busqueda")
-
+// Paginado de buscar personaje
 
 prevBusqueda.onclick = () => {
     paginaActual--
@@ -236,7 +233,7 @@ prevBusqueda.onclick = () => {
         nextBusqueda.disabled = false
     }
     numeroActualizoPaginaBusqueda()
-    buscarInfo(valorBusqueda)
+    buscarInfo()
 }
 
 nextBusqueda.onclick = () => {
@@ -250,6 +247,23 @@ nextBusqueda.onclick = () => {
         prevBusqueda.disabled = false
     }
     numeroActualizoPaginaBusqueda()
-    buscarInfo(valorBusqueda)
-
+    buscarInfo()
 }
+
+// const botonPrimeraPaginaBusqueda = document.getElementById("primera-pagina-busqueda")
+// const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqueda")
+
+// botonPrimeraPaginaBusqueda.onclick = () => {
+//     paginaActual = 1
+//     paginaUnoDesabilitado()
+//     numeroActualizoPaginaBusqueda()
+//     buscarInfo()
+// }
+
+// botonUltimaPaginaBusqueda.onclick = () => {
+//     console.log("ultima pagina")
+//     paginaActual = ultimaPagina
+//     paginaUltimaDesabilitado()
+//     numeroActualizoPaginaBusqueda()
+//     buscarInfo()
+// }
