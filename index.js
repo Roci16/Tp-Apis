@@ -148,7 +148,7 @@ const tarjetaDetalle = data => {
 
     seccionDetalles.innerHTML = `
     
-    <article>
+    <article class="tarjeta-detalle-individual">
     <div id="menu-times">
         <i class="fas fa-times"></i>
     </div>
@@ -172,7 +172,6 @@ const tarjetaDetalle = data => {
         menuTimes.style.display = "none"
         seccionTarjetas.style.display = "flex"
         conteinerBotonesPrincipales.style.display = "block"
-        baseOscura.classList.remove("detalles-fondo")
     }
 }
 
@@ -183,7 +182,9 @@ formBusqueda.oninput = e => {
     let valorBusqueda = inputBusqueda.value
 
     buscarInfo(valorBusqueda)
-    valorBusqueda = ""
+
+    console.log(valorBusqueda);
+
     seccionTarjetas.style.display = "none"
     resultadoBusqueda.style.display = "flex"
     conteinerBotonesPrincipales.style.display = "none"
@@ -217,6 +218,7 @@ const buscarInfo = (nombre) => {
 
             ultimaPagina = data.info.pages
             mostrarResultado(data.results)
+            console.log(data);
         })
 
 }
