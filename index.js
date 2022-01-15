@@ -17,6 +17,8 @@ const botonesPaginaBusqueda = document.getElementById("botones-paginado-busqueda
 const numeroDePaginaBusqueda = document.getElementById("numero-pagina-busqueda")
 const prevBusqueda = document.getElementById("prev-busqueda")
 const nextBusqueda = document.getElementById("next-busqueda")
+const botonPrimeraPaginaBusqueda = document.getElementById("primera-pagina-busqueda")
+const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqueda")
 
 let paginaActual = 1
 let ultimaPagina = 0
@@ -47,7 +49,6 @@ const personajes = () => {
     fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             ultimaPagina = data.info.pages
             mostrarTarjetas(data.results)
             clickPorTarjeta()
@@ -59,7 +60,6 @@ const buscarPersonaje = (id) => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             tarjetaDetalle(data)
         })
 }
@@ -102,7 +102,6 @@ botonPrimeraPagina.onclick = () => {
 }
 
 botonUltimaPagina.onclick = () => {
-    console.log("ultima pagina")
     paginaActual = ultimaPagina
     paginaUltimaDesabilitado()
     numeroActualizoPagina()
@@ -179,7 +178,7 @@ const tarjetaDetalle = data => {
 // Busqueda de personajes
 formBusqueda.oninput = e => {
     e.preventDefault()
-    let valorBusqueda = inputBusqueda.value
+    const valorBusqueda = inputBusqueda.value
 
     buscarInfo(valorBusqueda)
 
@@ -189,6 +188,46 @@ formBusqueda.oninput = e => {
     resultadoBusqueda.style.display = "flex"
     conteinerBotonesPrincipales.style.display = "none"
     botonesPaginaBusqueda.style.display = "flex"
+    
+    nextBusqueda.onclick = () => {
+        paginaActual + 1
+    
+        if (paginaActual == ultimaPagina) {
+            nextBusqueda.disabled = true
+        }
+    
+        if (paginaActual == paginaActual++) {
+            prevBusqueda.disabled = false
+        }
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    }
+    prevBusqueda.onclick = () => {
+        paginaActual--
+    
+        if (paginaActual == 1) {
+            prevBusqueda.disabled = true
+        }
+        if (paginaActual < ultimaPagina) {
+            nextBusqueda.disabled = false
+        }
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    }
+    botonPrimeraPaginaBusqueda.onclick = () => {
+        paginaActual = 1
+        paginaUnoDesabilitado()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    }
+    
+    botonUltimaPaginaBusqueda.onclick = () => {
+        console.log("ultima pagina")
+        paginaActual = ultimaPagina
+        paginaUltimaDesabilitado()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    }
 }
 
 const mostrarResultado = personaje => {
@@ -223,49 +262,3 @@ const buscarInfo = (nombre) => {
 
 }
 
-// Paginado de buscar personaje
-
-prevBusqueda.onclick = () => {
-    paginaActual--
-
-    if (paginaActual == 1) {
-        prevBusqueda.disabled = true
-    }
-    if (paginaActual < ultimaPagina) {
-        nextBusqueda.disabled = false
-    }
-    numeroActualizoPaginaBusqueda()
-    buscarInfo()
-}
-
-nextBusqueda.onclick = () => {
-    paginaActual + 1
-
-    if (paginaActual == ultimaPagina) {
-        nextBusqueda.disabled = true
-    }
-
-    if (paginaActual == paginaActual++) {
-        prevBusqueda.disabled = false
-    }
-    numeroActualizoPaginaBusqueda()
-    buscarInfo()
-}
-
-// const botonPrimeraPaginaBusqueda = document.getElementById("primera-pagina-busqueda")
-// const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqueda")
-
-// botonPrimeraPaginaBusqueda.onclick = () => {
-//     paginaActual = 1
-//     paginaUnoDesabilitado()
-//     numeroActualizoPaginaBusqueda()
-//     buscarInfo()
-// }
-
-// botonUltimaPaginaBusqueda.onclick = () => {
-//     console.log("ultima pagina")
-//     paginaActual = ultimaPagina
-//     paginaUltimaDesabilitado()
-//     numeroActualizoPaginaBusqueda()
-//     buscarInfo()
-// }
