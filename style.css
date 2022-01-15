@@ -7,35 +7,60 @@ body {
   background: #3cb640;
   background: linear-gradient(90deg, #3cb640 0%, #91c846 35%, #f2ec20 100%);
 }
+body header {
+  display: flex;
+  justify-content: center;
+}
 body #hero {
   width: 100%;
 }
+body header h1 {
+  position: absolute;
+  z-index: 1;
+  font-family: "Titillium Web", sans-serif;
+  font-style: bold 700;
+  font-size: 7em;
+  color: #12b0c9;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
+}
 body nav {
   width: auto;
-  background: #91c846;
-  background: radial-gradient(circle, #91c846 0%, #12b0c9 100%);
+  background: #1f3f16;
+  background: radial-gradient(circle, #1c7a68 0%, #192e05 100%);
   color: #f7d4bd;
-  padding: 2em;
+  padding: 1em;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  border-radius: 40px;
+  justify-content: space-evenly;
+  margin: 1em;
+  border-radius: 20px;
   box-shadow: 6px 6px 6px 6px #000000, inset 10px 10px 10px 0px #000000;
   font-family: "Titillium Web", sans-serif;
   font-style: bold 700;
   font-size: 1.3em;
 }
 body nav button {
-  border-radius: 50px;
-  background-color: transparent;
+  background-image: url("imagenes/fondo-botones.png");
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #91c846;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-  width: 8em;
+  font-family: "Titillium Web", sans-serif;
 }
 body nav input {
   background-color: transparent;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   border-radius: 50px;
+  width: 18em;
+  height: 7em;
+}
+body nav select {
+  background-color: transparent;
+  box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
 }
 body main {
   width: 100%;
@@ -62,6 +87,7 @@ body main #tarjeta-detalles {
   justify-content: center;
   flex-direction: row;
 }
+
 body main #tarjeta-detalles .tarjeta-detalle-individual {
   background-color: white;
   height: 500px;
@@ -79,18 +105,22 @@ body main .detalles {
   height: 100%;
   background-color: rgba(46, 46, 46, 0.294);
 }
+
 body main #botones {
   display: flex;
   justify-content: center;
   margin: 1em;
 }
 body main #botones button {
-  margin: 1em;
-  font-family: "Titillium Web", sans-serif;
-  border-radius: 50px;
-  background-color: transparent;
+  background-image: url("imagenes/fondo-botones.png");
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #91c846;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-  width: 8em;
+  font-family: "Titillium Web", sans-serif;
+  margin: 1em;
 }
 body main #botones-paginado-busqueda {
   display: none;
@@ -104,14 +134,15 @@ body footer img {
   width: 100%;
   position: absolute;
   z-index: -1;
+  filter: drop-shadow(0 -6mm 4mm #a000d2);
 }
 body #redes-footer {
-  justify-content: center;
   font-family: "Titillium Web", sans-serif;
   font-style: bold 700;
   font-size: 2em;
   color: #12b0c9;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
 }
+
 
 /*# sourceMappingURL=style.css.map */
