@@ -17,6 +17,7 @@ const resultadoBusqueda = document.getElementById("resultado-tarjetas")
 let paginaActual = 1
 let ultimaPagina = 0
 
+//comunicacion con la api
 const personajes = () => {
     fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
         .then((res) => res.json())
@@ -137,7 +138,7 @@ const tarjetaDetalle = data => {
 
     seccionDetalles.innerHTML = `
     
-    <article>
+    <article id= "detalle-tarjeta-personaje">
     <img src="${data.image}">
     <h2>${data.name}</h2>
     <p>Gender: ${data.gender}</p>
