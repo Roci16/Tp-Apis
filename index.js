@@ -52,6 +52,7 @@ const personajes = () => {
             ultimaPagina = data.info.pages
             mostrarTarjetas(data.results)
             clickPorTarjeta()
+            seccionTarjetas.style.display = "flex"
         })
 }
 personajes()
@@ -169,8 +170,6 @@ const tarjetaDetalle = data => {
     menuTimes.onclick = () => {
         seccionDetalles.style.display = "none"
         menuTimes.style.display = "none"
-        seccionTarjetas.style.display = "flex"
-        conteinerBotonesPrincipales.style.display = "block"
     }
 }
 
@@ -188,14 +187,14 @@ formBusqueda.oninput = e => {
     resultadoBusqueda.style.display = "flex"
     conteinerBotonesPrincipales.style.display = "none"
     botonesPaginaBusqueda.style.display = "flex"
-    
+
     nextBusqueda.onclick = () => {
         paginaActual + 1
-    
+
         if (paginaActual == ultimaPagina) {
             nextBusqueda.disabled = true
         }
-    
+
         if (paginaActual == paginaActual++) {
             prevBusqueda.disabled = false
         }
@@ -204,7 +203,7 @@ formBusqueda.oninput = e => {
     }
     prevBusqueda.onclick = () => {
         paginaActual--
-    
+
         if (paginaActual == 1) {
             prevBusqueda.disabled = true
         }
@@ -220,7 +219,7 @@ formBusqueda.oninput = e => {
         numeroActualizoPaginaBusqueda()
         buscarInfo(valorBusqueda)
     }
-    
+
     botonUltimaPaginaBusqueda.onclick = () => {
         console.log("ultima pagina")
         paginaActual = ultimaPagina
@@ -258,7 +257,8 @@ const buscarInfo = (nombre) => {
             ultimaPagina = data.info.pages
             mostrarResultado(data.results)
             console.log(data);
+            clickPorTarjeta();
+            resultadoBusqueda.style.display = "flex"
         })
 
 }
-
