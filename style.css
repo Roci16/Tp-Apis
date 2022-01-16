@@ -64,19 +64,19 @@ body nav select {
 }
 body main {
   width: 100%;
+  background: transparent;
+  font-family: "Titillium Web", sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: transparent;
-  font-family: "Titillium Web", sans-serif;
 }
 body main #vector-fondo-main {
   width: 100%;
   position: absolute;
   z-index: -1;
 }
-body main #seccion-tarjeta {
+body main .tarjetas-orden {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -87,7 +87,6 @@ body main #tarjeta-detalles {
   justify-content: center;
   flex-direction: row;
 }
-
 body main #tarjeta-detalles .tarjeta-detalle-individual {
   background-color: white;
   height: 500px;
@@ -95,23 +94,22 @@ body main #tarjeta-detalles .tarjeta-detalle-individual {
   align-items: center;
   flex-direction: column;
 }
-body main #tarjeta-detalles .tarjeta-detalle-individual img {
+body main #tarjeta-detalles img {
   width: 90%;
 }
-body main .detalles {
+body .detalles {
   position: fixed;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(46, 46, 46, 0.294);
 }
-
-body main #botones {
+body #botones {
   display: flex;
   justify-content: center;
   margin: 1em;
 }
-body main #botones button {
+body #botones button {
   background-image: url("imagenes/fondo-botones.png");
   width: 7em;
   height: 7em;
@@ -122,21 +120,21 @@ body main #botones button {
   font-family: "Titillium Web", sans-serif;
   margin: 1em;
 }
-body main #botones-paginado-busqueda {
-  display: none;
-}
-body footer {
+
+footer {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-body footer img {
+
+footer img {
   width: 100%;
   position: absolute;
   z-index: -1;
   filter: drop-shadow(0 -6mm 4mm #a000d2);
 }
-body #redes-footer {
+
+#redes-footer {
   font-family: "Titillium Web", sans-serif;
   font-style: bold 700;
   font-size: 2em;
@@ -144,5 +142,8 @@ body #redes-footer {
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
 }
 
+#botones-paginado-busqueda {
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,6 @@
 // Tarjetas
 const seccionTarjetas = document.getElementById("seccion-tarjeta")
 const seccionDetalles = document.getElementById("tarjeta-detalles")
-const baseOscura = document.getElementById("base-oscura")
 
 // Botones de pagina
 const conteinerBotonesPrincipales = document.getElementById("botones-paginado-principal")
@@ -136,7 +135,6 @@ const clickPorTarjeta = () => {
             const idPersonaje = tarjetas[i].dataset.id
             buscarPersonaje(idPersonaje)
             seccionDetalles.classList.add("detalles")
-            baseOscura.classList.add("detalles-fondo")
         }
     }
 
@@ -234,7 +232,7 @@ const mostrarResultado = personaje => {
     const resultados = personaje.reduce((acc, curr) => {
 
         return acc + `
-        <div class="tarjetas-datos" data-id=${curr.id}>
+        <div class="tarjetas-datos" data-id=${curr.id} >
                  <h2>
                      ${curr.name}
                  </h2>
