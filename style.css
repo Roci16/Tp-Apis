@@ -11,9 +11,6 @@ body header {
   display: flex;
   justify-content: center;
 }
-body #hero {
-  width: 100%;
-}
 body header h1 {
   position: absolute;
   z-index: 1;
@@ -22,6 +19,9 @@ body header h1 {
   font-size: 7em;
   color: #12b0c9;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
+}
+body header #hero {
+  width: 100%;
 }
 body nav {
   width: auto;
@@ -38,6 +38,13 @@ body nav {
   font-style: bold 700;
   font-size: 1.3em;
 }
+body nav input {
+  background-color: transparent;
+  box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
+  border-radius: 50px;
+  width: 18em;
+  height: 7em;
+}
 body nav button {
   background-image: url("imagenes/fondo-botones.png");
   width: 7em;
@@ -48,13 +55,6 @@ body nav button {
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   font-family: "Titillium Web", sans-serif;
 }
-body nav input {
-  background-color: transparent;
-  box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-  border-radius: 50px;
-  width: 18em;
-  height: 7em;
-}
 body nav select {
   background-color: transparent;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
@@ -64,19 +64,15 @@ body nav select {
 }
 body main {
   width: 100%;
+  background: transparent;
+  font-family: "Titillium Web", sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: transparent;
-  font-family: "Titillium Web", sans-serif;
+  background-image: url(imagenes/fondo-rick-morty.svg);
 }
-body main #vector-fondo-main {
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-}
-body main #seccion-tarjeta {
+body main .tarjetas-orden {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -87,7 +83,6 @@ body main #tarjeta-detalles {
   justify-content: center;
   flex-direction: row;
 }
-
 body main #tarjeta-detalles .tarjeta-detalle-individual {
   background-color: white;
   height: 500px;
@@ -105,13 +100,7 @@ body main .detalles {
   height: 100%;
   background-color: rgba(46, 46, 46, 0.294);
 }
-
-body main #botones {
-  display: flex;
-  justify-content: center;
-  margin: 1em;
-}
-body main #botones button {
+body main button {
   background-image: url("imagenes/fondo-botones.png");
   width: 7em;
   height: 7em;
@@ -136,13 +125,12 @@ body footer img {
   z-index: -1;
   filter: drop-shadow(0 -6mm 4mm #a000d2);
 }
-body #redes-footer {
+body footer #redes-footer {
   font-family: "Titillium Web", sans-serif;
   font-style: bold 700;
   font-size: 2em;
   color: #12b0c9;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
 }
-
 
 /*# sourceMappingURL=style.css.map */

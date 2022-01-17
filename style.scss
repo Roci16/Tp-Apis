@@ -1,190 +1,143 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap');
-* {
-    margin: 0;
-}
-
-//la imagen del hero esta muy grande la tengo que achicar
-//el nav estari bueno que quede fixed arriba cuando vamos recorriendo el main
-//todos los estilos son pruebas de cosas se pueden cambiar
-$color-principal-modo-claro: #733f17;
-$color-secundario-modo-claro: #c88251;
-$color-terciario-modo-claro: #3f0000;
-$color-acento-modo-claro: #EDA01A;
-$color-tipografia-modo-claro: #f7d4bd;
-$color-cuarto-modo-claro: #d8aa6e;
-
-
-body{
-    background: rgb(60,182,64);
-    background: linear-gradient(90deg, rgba(60,182,64,1) 0%, rgba(145,200,70,1) 35%, rgba(242,236,32,1) 100%);
-    
-    header{
-        display: flex;
-        justify-content: center;
-    }
-   
-
-    #hero {
-        width: 100%;   
-    }
-
-
-    header h1{
-        position: absolute;
-        z-index: 1;
-        font-family: 'Titillium Web', sans-serif;
-        font-style: bold 700;
-        font-size: 7em;
-        color:rgb(18, 176, 201) ;
-        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206,89,55,0), 2px 2px 2px rgba(206,89,55,0);
-        
-    }
-
-
-    nav {
-        width: auto;
-        background: rgb(31, 63, 22);
-        background: radial-gradient(circle, rgb(28, 122, 104) 0%, rgb(25, 46, 5) 100%);
-
-        color: $color-tipografia-modo-claro;
-        padding: 1em;
-        display: flex;
-
-        justify-content: space-evenly;
-        margin: 1em;
-        border-radius: 20px;
-       box-shadow: 6px 6px 6px 6px #000000, inset 10px 10px 10px 0px #000000;
-
-        font-family: 'Titillium Web', sans-serif;
-        font-style: bold 700;
-        font-size: 1.3em;
-        }
-
-    nav button {
-        background-image: url("imagenes/fondo-botones.png") ;
-       width: 7em;
-       height: 7em;
-        border-radius: 50%;
-        text-align: center;
-        background-color:  rgb(145,200, 70);
-        box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-        font-family: 'Titillium Web', sans-serif;
-       
-    }
-    nav input {
-        background-color: transparent;
-        box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-        border-radius: 50px;
-        width: 18em;
-       height: 7em;
-        
-    }
-
-    nav select {
-        
-        background-color: transparent;
-        box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-        width: 7em;
-        height: 7em;
-         border-radius: 50%;
-    }
-
-
-main {
-    width: 100%;  
-    background: transparent;
-    font-family: 'Titillium Web', sans-serif;
-     display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+ @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap');
+ * {
+     margin: 0;
+ }
  
-    #vector-fondo-main{
-        width: 100%;
-        position: absolute;
-        z-index: -1;
-    }
-   
-    #seccion-tarjeta {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 2em;
-    }
-      
-        #tarjeta-detalles {
-            display: flex;
-            justify-content: center;
-            flex-direction: row;
-            .tarjeta-detalle-individual{
-                background-color: white;
-                height: 500px;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-          img{
-                    width: 90%;
-                }
-          
-            }
-        }
-  
-        .detalles {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(46, 46, 46, 0.294);
-        }
-        #botones {
-            display: flex;
-            justify-content: center;
-            margin: 1em;
-        }
-
-        #botones button{
-        background-image: url("imagenes/fondo-botones.png") ;
-        width: 7em;
-        height: 7em;
-        border-radius: 50%;
-        text-align: center;
-        background-color:  rgb(145,200, 70);
-        box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-        font-family: 'Titillium Web', sans-serif;
-        margin: 1em;
-        }
-    
-}
-  
-footer{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-     
-}
-
-   footer img{
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-    filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
-
-}
-
-#redes-footer {
-
-    font-family: 'Titillium Web', sans-serif;
-    font-style: bold 700;
-    font-size: 2em;
-    color:rgb(18, 176, 201) ;
-    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206,89,55,0), 2px 2px 2px rgba(206,89,55,0);
-}
-
-
-
-
-        #botones-paginado-busqueda {
-            display: none
-        }
-    
-    
+ //la imagen del hero esta muy grande la tengo que achicar
+ //el nav estari bueno que quede fixed arriba cuando vamos recorriendo el main
+ //todos los estilos son pruebas de cosas se pueden cambiar
+ $color-principal-modo-claro: #733f17;
+ $color-secundario-modo-claro: #c88251;
+ $color-terciario-modo-claro: #3f0000;
+ $color-acento-modo-claro: #EDA01A;
+ $color-tipografia-modo-claro: #f7d4bd;
+ $color-cuarto-modo-claro: #d8aa6e;
+ body {
+     background: rgb(60, 182, 64);
+     background: linear-gradient(90deg, rgba(60, 182, 64, 1) 0%, rgba(145, 200, 70, 1) 35%, rgba(242, 236, 32, 1) 100%);
+     header {
+         display: flex;
+         justify-content: center;
+         h1 {
+             position: absolute;
+             z-index: 1;
+             font-family: 'Titillium Web', sans-serif;
+             font-style: bold 700;
+             font-size: 7em;
+             color: rgb(18, 176, 201);
+             text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
+         }
+         #hero {
+             width: 100%;
+         }
+     }
+     nav {
+         width: auto;
+         background: rgb(31, 63, 22);
+         background: radial-gradient(circle, rgb(28, 122, 104) 0%, rgb(25, 46, 5) 100%);
+         color: $color-tipografia-modo-claro;
+         padding: 1em;
+         display: flex;
+         justify-content: space-evenly;
+         margin: 1em;
+         border-radius: 20px;
+         box-shadow: 6px 6px 6px 6px #000000, inset 10px 10px 10px 0px #000000;
+         font-family: 'Titillium Web', sans-serif;
+         font-style: bold 700;
+         font-size: 1.3em;
+         input {
+             background-color: transparent;
+             box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
+             border-radius: 50px;
+             width: 18em;
+             height: 7em;
+         }
+         button {
+             background-image: url("imagenes/fondo-botones.png");
+             width: 7em;
+             height: 7em;
+             border-radius: 50%;
+             text-align: center;
+             background-color: rgb(145, 200, 70);
+             box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
+             font-family: 'Titillium Web', sans-serif;
+         }
+         select {
+             background-color: transparent;
+             box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
+             width: 7em;
+             height: 7em;
+             border-radius: 50%;
+         }
+     }
+     main {
+         width: 100%;
+         background: transparent;
+         font-family: 'Titillium Web', sans-serif;
+         display: flex;
+         justify-content: center;
+         flex-direction: column;
+         align-items: center;
+         background-image: url(imagenes/fondo-rick-morty.svg);
+         .tarjetas-orden {
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: space-between;
+             padding: 2em;
+         }
+         #tarjeta-detalles {
+             display: flex;
+             justify-content: center;
+             flex-direction: row;
+             .tarjeta-detalle-individual {
+                 background-color: white;
+                 height: 500px;
+                 display: flex;
+                 align-items: center;
+                 flex-direction: column;
+                 img {
+                     width: 90%;
+                 }
+             }
+         }
+         .detalles {
+             position: fixed;
+             top: 0;
+             width: 100%;
+             height: 100%;
+             background-color: rgba(46, 46, 46, 0.294);
+         }
+         button {
+             background-image: url("imagenes/fondo-botones.png");
+             width: 7em;
+             height: 7em;
+             border-radius: 50%;
+             text-align: center;
+             background-color: rgb(145, 200, 70);
+             box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
+             font-family: 'Titillium Web', sans-serif;
+             margin: 1em;
+         }
+         #botones-paginado-busqueda {
+             display: none
+         }
+     }
+     footer {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         img {
+             width: 100%;
+             position: absolute;
+             z-index: -1;
+             filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
+         }
+         #redes-footer {
+             font-family: 'Titillium Web', sans-serif;
+             font-style: bold 700;
+             font-size: 2em;
+             color: rgb(18, 176, 201);
+             text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
+         }
+     }
+ }

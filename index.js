@@ -1,7 +1,6 @@
 // Tarjetas
 const seccionTarjetas = document.getElementById("seccion-tarjeta")
 const seccionDetalles = document.getElementById("tarjeta-detalles")
-const baseOscura = document.getElementById("base-oscura")
 
 // Botones de pagina
 const conteinerBotonesPrincipales = document.getElementById("botones-paginado-principal")
@@ -56,6 +55,7 @@ const personajes = () => {
             ultimaPagina = data.info.pages
             mostrarTarjetas(data.results)
             clickPorTarjeta()
+            seccionTarjetas.style.display = "flex"
         })
 }
 personajes()
@@ -139,7 +139,6 @@ const clickPorTarjeta = () => {
             const idPersonaje = tarjetas[i].dataset.id
             buscarPersonaje(idPersonaje)
             seccionDetalles.classList.add("detalles")
-            baseOscura.classList.add("detalles-fondo")
         }
     }
 
@@ -173,8 +172,6 @@ const tarjetaDetalle = data => {
     menuTimes.onclick = () => {
         seccionDetalles.style.display = "none"
         menuTimes.style.display = "none"
-        seccionTarjetas.style.display = "flex"
-        conteinerBotonesPrincipales.style.display = "block"
     }
 }
 
@@ -192,14 +189,14 @@ formBusqueda.oninput = e => {
     resultadoBusqueda.style.display = "flex"
     conteinerBotonesPrincipales.style.display = "none"
     botonesPaginaBusqueda.style.display = "flex"
-    
+
     nextBusqueda.onclick = () => {
         paginaActual + 1
-    
+
         if (paginaActual == ultimaPagina) {
             nextBusqueda.disabled = true
         }
-    
+
         if (paginaActual == paginaActual++) {
             prevBusqueda.disabled = false
         }
@@ -208,7 +205,7 @@ formBusqueda.oninput = e => {
     }
     prevBusqueda.onclick = () => {
         paginaActual--
-    
+
         if (paginaActual == 1) {
             prevBusqueda.disabled = true
         }
@@ -224,7 +221,7 @@ formBusqueda.oninput = e => {
         numeroActualizoPaginaBusqueda()
         buscarInfo(valorBusqueda)
     }
-    
+
     botonUltimaPaginaBusqueda.onclick = () => {
         console.log("ultima pagina")
         paginaActual = ultimaPagina
@@ -239,7 +236,7 @@ const mostrarResultado = personaje => {
     const resultados = personaje.reduce((acc, curr) => {
 
         return acc + `
-        <div class="tarjetas-datos" data-id=${curr.id}>
+        <div class="tarjetas-datos" data-id=${curr.id} >
                  <h2>
                      ${curr.name}
                  </h2>
@@ -262,7 +259,8 @@ const buscarInfo = (nombre) => {
             ultimaPagina = data.info.pages
             mostrarResultado(data.results)
             console.log(data);
+            clickPorTarjeta();
+            resultadoBusqueda.style.display = "flex"
         })
 
 }
-
