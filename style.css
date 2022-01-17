@@ -62,5 +62,79 @@ body nav select {
   height: 7em;
   border-radius: 50%;
 }
+body main {
+  width: 100%;
+  background: transparent;
+  font-family: "Titillium Web", sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+body main #vector-fondo-main {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+body main .tarjetas-orden {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2em;
+}
+body main #tarjeta-detalles {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+body main #tarjeta-detalles .tarjeta-detalle-individual {
+  background-color: white;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body main #tarjeta-detalles .tarjeta-detalle-individual img {
+  width: 90%;
+}
+body main .detalles {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 46, 46, 0.294);
+}
+body main button {
+  background-image: url("imagenes/fondo-botones.png");
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #91c846;
+  box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
+  font-family: "Titillium Web", sans-serif;
+  margin: 1em;
+}
+body main #botones-paginado-busqueda {
+  display: none;
+}
+body footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body footer img {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  filter: drop-shadow(0 -6mm 4mm #a000d2);
+}
+body footer #redes-footer {
+  font-family: "Titillium Web", sans-serif;
+  font-style: bold 700;
+  font-size: 2em;
+  color: #12b0c9;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
+}
 
 /*# sourceMappingURL=style.css.map */
