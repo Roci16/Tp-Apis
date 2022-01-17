@@ -9,32 +9,38 @@ body {
 }
 body header {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 body header h1 {
   position: absolute;
   z-index: 1;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Titillium Web";
   font-style: bold 700;
   font-size: 7em;
   color: #12b0c9;
-  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
 }
 body header #hero {
   width: 100%;
 }
 body nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: auto;
   background: #1f3f16;
   background: radial-gradient(circle, #1c7a68 0%, #192e05 100%);
   color: #f7d4bd;
   padding: 1em;
-  display: flex;
-  justify-content: space-evenly;
   margin: 1em;
   border-radius: 20px;
   box-shadow: 6px 6px 6px 6px #000000, inset 10px 10px 10px 0px #000000;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Titillium Web";
   font-style: bold 700;
   font-size: 1.3em;
 }
@@ -53,7 +59,7 @@ body nav button {
   text-align: center;
   background-color: #91c846;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Titillium Web";
 }
 body nav select {
   background-color: transparent;
@@ -63,32 +69,39 @@ body nav select {
   border-radius: 50%;
 }
 body main {
-  width: 100%;
-  background: transparent;
-  font-family: "Titillium Web", sans-serif;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  background: transparent;
+  font-family: "Titillium Web";
   background-image: url(imagenes/fondo-rick-morty.svg);
 }
 body main .tarjetas-orden {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: 2em;
 }
 body main #tarjeta-detalles {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 body main #tarjeta-detalles .tarjeta-detalle-individual {
-  background-color: white;
-  height: 500px;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
+  background-color: white;
+  height: 500px;
 }
 body main #tarjeta-detalles .tarjeta-detalle-individual img {
   width: 90%;
@@ -108,8 +121,9 @@ body main button {
   text-align: center;
   background-color: #91c846;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Titillium Web";
   margin: 1em;
+  z-index: 2;
 }
 body main #botones-paginado-busqueda {
   display: none;
@@ -118,19 +132,23 @@ body footer {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 body footer img {
   width: 100%;
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   filter: drop-shadow(0 -6mm 4mm #a000d2);
 }
 body footer #redes-footer {
-  font-family: "Titillium Web", sans-serif;
+  z-index: 2;
+  font-family: "Titillium Web";
   font-style: bold 700;
   font-size: 2em;
   color: #12b0c9;
-  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
 }
 
 /*# sourceMappingURL=style.css.map */
