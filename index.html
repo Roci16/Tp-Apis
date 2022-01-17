@@ -14,6 +14,7 @@
 
 <body>
 
+
     <header> 
         <h1>Buscador Rick y Morty</h1> 
         <img src="imagenes/rick-and-morty-en-nave-4518.jpg" alt="" id="hero"> 
@@ -23,18 +24,26 @@
     <nav>
         <label id="form-busqueda"> ¿A donde vamos Rick?
             <input id="input-busqueda" type="text" >
+
         </label>
-        <button>
+            <button>
             buscar
         </button>
+<<<<<<< HEAD
         <button>Capitulos</button>
+=======
+
+         <button>Capitulos</button>
+>>>>>>> 82152189106ae12694a7a662ee7877925e242279
         <button>Personajes</button>
         <select name="ordenar" id="ordenar">
+
             <option value="">A/Z</option>
             <option value="">Z/A</option>
             <option value="">Más nuevos</option>
             <option value="">Más viejos</option>
         </select>
+
     </nav>
     <main>
         <img src="imagenes/fondo-rick-morty.svg" alt="" id="vector-fondo-main">
@@ -42,14 +51,28 @@
             <section id="seccion-tarjeta"></section>
         </article>
         <section id="tarjeta-detalles"></section>
-        <article id="botones">
-            <button id="primera-pagina">Primera</button>
-            <button id="prev">Anterior</button>
-            <span id="numero-pagina">1</span>
-            <button id="next">Siguiente</button>
-            <button id="ultima-pagina">Última</button>
-        </article>
+         <!-- Paginado personajes pag principal -->
+            <section id="tarjeta-detalles"></section>
+            <article id="botones-paginado-principal">
+                <button id="primera-pagina">Primera</button>
+                <button id="prev">Anterior</button>
+                <span id="numero-pagina">1</span>
+                <button id="next">Siguiente</button>
+                <button id="ultima-pagina">Última</button>
+            </article>
+
+            <!-- Páginado personaje en busqueda -->
+            <section id="resultado-tarjetas"></section>
+            <article id="botones-paginado-busqueda">
+                <button id="primera-pagina-busqueda">Primera</button>
+                <button id="prev-busqueda">Página anterior</button>
+                <span id="numero-pagina-busqueda">1</span>
+                <button id="next-busqueda">Página siguiente</button>
+                <button id="ultima-pagina-busqueda">Última</button>
+            </article>
         <section id="resultado-tarjetas"></section>
+      
+      
     </main>
     <footer>
         
@@ -62,6 +85,14 @@
         </div>
     </footer>
 
+
+            <div id="redes-footer">
+                <h3>Hecho con amor</h3>
+                <h5>redes 1</h5>
+                <h5>redes 1</h5>
+            </div>
+        </footer>
+    </div>
     <script src="index.js"></script>
 
 </body>
