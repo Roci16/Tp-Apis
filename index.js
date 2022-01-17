@@ -151,14 +151,10 @@ const tarjetaDetalle = data => {
 
     seccionDetalles.innerHTML = `
     
-<<<<<<< HEAD
-    <article id= "detalle-tarjeta-personaje">
-=======
     <article class="tarjeta-detalle-individual">
     <div id="menu-times">
         <i class="fas fa-times"></i>
     </div>
->>>>>>> 82152189106ae12694a7a662ee7877925e242279
     <img src="${data.image}">
     <h2>${data.name}</h2>
     <p>ID: ${data.id}</p>
