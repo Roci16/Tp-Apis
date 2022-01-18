@@ -93,6 +93,7 @@ body main #tarjeta-detalles {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+  z-index: 3;
 }
 body main #tarjeta-detalles .tarjeta-detalle-individual {
   display: flex;

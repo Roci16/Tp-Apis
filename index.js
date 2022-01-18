@@ -28,7 +28,9 @@ const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqued
 let paginaActual = 1
 let ultimaPagina = 0
 
+
 //comunicacion con la api
+
 
 const numeroActualizoPagina = () => {
     const numeroPagina = `${paginaActual}`
@@ -50,7 +52,9 @@ const paginaUltimaDesabilitado = () => {
     prev.disabled = false
 }
 
+
 // llamado para personajes
+
 const personajes = () => {
     fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
         .then((res) => res.json())
