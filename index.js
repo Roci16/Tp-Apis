@@ -92,10 +92,19 @@ const buscarPersonaje = (id) => {
         })
 }
 
-// eventos botones onclick
+const apareceInput = () =>{
+    const input = `<label id="form-busqueda"> 
+    ¿A donde vamos Rick?
+        <input id="input-busqueda" type="text" >
+     </label>`
+  return   divInputBusqueda.innerHTML = input
+}
+
+
+// eventos botones nav onclick
 botonPersonajes.onclick = () =>{
     personajes()
-    divInputBusqueda.classList.remove("oculto")
+    apareceInput()
 }
 
 
