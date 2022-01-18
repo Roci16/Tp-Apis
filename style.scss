@@ -45,6 +45,7 @@
  $transparente:transparent;
  $color-tipografia-modo-claro: #f7d4bd;
  $color-background:rgb(60, 182, 64, 1);
+ $display-none: none
 // 
 //Mixins
 @mixin flex-centrar($content: center,$direccion: column){
@@ -53,6 +54,9 @@
     align-items:center;
     flex-direction: $direccion;
     flex-wrap: wrap;
+}
+.oculto{
+    display: none;
 }
 //  
  body {
@@ -110,6 +114,10 @@
              height: $escala-media;
              width: $escala-media;  
          }
+         #div-input-busqueda{
+            @include flex-centrar($content: center,$direccion: column);
+             display: $display-none;
+         }
      }
      main {
         @include flex-centrar();
@@ -153,8 +161,9 @@
              z-index: 2;
          }
          #botones-paginado-busqueda {
-             display: none
+             display: $display-none
          }
+        
      }
      footer {
          width: $full;

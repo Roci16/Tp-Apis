@@ -129,6 +129,9 @@ body main button {
 body main #botones-paginado-busqueda {
   display: none;
 }
+body main #div-input-busqueda {
+  display: none;
+}
 body footer {
   width: 100%;
   display: flex;
