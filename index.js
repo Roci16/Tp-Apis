@@ -3,6 +3,12 @@ const seccionTarjetas = document.getElementById("seccion-tarjeta")
 const seccionDetalles = document.getElementById("tarjeta-detalles")
 
 // Botones de pagina
+//botones nav
+const botonPersonajes = document.getElementById("boton-personajes")
+const botonCapitulos = document.getElementById("boton-capitulos")
+const botonUniversos = document.getElementById("boton-universos")
+const divInputBusqueda = document.getElementById("div-input-busqueda")
+//-----------------------------------------------------------
 const conteinerBotonesPrincipales = document.getElementById("botones-paginado-principal")
 const numeroDePagina = document.getElementById("numero-pagina")
 const prev = document.getElementById("prev")
@@ -22,9 +28,7 @@ const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqued
 let paginaActual = 1
 let ultimaPagina = 0
 
-<<<<<<< HEAD
 //comunicacion con la api
-=======
 
 const numeroActualizoPagina = () => {
     const numeroPagina = `${paginaActual}`
@@ -46,8 +50,7 @@ const paginaUltimaDesabilitado = () => {
     prev.disabled = false
 }
 
-// Personajes
->>>>>>> 82152189106ae12694a7a662ee7877925e242279
+// llamado para personajes
 const personajes = () => {
     fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
         .then((res) => res.json())
@@ -58,7 +61,28 @@ const personajes = () => {
             seccionTarjetas.style.display = "flex"
         })
 }
-personajes()
+// llamado para universos
+const universos = () =>{
+    fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}`)
+    .then((res) =>res.json())
+    .then((data)=> {
+        ultimaPagina = data.info.pages
+        mostrarTarjetas(data.results)
+        clickPorTarjeta()
+    })
+}
+// llamado para capitulos
+const capitulos = () =>{
+    fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
+    .then((res) =>res.json())
+    .then((data)=>{
+        ultimaPagina = data.info.pages
+        mostrarTarjetas(data.results)
+        clickPorTarjeta()
+
+    })
+}
+
 
 const buscarPersonaje = (id) => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
@@ -68,6 +92,23 @@ const buscarPersonaje = (id) => {
         })
 }
 
+// eventos botones onclick
+botonPersonajes.onclick = () =>{
+    personajes()
+    divInputBusqueda.classList.remove("oculto")
+}
+
+
+botonUniversos.onclick = () =>{
+    universos()
+    divInputBusqueda.classList.remove("oculto")
+}
+
+
+botonCapitulos.onclick = () =>{
+    capitulos()
+    divInputBusqueda.classList.remove("oculto")
+}
 
 //Paginas Personajes en pantalla principal
 prev.onclick = () => {
