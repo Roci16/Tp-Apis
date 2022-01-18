@@ -29,7 +29,10 @@ const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqued
 
 
 //---------------------FETCH--------------------------------
+//comunicacion con la api
+
 // llamado para personajes
+
 const personajes = () => {
     fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
         .then((res) => res.json())
@@ -99,11 +102,9 @@ botonCapitulos.onclick = () =>{
     capitulos()
     apareceInput()
 }
-
+//--------------paginado
 let paginaActual = 1
 let ultimaPagina = 0
-
-//paginado
 
 const numeroActualizoPagina = () => {
     const numeroPagina = `${paginaActual}`
@@ -239,6 +240,7 @@ const clickPorTarjeta = () => {
     }
 
 }
+// TARJETA DETALLE
 const tarjetaDetalle = data => {
 
     seccionDetalles.style.display = "flex"
@@ -327,7 +329,7 @@ formBusqueda.oninput = e => {
     }
 }
 
-//-----------------------------------------------------------------------
+//-----------------MOSTRAR RESULTADOS DE BUSQUEDA ------------------------------------------------------
 //aca hay que modficar que sea mostrarResultadoPersonaje 
 const mostrarResultado = personaje => {
 

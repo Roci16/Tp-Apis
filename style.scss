@@ -65,13 +65,13 @@
      header {
         @include flex-centrar($content: start);
          h1 {
-             position: absolute;
-             z-index: 1;
-             font-family: $font-principal;
-             font-style: $grosor-font;
-             font-size: $escala-media;
              color: $color-relleno-font;
+             font-family: $font-principal;
+             font-size: $escala-media;
+             font-style: $grosor-font;
+             position: absolute;
              text-shadow: $sombra-texto;
+             z-index: 1; 
          }
          #hero {
              width: $full;
@@ -79,40 +79,40 @@
      }
      nav {
         @include flex-centrar($content: space-evenly, $direccion: row);
-         width: auto;
          background: rgb(31, 63, 22);
          background: radial-gradient(circle, rgb(28, 122, 104) 0%, rgb(25, 46, 5) $full);
-         color: $color-tipografia-modo-claro;
-         padding: $escala-baja;
-         margin: $escala-baja;
          border-radius: 20px;
          box-shadow: 6px 6px 6px 6px #000000, inset 10px 10px 10px 0px #000000;
+         color: $color-tipografia-modo-claro;
          font-family: $font-principal;
-         font-style: $grosor-font;
          font-size: 1.3em;
+         font-style: $grosor-font;
+         margin: $escala-baja;
+         padding: $escala-baja;
+         width: auto;
          input {
              background-color: $transparente;
-             box-shadow: $sombra-generica;
              border-radius: 50px;
-             width: 18em;
+             box-shadow: $sombra-generica;
              height: $escala-media;
+             width: 18em;
          }
          button {
-             background-image: url("imagenes/fondo-botones.png");
-             width: $escala-media;
-             height: $escala-media;
-             border-radius:$medium;
-             text-align: center;
              background-color:  $color-boton;
+             background-image: url("imagenes/fondo-botones.png");
+             border-radius:$medium;
              box-shadow: $sombra-generica;
              font-family: $font-principal;
+             height: $escala-media;
+             text-align: center;
+             width: $escala-media;
          }
          select {
              background-color: $transparente;
-             box-shadow: $sombra-generica;
-             width: $escala-media;
-             height: $escala-media;
              border-radius:$medium;
+             box-shadow: $sombra-generica;
+             height: $escala-media;
+             width: $escala-media;  
          }
          #div-input-busqueda{
             @include flex-centrar($content: center,$direccion: column);
@@ -121,17 +121,17 @@
      }
      main {
         @include flex-centrar();
-         width: $full;
          background: $transparente;
-         font-family: $font-principal;
-         
          background-image: url(imagenes/fondo-rick-morty.svg);
+         font-family: $font-principal;
+         width: $full;
          .tarjetas-orden {
             @include flex-centrar($content: space-between, $direccion: row);
-             padding: $escala-media-baja;
+            padding: $escala-media-baja;
          }
          #tarjeta-detalles {
             @include flex-centrar($direccion: row);
+            z-index:3;
              .tarjeta-detalle-individual {
                 @include flex-centrar();
                  background-color: white;
@@ -142,22 +142,22 @@
              }
          }
          .detalles {
+             background-color: rgba(46, 46, 46, 0.294);
+             height: $full;
              position: fixed;
              top: 0;
              width: $full;
-             height: $full;
-             background-color: rgba(46, 46, 46, 0.294);
          }
          button {
-             background-image: url("imagenes/fondo-botones.png");
-             width: $escala-media;
-             height: $escala-media;
-             border-radius:$medium;
-             text-align: center;
              background-color:  $color-boton;
+             background-image: url("imagenes/fondo-botones.png");
+             border-radius:$medium;
              box-shadow: $sombra-generica;
              font-family: $font-principal;
+             height: $escala-media;
              margin: $escala-baja;
+             text-align: center;
+             width: $escala-media;
              z-index: 2;
          }
          #botones-paginado-busqueda {
@@ -169,18 +169,18 @@
          width: $full;
          @include flex-centrar();
          img {
-             width: $full;
-             position: absolute;
-             z-index: 1;
              filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
+             position: absolute;
+             width: $full;
+             z-index: 1;   
          }
          #redes-footer {
-            z-index: 2;
-             font-family: $font-principal;
-             font-style: $grosor-font;
-             font-size: $escala-media-baja;
              color: $color-relleno-font;
+             font-family: $font-principal;
+             font-size: $escala-media-baja;
+             font-style: $grosor-font;
              text-shadow: $sombra-texto;
+             z-index: 2;
          }
      }
  }
