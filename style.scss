@@ -45,7 +45,7 @@
  $transparente:transparent;
  $color-tipografia-modo-claro: #f7d4bd;
  $color-background:rgb(60, 182, 64, 1);
- $display-none: none
+ $display-none: none;
 // 
 //Mixins
 @mixin flex-centrar($content: center,$direccion: column){
@@ -56,7 +56,7 @@
     flex-wrap: wrap;
 }
 .oculto{
-    display: none;
+    display: $display-none;
 }
 //  
  body {

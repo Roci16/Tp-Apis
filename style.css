@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.oculto {
+  display: none;
+}
+
 body {
   background: #3cb640;
   background: linear-gradient(90deg, #3cb640 0%, #91c846 35%, #f2ec20 100%);
@@ -68,6 +72,14 @@ body nav select {
   height: 7em;
   border-radius: 50%;
 }
+body nav #div-input-busqueda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: none;
+}
 body main {
   display: flex;
   justify-content: center;
@@ -126,9 +138,6 @@ body main button {
   z-index: 2;
 }
 body main #botones-paginado-busqueda {
-  display: none;
-}
-body main #div-input-busqueda {
   display: none;
 }
 body footer {
