@@ -201,9 +201,9 @@ body footer #redes-footer {
   }
   body nav button,
 body main article button {
-    font-size: 8px;
-    height: 3rem;
-    width: 3rem;
+    font-size: 6px;
+    height: 2rem;
+    width: 2rem;
   }
   body nav #div-input-busqueda #form-busqueda-capitulos,
 body nav #div-input-busqueda #form-busqueda-universos,
