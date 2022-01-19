@@ -222,6 +222,12 @@ body nav #div-input-busqueda #form-busqueda-personaje input {
     height: 25px;
     width: 100px;
   }
+  body main #tarjetas-principales {
+    width: 12em;
+  }
+  body main article #seccion-tarjeta div img {
+    width: 100%;
+  }
   body footer div h3 {
     font-size: 20px;
   }
