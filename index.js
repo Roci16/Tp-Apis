@@ -8,7 +8,7 @@ const botonPersonajes = document.getElementById("boton-personajes")
 const botonCapitulos = document.getElementById("boton-capitulos")
 const botonUniversos = document.getElementById("boton-universos")
 const divInputBusqueda = document.getElementById("div-input-busqueda")
-//-------------input----------------------------
+    //-------------input----------------------------
 const inputBusqueda = document.getElementById("input-busqueda")
 const formBusqueda = document.getElementById("form-busqueda")
 
@@ -34,38 +34,38 @@ const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqued
 // llamado para personajes
 
 const personajes = () => {
-    fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
-        .then((res) => res.json())
-        .then((data) => {
-            ultimaPagina = data.info.pages
-            mostrarTarjetas(data.results)
-            clickPorTarjeta()
-            seccionTarjetas.style.display = "flex"
-        })
-}
-// llamado para universos
-const universos = () =>{
-    fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}`)
-    .then((res) =>res.json())
-    .then((data)=> {
-        ultimaPagina = data.info.pages
-        mostrarTarjetasUniversos(data.results)
-        clickPorTarjeta()
-    })
-}
-// llamado para capitulos
-const capitulos = () =>{
-    fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
-    .then((res) =>res.json())
-    .then((data)=>{
-        ultimaPagina = data.info.pages
-        mostrarTarjetasCapitulos(data.results)
-        clickPorTarjeta()
+        fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
+            .then((res) => res.json())
+            .then((data) => {
+                ultimaPagina = data.info.pages
+                mostrarTarjetas(data.results)
+                clickPorTarjeta()
+                seccionTarjetas.style.display = "flex"
+            })
+    }
+    // llamado para universos
+const universos = () => {
+        fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}`)
+            .then((res) => res.json())
+            .then((data) => {
+                ultimaPagina = data.info.pages
+                mostrarTarjetasUniversos(data.results)
+                clickPorTarjeta()
+            })
+    }
+    // llamado para capitulos
+const capitulos = () => {
+        fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
+            .then((res) => res.json())
+            .then((data) => {
+                ultimaPagina = data.info.pages
+                mostrarTarjetasCapitulos(data.results)
+                clickPorTarjeta()
 
-    })
-}
-//---------------------------------------------------------------------------
-// funcion buscar personaje (para que sirve)
+            })
+    }
+    //---------------------------------------------------------------------------
+    // funcion buscar personaje (para que sirve)
 const buscarPersonaje = (id) => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
         .then(res => res.json())
@@ -74,34 +74,24 @@ const buscarPersonaje = (id) => {
         })
 }
 
-//------------------------------------------------
-//funcion para que aparezca el input
-const apareceInput = () =>{
-    const input = `<label id="form-busqueda"> 
-    ¿A donde vamos Rick?
-        <input id="input-busqueda" type="text" >
-     </label>`
-  return   divInputBusqueda.innerHTML = input
-}
-
-//------------------------------------------------------------------ 
 // eventos botones nav onclick
-botonPersonajes.onclick = () =>{
+botonPersonajes.onclick = () => {
     personajes()
-    apareceInput()
+    divInputBusqueda.style.display = "flex"
 }
 
 
-botonUniversos.onclick = () =>{
+botonUniversos.onclick = () => {
     universos()
-    apareceInput()
+    divInputBusqueda.style.display = "none"
 }
 
 
-botonCapitulos.onclick = () =>{
+botonCapitulos.onclick = () => {
     capitulos()
-    apareceInput()
+    divInputBusqueda.style.display = "none"
 }
+
 //--------------paginado
 let paginaActual = 1
 let ultimaPagina = 0
@@ -212,9 +202,9 @@ const mostrarTarjetasUniversos = universos => {
 // Muestra de capitulos en pantalla principal
 const mostrarTarjetasCapitulos = capitulos => {
 
-    const html = capitulos.reduce((acc, curr) => {
+        const html = capitulos.reduce((acc, curr) => {
 
-        return acc + `
+            return acc + `
 <div class="tarjetas-datos" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
@@ -222,25 +212,25 @@ const mostrarTarjetasCapitulos = capitulos => {
                  <img src="imagenes/capitulos.png">
              </div>
 `
-    }, "")
-    seccionTarjetas.innerHTML = html
-}
-//--------------------------------------------------------------------------------------
+        }, "")
+        seccionTarjetas.innerHTML = html
+    }
+    //--------------------------------------------------------------------------------------
 
 // click por tajeta que muestra el detalle
 const clickPorTarjeta = () => {
-    const tarjetas = document.querySelectorAll(".tarjetas-datos")
+        const tarjetas = document.querySelectorAll(".tarjetas-datos")
 
-    for (let i = 0; i < tarjetas.length; i++) {
-        tarjetas[i].onclick = () => {
-            const idPersonaje = tarjetas[i].dataset.id
-            buscarPersonaje(idPersonaje)
-            seccionDetalles.classList.add("detalles")
+        for (let i = 0; i < tarjetas.length; i++) {
+            tarjetas[i].onclick = () => {
+                const idPersonaje = tarjetas[i].dataset.id
+                buscarPersonaje(idPersonaje)
+                seccionDetalles.classList.add("detalles")
+            }
         }
-    }
 
-}
-// TARJETA DETALLE
+    }
+    // TARJETA DETALLE
 const tarjetaDetalle = data => {
 
     seccionDetalles.style.display = "flex"
@@ -261,8 +251,6 @@ const tarjetaDetalle = data => {
     <p>Origin: ${data.origin.name}</p> 
     </article>
   `
-
-
 
     const menuTimes = document.getElementById("menu-times")
     menuTimes.style.display = "block"
@@ -333,9 +321,9 @@ formBusqueda.oninput = e => {
 //aca hay que modficar que sea mostrarResultadoPersonaje 
 const mostrarResultado = personaje => {
 
-    const resultados = personaje.reduce((acc, curr) => {
+        const resultados = personaje.reduce((acc, curr) => {
 
-        return acc + `
+            return acc + `
         <div class="tarjetas-datos" data-id=${curr.id} >
                  <h2>
                      ${curr.name}
@@ -345,12 +333,12 @@ const mostrarResultado = personaje => {
             
         `
 
-    }, "")
+        }, "")
 
-    resultadoBusqueda.innerHTML = resultados
+        resultadoBusqueda.innerHTML = resultados
 
-}
-//Mostrar resultado de busqueda universos
+    }
+    //Mostrar resultado de busqueda universos
 const mostrarResultadoUniversos = universos => {
 
     const resultados = universos.reduce((acc, curr) => {
@@ -374,9 +362,9 @@ const mostrarResultadoUniversos = universos => {
 //Mostrar resultado de busqueda capitulos
 const mostrarResultadoCapitulos = capitulos => {
 
-    const resultados = capitulos.reduce((acc, curr) => {
+        const resultados = capitulos.reduce((acc, curr) => {
 
-        return acc + `
+            return acc + `
         <div class="tarjetas-datos" data-id=${curr.id} >
                  <h2>
                      ${curr.name}
@@ -386,13 +374,13 @@ const mostrarResultadoCapitulos = capitulos => {
             
         `
 
-    }, "")
+        }, "")
 
-    resultadoBusqueda.innerHTML = resultados
+        resultadoBusqueda.innerHTML = resultados
 
-}
-//----------------------------------BUSCAR INFORMACION------------------------------------------------
-//buscar por personaje
+    }
+    //----------------------------------BUSCAR INFORMACION------------------------------------------------
+    //buscar por personaje
 const buscarInfo = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${paginaActual}&name=${nombre}`)
         .then(res => res.json())
@@ -406,6 +394,7 @@ const buscarInfo = (nombre) => {
         })
 
 }
+
 
 //buscar por universo
 const buscarInfoUniverso = (nombre) => {

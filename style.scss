@@ -6,14 +6,13 @@
  //la imagen del hero esta muy grande la tengo que achicar
  //el nav estari bueno que quede fixed arriba cuando vamos recorriendo el main
  //todos los estilos son pruebas de cosas se pueden cambiar
-//  $color-principal-modo-claro: #733f17;
-//  $color-secundario-modo-claro: #c88251;
-//  $color-terciario-modo-claro: #3f0000;
-//  $color-acento-modo-claro: #EDA01A;
-
-//  $color-cuarto-modo-claro: #d8aa6e;
-// 
-// Variables
+ //  $color-principal-modo-claro: #733f17;
+ //  $color-secundario-modo-claro: #c88251;
+ //  $color-terciario-modo-claro: #3f0000;
+ //  $color-acento-modo-claro: #EDA01A;
+ //  $color-cuarto-modo-claro: #d8aa6e;
+ // 
+ // Variables
  $font-principal:'Titillium Web';
  $full:100%;
  $medium:50%;
@@ -41,29 +40,38 @@
  89,
  55,
  0);
- $color-boton:rgb(145, 200, 70,1);
+ $color-boton:rgb(145,
+ 200,
+ 70,
+ 1);
  $transparente:transparent;
  $color-tipografia-modo-claro: #f7d4bd;
- $color-background:rgb(60, 182, 64, 1);
+ $color-background:rgb(60,
+ 182,
+ 64,
+ 1);
  $display-none: none;
-// 
-//Mixins
-@mixin flex-centrar($content: center,$direccion: column){
-    display:flex;
-    justify-content: $content;
-    align-items:center;
-    flex-direction: $direccion;
-    flex-wrap: wrap;
-}
-.oculto{
-    display: $display-none;
-}
-//  
+ // 
+ //Mixins
+ @mixin flex-centrar($content: center,
+ $direccion: column) {
+     display: flex;
+     justify-content: $content;
+     align-items: center;
+     flex-direction: $direccion;
+     flex-wrap: wrap;
+ }
+ 
+ .oculto {
+     display: $display-none;
+ }
+ 
+ //  
  body {
-     background:$color-background;
-     background: linear-gradient(90deg,$color-background 0%,  $color-boton 35%, rgba(242, 236, 32, 1) $full);
+     background: $color-background;
+     background: linear-gradient(90deg, $color-background 0%, $color-boton 35%, rgba(242, 236, 32, 1) $full);
      header {
-        @include flex-centrar($content: start);
+         @include flex-centrar($content: start);
          h1 {
              color: $color-relleno-font;
              font-family: $font-principal;
@@ -71,14 +79,17 @@
              font-style: $grosor-font;
              position: absolute;
              text-shadow: $sombra-texto;
-             z-index: 1; 
+             z-index: 1;
+             //  @media (max-width: 500px) {
+             //      color: blue
+             //  }
          }
          #hero {
              width: $full;
          }
      }
      nav {
-        @include flex-centrar($content: space-evenly, $direccion: row);
+         @include flex-centrar($content: space-evenly, $direccion: row);
          background: rgb(31, 63, 22);
          background: radial-gradient(circle, rgb(28, 122, 104) 0%, rgb(25, 46, 5) $full);
          border-radius: 20px;
@@ -98,9 +109,9 @@
              width: 18em;
          }
          button {
-             background-color:  $color-boton;
+             background-color: $color-boton;
              background-image: url("imagenes/fondo-botones.png");
-             border-radius:$medium;
+             border-radius: $medium;
              box-shadow: $sombra-generica;
              font-family: $font-principal;
              height: $escala-media;
@@ -109,31 +120,31 @@
          }
          select {
              background-color: $transparente;
-             border-radius:$medium;
+             border-radius: $medium;
              box-shadow: $sombra-generica;
              height: $escala-media;
-             width: $escala-media;  
+             width: $escala-media;
          }
-         #div-input-busqueda{
-            @include flex-centrar($content: center,$direccion: column);
+         #div-input-busqueda {
+             @include flex-centrar($content: center, $direccion: column);
              display: $display-none;
          }
      }
      main {
-        @include flex-centrar();
+         @include flex-centrar();
          background: $transparente;
          background-image: url(imagenes/fondo-rick-morty.svg);
          font-family: $font-principal;
          width: $full;
          .tarjetas-orden {
-            @include flex-centrar($content: space-between, $direccion: row);
-            padding: $escala-media-baja;
+             @include flex-centrar($content: space-between, $direccion: row);
+             padding: $escala-media-baja;
          }
          #tarjeta-detalles {
-            @include flex-centrar($direccion: row);
-            z-index:3;
+             @include flex-centrar($direccion: row);
+             z-index: 3;
              .tarjeta-detalle-individual {
-                @include flex-centrar();
+                 @include flex-centrar();
                  background-color: white;
                  height: 500px;
                  img {
@@ -149,9 +160,9 @@
              width: $full;
          }
          button {
-             background-color:  $color-boton;
+             background-color: $color-boton;
              background-image: url("imagenes/fondo-botones.png");
-             border-radius:$medium;
+             border-radius: $medium;
              box-shadow: $sombra-generica;
              font-family: $font-principal;
              height: $escala-media;
@@ -163,7 +174,6 @@
          #botones-paginado-busqueda {
              display: $display-none
          }
-        
      }
      footer {
          width: $full;
@@ -172,7 +182,7 @@
              filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
              position: absolute;
              width: $full;
-             z-index: 1;   
+             z-index: 1;
          }
          #redes-footer {
              color: $color-relleno-font;

@@ -19,13 +19,18 @@ body header {
   flex-wrap: wrap;
 }
 body header h1 {
-  position: absolute;
-  z-index: 1;
-  font-family: "Titillium Web";
-  font-style: bold 700;
-  font-size: 7em;
   color: #12b0c9;
+  font-family: "Titillium Web";
+  font-size: 7em;
+  font-style: bold 700;
+  position: absolute;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
+  z-index: 1;
+}
+@media (max-width: 500px) {
+  body header h1 {
+    color: blue;
+  }
 }
 body header #hero {
   width: 100%;
@@ -36,41 +41,41 @@ body nav {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  width: auto;
   background: #1f3f16;
   background: radial-gradient(circle, #1c7a68 0%, #192e05 100%);
-  color: #f7d4bd;
-  padding: 1em;
-  margin: 1em;
   border-radius: 20px;
   box-shadow: 6px 6px 6px 6px #000000, inset 10px 10px 10px 0px #000000;
+  color: #f7d4bd;
   font-family: "Titillium Web";
-  font-style: bold 700;
   font-size: 1.3em;
+  font-style: bold 700;
+  margin: 1em;
+  padding: 1em;
+  width: auto;
 }
 body nav input {
   background-color: transparent;
-  box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   border-radius: 50px;
-  width: 18em;
+  box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   height: 7em;
+  width: 18em;
 }
 body nav button {
-  background-image: url("imagenes/fondo-botones.png");
-  width: 7em;
-  height: 7em;
-  border-radius: 50%;
-  text-align: center;
   background-color: #91c846;
+  background-image: url("imagenes/fondo-botones.png");
+  border-radius: 50%;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   font-family: "Titillium Web";
+  height: 7em;
+  text-align: center;
+  width: 7em;
 }
 body nav select {
   background-color: transparent;
-  box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
-  width: 7em;
-  height: 7em;
   border-radius: 50%;
+  box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
+  height: 7em;
+  width: 7em;
 }
 body nav #div-input-busqueda {
   display: flex;
@@ -86,10 +91,10 @@ body main {
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
   background: transparent;
-  font-family: "Titillium Web";
   background-image: url(imagenes/fondo-rick-morty.svg);
+  font-family: "Titillium Web";
+  width: 100%;
 }
 body main .tarjetas-orden {
   display: flex;
@@ -120,22 +125,22 @@ body main #tarjeta-detalles .tarjeta-detalle-individual img {
   width: 90%;
 }
 body main .detalles {
+  background-color: rgba(46, 46, 46, 0.294);
+  height: 100%;
   position: fixed;
   top: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(46, 46, 46, 0.294);
 }
 body main button {
-  background-image: url("imagenes/fondo-botones.png");
-  width: 7em;
-  height: 7em;
-  border-radius: 50%;
-  text-align: center;
   background-color: #91c846;
+  background-image: url("imagenes/fondo-botones.png");
+  border-radius: 50%;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   font-family: "Titillium Web";
+  height: 7em;
   margin: 1em;
+  text-align: center;
+  width: 7em;
   z-index: 2;
 }
 body main #botones-paginado-busqueda {
@@ -150,18 +155,18 @@ body footer {
   flex-wrap: wrap;
 }
 body footer img {
-  width: 100%;
-  position: absolute;
-  z-index: 1;
   filter: drop-shadow(0 -6mm 4mm #a000d2);
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 body footer #redes-footer {
-  z-index: 2;
-  font-family: "Titillium Web";
-  font-style: bold 700;
-  font-size: 2em;
   color: #12b0c9;
+  font-family: "Titillium Web";
+  font-size: 2em;
+  font-style: bold 700;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
+  z-index: 2;
 }
 
 /*# sourceMappingURL=style.css.map */
