@@ -196,7 +196,6 @@ body footer #redes-footer {
 }
 @media screen and (max-width: 250px) {
   body header h1 {
-    color: blue;
     font-size: 1rem;
   }
   body nav button,
@@ -227,6 +226,12 @@ body nav #div-input-busqueda #form-busqueda-personaje input {
   }
   body main article #seccion-tarjeta div img {
     width: 100%;
+  }
+  body main section .tarjetas-datos-universo {
+    font-size: 0.4rem;
+    height: auto;
+    width: 100%;
+    background-color: #FFF;
   }
   body footer div h3 {
     font-size: 20px;
