@@ -85,6 +85,7 @@ botonPersonajes.onclick = () => {
     formBusquedaPersonaje.style.display = "flex"
     formBusquedaCapitulos.style.display = "none"
     formBusquedaUniversos.style.display = "none"
+    resultadoBusqueda.style.display = "none"
 
 }
 
@@ -95,6 +96,7 @@ botonUniversos.onclick = () => {
     formBusquedaPersonaje.style.display = "none"
     formBusquedaCapitulos.style.display = "none"
     formBusquedaUniversos.style.display = "flex"
+    resultadoBusqueda.style.display = "none"
 }
 
 
@@ -104,6 +106,7 @@ botonCapitulos.onclick = () => {
     formBusquedaPersonaje.style.display = "none"
     formBusquedaCapitulos.style.display = "flex"
     formBusquedaUniversos.style.display = "none"
+    resultadoBusqueda.style.display = "none"
 }
 
 //--------------paginado
@@ -281,6 +284,10 @@ formBusquedaCapitulos.oninput = e => {
     const valorBusqueda = inputBusquedaCapitulos.value
     console.log(valorBusqueda);
     buscarInfoCapitulo(valorBusqueda)
+
+    seccionTarjetas.style.display = "none"
+    resultadoBusqueda.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "none"
 }
 
 // Busqueda de universo
@@ -289,6 +296,10 @@ formBusquedaUniversos.oninput = e => {
     const valorBusqueda = inputBusquedaUniversos.value
     console.log(valorBusqueda);
     buscarInfoUniverso(valorBusqueda)
+
+    seccionTarjetas.style.display = "none"
+    resultadoBusqueda.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "none"
 }
 
 // Busqueda de personajes
@@ -369,11 +380,12 @@ const mostrarResultado = personaje => {
     }
     //Mostrar resultado de busqueda universos
 const mostrarResultadoUniversos = universos => {
-
+    seccionTarjetas.style.display = "none"
+    conteinerBotonesPrincipales.style.display = "none"
     const resultados = universos.reduce((acc, curr) => {
 
         return acc + `
-        <div class="tarjetas-datos" data-id=${curr.id} >
+        <div class="tarjetas-datos-universo" data-id=${curr.id} >
                  <h2>
                      ${curr.name}
                  </h2>
