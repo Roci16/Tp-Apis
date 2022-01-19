@@ -83,6 +83,7 @@ botonPersonajes.onclick = () => {
     personajes()
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "flex"
     formBusquedaCapitulos.style.display = "none"
     formBusquedaUniversos.style.display = "none"
     resultadoBusqueda.style.display = "none"
@@ -97,6 +98,7 @@ botonUniversos.onclick = () => {
     formBusquedaCapitulos.style.display = "none"
     formBusquedaUniversos.style.display = "flex"
     resultadoBusqueda.style.display = "none"
+    conteinerBotonesPrincipales.style.display = "none"
 }
 
 
@@ -107,6 +109,7 @@ botonCapitulos.onclick = () => {
     formBusquedaCapitulos.style.display = "flex"
     formBusquedaUniversos.style.display = "none"
     resultadoBusqueda.style.display = "none"
+    conteinerBotonesPrincipales.style.display = "none"
 }
 
 //--------------paginado

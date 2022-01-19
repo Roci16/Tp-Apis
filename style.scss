@@ -80,8 +80,11 @@
              position: absolute;
              text-shadow: $sombra-texto;
              z-index: 1;
-             //  @media (max-width: 500px) {
-             //      color: blue
+             //  @media (max-width: 200px) {
+             //      header h1 {
+             //          color: blue;
+             //          font-size: 1rem;
+             //      }
              //  }
          }
          #hero {
@@ -190,13 +193,16 @@
              width: $escala-media;
              z-index: 2;
          }
+         #botones-paginado-principal {
+             display: none;
+         }
          #botones-paginado-busqueda {
              display: $display-none
          }
      }
      footer {
          width: $full;
-         @include flex-centrar();
+         @include flex-centrar($content: end);
          img {
              filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
              position: absolute;
@@ -204,12 +210,44 @@
              z-index: 1;
          }
          #redes-footer {
+             @include flex-centrar($content: start);
              color: $color-relleno-font;
              font-family: $font-principal;
              font-size: $escala-media-baja;
              font-style: $grosor-font;
              text-shadow: $sombra-texto;
              z-index: 2;
+         }
+     }
+     @media screen and (max-width: 250px) {
+         header h1 {
+             color: blue;
+             font-size: 1rem;
+         }
+         nav button,
+         main article button {
+             font-size: 8px;
+             height: 3rem;
+             width: 3rem;
+         }
+         nav #div-input-busqueda #form-busqueda-capitulos,
+         nav #div-input-busqueda #form-busqueda-universos,
+         nav #div-input-busqueda #form-busqueda-personaje {
+             @include flex-centrar();
+             font-size: 15px;
+         }
+         nav #div-input-busqueda #form-busqueda-capitulos input,
+         nav #div-input-busqueda #form-busqueda-universos input,
+         nav #div-input-busqueda #form-busqueda-personaje input {
+             background-color: white;
+             height: 25px;
+             width: 100px;
+         }
+         footer div h3 {
+             font-size: 20px;
+         }
+         footer div h5 {
+             font-size: 15px;
          }
      }
  }
