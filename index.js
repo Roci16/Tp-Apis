@@ -9,8 +9,12 @@ const botonCapitulos = document.getElementById("boton-capitulos")
 const botonUniversos = document.getElementById("boton-universos")
 const divInputBusqueda = document.getElementById("div-input-busqueda")
     //-------------input----------------------------
-const inputBusqueda = document.getElementById("input-busqueda")
-const formBusqueda = document.getElementById("form-busqueda")
+const inputBusquedaPersonaje = document.getElementById("input-busqueda-personaje")
+const formBusquedaPersonaje = document.getElementById("form-busqueda-personaje")
+const inputBusquedaCapitulos = document.getElementById("input-busqueda-capitulos")
+const formBusquedaCapitulos = document.getElementById("form-busqueda-capitulos")
+const inputBusquedaUniversos = document.getElementById("input-busqueda-universos")
+const formBusquedaUniversos = document.getElementById("form-busqueda-universos")
 
 //elementos numeros de pagina--------------
 const conteinerBotonesPrincipales = document.getElementById("botones-paginado-principal")
@@ -39,7 +43,7 @@ const personajes = () => {
             .then((data) => {
                 ultimaPagina = data.info.pages
                 mostrarTarjetas(data.results)
-                clickPorTarjeta()
+                clickPorTarjetaPersonaje()
                 seccionTarjetas.style.display = "flex"
             })
     }
@@ -50,7 +54,7 @@ const universos = () => {
             .then((data) => {
                 ultimaPagina = data.info.pages
                 mostrarTarjetasUniversos(data.results)
-                clickPorTarjeta()
+                    // clickPorTarjeta()
             })
     }
     // llamado para capitulos
@@ -60,7 +64,7 @@ const capitulos = () => {
             .then((data) => {
                 ultimaPagina = data.info.pages
                 mostrarTarjetasCapitulos(data.results)
-                clickPorTarjeta()
+                    // clickPorTarjeta()
 
             })
     }
@@ -78,18 +82,31 @@ const buscarPersonaje = (id) => {
 botonPersonajes.onclick = () => {
     personajes()
     divInputBusqueda.style.display = "flex"
+    formBusquedaPersonaje.style.display = "flex"
+    formBusquedaCapitulos.style.display = "none"
+    formBusquedaUniversos.style.display = "none"
+    resultadoBusqueda.style.display = "none"
+
 }
 
 
 botonUniversos.onclick = () => {
     universos()
-    divInputBusqueda.style.display = "none"
+    divInputBusqueda.style.display = "flex"
+    formBusquedaPersonaje.style.display = "none"
+    formBusquedaCapitulos.style.display = "none"
+    formBusquedaUniversos.style.display = "flex"
+    resultadoBusqueda.style.display = "none"
 }
 
 
 botonCapitulos.onclick = () => {
     capitulos()
-    divInputBusqueda.style.display = "none"
+    divInputBusqueda.style.display = "flex"
+    formBusquedaPersonaje.style.display = "none"
+    formBusquedaCapitulos.style.display = "flex"
+    formBusquedaUniversos.style.display = "none"
+    resultadoBusqueda.style.display = "none"
 }
 
 //--------------paginado
@@ -171,7 +188,7 @@ const mostrarTarjetas = personajes => {
     const html = personajes.reduce((acc, curr) => {
 
         return acc + `
-<div class="tarjetas-datos" data-id=${curr.id}>
+<div class="tarjetas-datos" data-id=${curr.id} >
                 <h2>
                     ${curr.name}
                 </h2>
@@ -188,7 +205,7 @@ const mostrarTarjetasUniversos = universos => {
     const html = universos.reduce((acc, curr) => {
 
         return acc + `
-<div class="tarjetas-datos" data-id=${curr.id}>
+<div  class="tarjetas-datos-universo" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
@@ -218,7 +235,7 @@ const mostrarTarjetasCapitulos = capitulos => {
     //--------------------------------------------------------------------------------------
 
 // click por tajeta que muestra el detalle
-const clickPorTarjeta = () => {
+const clickPorTarjetaPersonaje = () => {
         const tarjetas = document.querySelectorAll(".tarjetas-datos")
 
         for (let i = 0; i < tarjetas.length; i++) {
@@ -261,11 +278,34 @@ const tarjetaDetalle = data => {
     }
 }
 
-//EL FORM QUE ES?
-// Busqueda de personajes
-formBusqueda.oninput = e => {
+// Busqueda de capitulos
+formBusquedaCapitulos.oninput = e => {
     e.preventDefault()
-    const valorBusqueda = inputBusqueda.value
+    const valorBusqueda = inputBusquedaCapitulos.value
+    console.log(valorBusqueda);
+    buscarInfoCapitulo(valorBusqueda)
+
+    seccionTarjetas.style.display = "none"
+    resultadoBusqueda.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "none"
+}
+
+// Busqueda de universo
+formBusquedaUniversos.oninput = e => {
+    e.preventDefault()
+    const valorBusqueda = inputBusquedaUniversos.value
+    console.log(valorBusqueda);
+    buscarInfoUniverso(valorBusqueda)
+
+    seccionTarjetas.style.display = "none"
+    resultadoBusqueda.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "none"
+}
+
+// Busqueda de personajes
+formBusquedaPersonaje.oninput = e => {
+    e.preventDefault()
+    const valorBusqueda = inputBusquedaPersonaje.value
 
     buscarInfo(valorBusqueda)
 
@@ -340,11 +380,12 @@ const mostrarResultado = personaje => {
     }
     //Mostrar resultado de busqueda universos
 const mostrarResultadoUniversos = universos => {
-
+    seccionTarjetas.style.display = "none"
+    conteinerBotonesPrincipales.style.display = "none"
     const resultados = universos.reduce((acc, curr) => {
 
         return acc + `
-        <div class="tarjetas-datos" data-id=${curr.id} >
+        <div class="tarjetas-datos-universo" data-id=${curr.id} >
                  <h2>
                      ${curr.name}
                  </h2>
@@ -389,7 +430,7 @@ const buscarInfo = (nombre) => {
             ultimaPagina = data.info.pages
             mostrarResultado(data.results)
             console.log(data);
-            clickPorTarjeta();
+            clickPorTarjetaPersonaje();
             resultadoBusqueda.style.display = "flex"
         })
 
@@ -397,19 +438,20 @@ const buscarInfo = (nombre) => {
 
 
 //buscar por universo
-const buscarInfoUniverso = (nombre) => {
-    fetch(`https://rickandmortyapi.com/api/location/?page=${paginaActual}&name=${nombre}`)
+const buscarInfoUniverso = (valor) => {
+    fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}&name=${valor}`)
         .then(res => res.json())
         .then(data => {
 
             ultimaPagina = data.info.pages
             mostrarResultadoUniversos(data.results)
             console.log(data);
-            clickPorTarjeta();
+            // clickPorTarjeta();
             resultadoBusqueda.style.display = "flex"
         })
 
 }
+
 
 //buscar por capitulo
 const buscarInfoCapitulo = (nombre) => {
@@ -420,7 +462,7 @@ const buscarInfoCapitulo = (nombre) => {
             ultimaPagina = data.info.pages
             mostrarResultadoCapitulos(data.results)
             console.log(data);
-            clickPorTarjeta();
+            // clickPorTarjeta();
             resultadoBusqueda.style.display = "flex"
         })
 

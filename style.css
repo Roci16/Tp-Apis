@@ -27,11 +27,6 @@ body header h1 {
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
   z-index: 1;
 }
-@media (max-width: 500px) {
-  body header h1 {
-    color: blue;
-  }
-}
 body header #hero {
   width: 100%;
 }
@@ -85,6 +80,15 @@ body nav #div-input-busqueda {
   flex-wrap: wrap;
   display: none;
 }
+body nav #div-input-busqueda #form-busqueda-capitulos {
+  display: none;
+}
+body nav #div-input-busqueda #form-busqueda-personaje {
+  display: none;
+}
+body nav #div-input-busqueda #form-busqueda-universos {
+  display: none;
+}
 body main {
   display: flex;
   justify-content: center;
@@ -103,6 +107,20 @@ body main .tarjetas-orden {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 2em;
+}
+body main .tarjetas-datos-universo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: blue;
+  height: 250px;
+  margin: 10px;
+  width: 20%;
+}
+body main .tarjetas-datos-universo img {
+  width: 50%;
 }
 body main #tarjeta-detalles {
   display: flex;

@@ -128,6 +128,15 @@
          #div-input-busqueda {
              @include flex-centrar($content: center, $direccion: column);
              display: $display-none;
+             #form-busqueda-capitulos {
+                 display: none
+             }
+             #form-busqueda-personaje {
+                 display: none
+             }
+             #form-busqueda-universos {
+                 display: none
+             }
          }
      }
      main {
@@ -139,6 +148,16 @@
          .tarjetas-orden {
              @include flex-centrar($content: space-between, $direccion: row);
              padding: $escala-media-baja;
+         }
+         .tarjetas-datos-universo {
+             @include flex-centrar();
+             background-color: blue;
+             height: 250px;
+             margin: 10px;
+             width: 20%;
+             img {
+                 width: 50%;
+             }
          }
          #tarjeta-detalles {
              @include flex-centrar($direccion: row);
