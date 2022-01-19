@@ -161,13 +161,16 @@ body main button {
   width: 7em;
   z-index: 2;
 }
+body main #botones-paginado-principal {
+  display: none;
+}
 body main #botones-paginado-busqueda {
   display: none;
 }
 body footer {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
@@ -179,12 +182,58 @@ body footer img {
   z-index: 1;
 }
 body footer #redes-footer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
   color: #12b0c9;
   font-family: "Titillium Web";
   font-size: 2em;
   font-style: bold 700;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
   z-index: 2;
+}
+@media screen and (max-width: 250px) {
+  body header h1 {
+    color: blue;
+    font-size: 1rem;
+  }
+  body nav button,
+body main article button {
+    font-size: 6px;
+    height: 2rem;
+    width: 2rem;
+  }
+  body nav #div-input-busqueda #form-busqueda-capitulos,
+body nav #div-input-busqueda #form-busqueda-universos,
+body nav #div-input-busqueda #form-busqueda-personaje {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 15px;
+  }
+  body nav #div-input-busqueda #form-busqueda-capitulos input,
+body nav #div-input-busqueda #form-busqueda-universos input,
+body nav #div-input-busqueda #form-busqueda-personaje input {
+    background-color: white;
+    height: 25px;
+    width: 100px;
+  }
+  body main #tarjetas-principales {
+    width: 12em;
+  }
+  body main article #seccion-tarjeta div img {
+    width: 100%;
+  }
+  body footer div h3 {
+    font-size: 20px;
+  }
+  body footer div h5 {
+    font-size: 15px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
