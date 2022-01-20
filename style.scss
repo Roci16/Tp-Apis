@@ -121,13 +121,7 @@
              text-align: center;
              width: $escala-media;
          }
-         select {
-             background-color: $transparente;
-             border-radius: $medium;
-             box-shadow: $sombra-generica;
-             height: $escala-media;
-             width: $escala-media;
-         }
+        
          #div-input-busqueda {
              @include flex-centrar($content: center, $direccion: column);
              display: $display-none;
@@ -158,12 +152,13 @@
          }
          .tarjetas-datos-universo {
              @include flex-centrar();
-             background-color: blue;
+             background-color: transparent;
              height: 250px;
              margin: 10px;
              width: 20%;
              img {
                  width: 50%;
+                 box-shadow: $color-sombra
              }
          }
          #tarjeta-detalles {
@@ -175,6 +170,8 @@
                  height: 500px;
                  img {
                      width: 90%;
+                     box-shadow: $color-sombra
+                     
                  }
              }
          }
@@ -187,7 +184,7 @@
          }
          button {
              background-color: $color-boton;
-             background-image: url("imagenes/fondo-botones.png");
+             background-image: url("");
              border-radius: $medium;
              box-shadow: $sombra-generica;
              font-family: $font-principal;

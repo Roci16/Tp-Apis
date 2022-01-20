@@ -113,6 +113,8 @@ botonCapitulos.onclick = () => {
 }
 
 //--------------paginado------------------------------------------------
+
+//funcion para el numerado de página
 let paginaActual = 1
 let ultimaPagina = 0
 
