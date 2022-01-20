@@ -135,13 +135,10 @@ const paginaUltimaDesabilitado = () => {
     next.disabled = true
     prev.disabled = false
 }
+// FUNCIONES AUXILIARES PARA PAGINADO POR FILTRO
 
-
-//funcion Paginado Personajes en pantalla principal
-//como hago para reutilizar la funcion si repetir codigo pero ejecutando la funcion por fetch para cada
-
-prev.onclick = () => {
-    paginaActual--
+const prevOnclick = () =>{
+  paginaActual--
 
     if (paginaActual == 1) {
         prev.disabled = true
@@ -149,11 +146,29 @@ prev.onclick = () => {
     if (paginaActual < 42) {
         next.disabled = false
     }
-    numeroActualizoPagina()
-    personajes()
+
 }
 
+
+//funcion Paginado Personajes en pantalla principal
+//como hago para reutilizar la funcion si repetir codigo pero ejecutando la funcion por fetch para cada
+
+prev.onclick = () => {
+    prevOnclick()
+    numeroActualizoPagina() 
+    if(formBusquedaPersonaje.style.display = "flex"){
+     personajes()
+        }
+    else if(formBusquedaUniversos.style.display = "flex"){
+        universos()
+    }
+    else if (formBusquedaCapitulos.style.display = "flex")
+        capitulos()
+    }
+
+
 next.onclick = () => {
+    
     paginaActual + 1
 
     if (paginaActual == 41) {
