@@ -82,12 +82,27 @@ body nav #div-input-busqueda {
 }
 body nav #div-input-busqueda #form-busqueda-capitulos {
   display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 body nav #div-input-busqueda #form-busqueda-personaje {
   display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 body nav #div-input-busqueda #form-busqueda-universos {
   display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 body main {
   display: flex;

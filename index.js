@@ -156,11 +156,11 @@ const prevOnclick = () =>{
 prev.onclick = () => {
     prevOnclick()
     numeroActualizoPagina() 
-    if(formBusquedaPersonaje.style.display = "flex"){
-     personajes()
-        }
-    else if(formBusquedaUniversos.style.display = "flex"){
+    if(formBusquedaUniversos.style.display = "flex"){
         universos()
+        }
+    else if(formBusquedaPersonaje.style.display = "flex"){
+     personajes()
     }
     else if (formBusquedaCapitulos.style.display = "flex")
         capitulos()
