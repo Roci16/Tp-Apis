@@ -1,13 +1,13 @@
 # 🛸 Rick y Morty
-Este proyecto fué realizado en el marco de la carrera de Desarrollo Frontend de la escuela de programacion ADA it. El mismo aborda el uso de la API de Rick y Morty para el cual diseñamos una interface capaz de mostrar los resultados y acceder a sus detalles
+Este proyecto fué realizado en el marco de la carrera de Desarrollo Frontend de la escuela de programacion ADA it. El mismo aborda el uso de la API de Rick y Morty para el cual diseñamos una interface capaz de mostrar los resultados y acceder a sus detalles.
 
 ## 🎨 **Diseño**:
-La interface la diseñamos teniendo en cuenta el concepto syfy que propone la serie, elegimos una paleta de perdes saturados en constraste con valores bajos para enfatizar el caracter oscuro de la serie.
+La interface la diseñamos teniendo en cuenta el concepto syfy que propone la serie, elegimos una paleta de verdes saturados en constraste con valores bajos para enfatizar el caracter oscuro de la serie.
 - Las imágenes fueron sacadas de distintos sitios y adaptadas en tamaño y formato para el diseño de la web.
-- Buscamos generar en el nav la sensación de viaje interdimensional recuperando elementos gráficos de la serie
+- Buscamos generar en el nav la sensación de viaje interdimensional recuperando elementos gráficos de la serie.
 ## 🛠 **Funcionalidades**:
 El proyecto cuenta con Diseño **responsivo**.
-El sitio ofrece, además la posibilidad de acceder a las **API** a través de tres filtros diferentes que pueden ser aplicados desde los botones ubicados en el nav.
+El sitio ofrece, además la posibilidad de acceder a la **API** a través de tres filtros diferentes que pueden ser aplicados desde los botones ubicados en el nav.
 ## Se puede obtener los siguientes datos en el área principal: 
 - 🛠 Filtro por personajes
 - 🛠 Filtro por universo
