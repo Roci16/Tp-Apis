@@ -77,7 +77,7 @@ const buscarPersonaje = (id) => {
             tarjetaDetalle(data)
         })
 }
-
+//------------------------------------------------------------------------
 // eventos botones nav onclick
 botonPersonajes.onclick = () => {
     personajes()
@@ -112,7 +112,7 @@ botonCapitulos.onclick = () => {
     conteinerBotonesPrincipales.style.display = "none"
 }
 
-//--------------paginado
+//--------------paginado------------------------------------------------
 let paginaActual = 1
 let ultimaPagina = 0
 
@@ -136,12 +136,10 @@ const paginaUltimaDesabilitado = () => {
     prev.disabled = false
 }
 
+// FUNCIONES AUXILIARES PARA PAGINADO POR FILTRO
 
-//funcion Paginado Personajes en pantalla principal
-//como hago para reutilizar la funcion si repetir codigo pero ejecutando la funcion por fetch para cada
-
-prev.onclick = () => {
-    paginaActual--
+const prevOnclick = () =>{
+  paginaActual--
 
     if (paginaActual == 1) {
         prev.disabled = true
@@ -149,11 +147,10 @@ prev.onclick = () => {
     if (paginaActual < 42) {
         next.disabled = false
     }
-    numeroActualizoPagina()
-    personajes()
+
 }
 
-next.onclick = () => {
+const nextOnclick = () =>{
     paginaActual + 1
 
     if (paginaActual == 41) {
@@ -163,8 +160,38 @@ next.onclick = () => {
     if (paginaActual == paginaActual++) {
         prev.disabled = false
     }
+}
+
+
+//funcion Paginado Personajes en pantalla principal
+//como hago para reutilizar la funcion si repetir codigo pero ejecutando la funcion por fetch para cada
+
+prev.onclick = () => {
+    prevOnclick()
+    numeroActualizoPagina() 
+    if(formBusquedaUniversos.style.display = "flex"){
+        universos()
+        }
+    else if(formBusquedaPersonaje.style.display = "flex"){
+     personajes()
+    }
+    else if (formBusquedaCapitulos.style.display = "flex")
+        capitulos()
+    }
+
+
+next.onclick = () => {
+    nextOnclick()
     numeroActualizoPagina()
-    personajes()
+    if(formBusquedaUniversos.style.display = "flex"){
+        universos()
+        }
+    else if(formBusquedaPersonaje.style.display = "flex"){
+     personajes()
+    }
+    else if (formBusquedaCapitulos.style.display = "flex"){
+        capitulos()
+    }
 
 }
 
@@ -172,14 +199,30 @@ botonPrimeraPagina.onclick = () => {
     paginaActual = 1
     paginaUnoDesabilitado()
     numeroActualizoPagina()
-    personajes()
+    if(formBusquedaUniversos.style.display = "flex"){
+        universos()
+        }
+    else if(formBusquedaPersonaje.style.display = "flex"){
+     personajes()
+    }
+    else if (formBusquedaCapitulos.style.display = "flex"){
+        capitulos()
+    }
 }
 
 botonUltimaPagina.onclick = () => {
     paginaActual = ultimaPagina
     paginaUltimaDesabilitado()
     numeroActualizoPagina()
-    personajes()
+    if(formBusquedaUniversos.style.display = "flex"){
+        universos()
+        }
+    else if(formBusquedaPersonaje.style.display = "flex"){
+     personajes()
+    }
+    else if (formBusquedaCapitulos.style.display = "flex"){
+        capitulos()
+    }
 }
 
 

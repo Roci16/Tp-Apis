@@ -132,13 +132,16 @@
              @include flex-centrar($content: center, $direccion: column);
              display: $display-none;
              #form-busqueda-capitulos {
-                 display: none
+                 display: none;
+                 @include flex-centrar($content: center, $direccion: column)
              }
              #form-busqueda-personaje {
-                 display: none
+                 display: none;
+                 @include flex-centrar($content: center, $direccion: column)
              }
              #form-busqueda-universos {
-                 display: none
+                 display: none;
+                 @include flex-centrar($content: center, $direccion: column)
              }
          }
      }
