@@ -77,7 +77,7 @@ const buscarPersonaje = (id) => {
             tarjetaDetalle(data)
         })
 }
-
+//------------------------------------------------------------------------
 // eventos botones nav onclick
 botonPersonajes.onclick = () => {
     personajes()
@@ -112,7 +112,7 @@ botonCapitulos.onclick = () => {
     conteinerBotonesPrincipales.style.display = "none"
 }
 
-//--------------paginado
+//--------------paginado------------------------------------------------
 let paginaActual = 1
 let ultimaPagina = 0
 
@@ -135,6 +135,7 @@ const paginaUltimaDesabilitado = () => {
     next.disabled = true
     prev.disabled = false
 }
+
 // FUNCIONES AUXILIARES PARA PAGINADO POR FILTRO
 
 const prevOnclick = () =>{
@@ -147,6 +148,18 @@ const prevOnclick = () =>{
         next.disabled = false
     }
 
+}
+
+const nextOnclick = () =>{
+    paginaActual + 1
+
+    if (paginaActual == 41) {
+        next.disabled = true
+    }
+
+    if (paginaActual == paginaActual++) {
+        prev.disabled = false
+    }
 }
 
 
@@ -168,18 +181,17 @@ prev.onclick = () => {
 
 
 next.onclick = () => {
-    
-    paginaActual + 1
-
-    if (paginaActual == 41) {
-        next.disabled = true
-    }
-
-    if (paginaActual == paginaActual++) {
-        prev.disabled = false
-    }
+    nextOnclick()
     numeroActualizoPagina()
-    personajes()
+    if(formBusquedaUniversos.style.display = "flex"){
+        universos()
+        }
+    else if(formBusquedaPersonaje.style.display = "flex"){
+     personajes()
+    }
+    else if (formBusquedaCapitulos.style.display = "flex"){
+        capitulos()
+    }
 
 }
 
@@ -187,14 +199,30 @@ botonPrimeraPagina.onclick = () => {
     paginaActual = 1
     paginaUnoDesabilitado()
     numeroActualizoPagina()
-    personajes()
+    if(formBusquedaUniversos.style.display = "flex"){
+        universos()
+        }
+    else if(formBusquedaPersonaje.style.display = "flex"){
+     personajes()
+    }
+    else if (formBusquedaCapitulos.style.display = "flex"){
+        capitulos()
+    }
 }
 
 botonUltimaPagina.onclick = () => {
     paginaActual = ultimaPagina
     paginaUltimaDesabilitado()
     numeroActualizoPagina()
-    personajes()
+    if(formBusquedaUniversos.style.display = "flex"){
+        universos()
+        }
+    else if(formBusquedaPersonaje.style.display = "flex"){
+     personajes()
+    }
+    else if (formBusquedaCapitulos.style.display = "flex"){
+        capitulos()
+    }
 }
 
 
