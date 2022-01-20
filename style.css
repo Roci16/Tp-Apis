@@ -49,7 +49,6 @@ body nav {
   width: auto;
 }
 body nav input {
-  background-color: transparent;
   border-radius: 50px;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   height: 7em;
@@ -217,7 +216,6 @@ body nav #div-input-busqueda #form-busqueda-personaje {
   body nav #div-input-busqueda #form-busqueda-capitulos input,
 body nav #div-input-busqueda #form-busqueda-universos input,
 body nav #div-input-busqueda #form-busqueda-personaje input {
-    background-color: white;
     height: 25px;
     width: 100px;
   }
@@ -233,17 +231,56 @@ body nav #div-input-busqueda #form-busqueda-personaje input {
     width: 100%;
     background-color: #FFF;
   }
-  body footer div h3 {
+  body footer div a h3 {
     font-size: 20px;
   }
-  body footer div h5 {
-    font-size: 15px;
+  body footer div a h5 {
+    font-size: 10px;
   }
 }
-@media screen and (min-width: 291px) and (max-width: 375px) {
+@media screen and (min-width: 291px) and (max-width: 376px) {
   body header h1 {
     font-size: 1.8rem;
-    color: red;
+  }
+  body nav button,
+body main article button {
+    font-size: 9px;
+    height: 3rem;
+    width: 3rem;
+  }
+  body nav #div-input-busqueda #form-busqueda-capitulos,
+body nav #div-input-busqueda #form-busqueda-universos,
+body nav #div-input-busqueda #form-busqueda-personaje {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 20px;
+  }
+  body nav #div-input-busqueda #form-busqueda-capitulos input,
+body nav #div-input-busqueda #form-busqueda-universos input,
+body nav #div-input-busqueda #form-busqueda-personaje input {
+    height: 30px;
+    width: 180px;
+  }
+  body main #tarjetas-principales {
+    width: 15em;
+  }
+  body main article #seccion-tarjeta div img {
+    width: 100%;
+  }
+  body main section .tarjetas-datos-universo {
+    font-size: 0.7rem;
+    height: auto;
+    width: 100%;
+    background-color: #FFF;
+  }
+  body footer div a h3 {
+    font-size: 25px;
+  }
+  body footer div a h5 {
+    font-size: 15px;
   }
 }
 

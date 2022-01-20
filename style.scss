@@ -39,6 +39,7 @@
  $color-tipografia-modo-claro: #f7d4bd;
  $color-background:rgb(60,182,64,1);
  $display-none: none;
+ $auto : auto;
  // 
  //Mixins
  @mixin flex-centrar($content: center,
@@ -91,9 +92,8 @@
          font-style: $grosor-font;
          margin: $escala-baja;
          padding: $escala-baja;
-         width: auto;
+         width:  $auto;
          input {
-             background-color: $transparente;
              border-radius: 50px;
              box-shadow: $sombra-generica;
              height: $escala-media;
@@ -226,7 +226,6 @@
          nav #div-input-busqueda #form-busqueda-capitulos input,
          nav #div-input-busqueda #form-busqueda-universos input,
          nav #div-input-busqueda #form-busqueda-personaje input {
-             background-color: white;
              height: 25px;
              width: 100px;
          }
@@ -234,25 +233,60 @@
              width: 12em;
          }
          main article #seccion-tarjeta div img {
-             width: 100%;
+             width: $full;
          }
          main section .tarjetas-datos-universo{
              font-size: 0.4rem;
-             height: auto;
-             width: 100%;
+             height:  $auto;
+             width: $full;
              background-color: #FFF;
          }
-         footer div h3 {
+         footer div a h3 {
              font-size: 20px;
          }
-         footer div h5 {
-             font-size: 15px;
+         footer div a h5 {
+             font-size: 10px;
          }
      }
-     @media screen and (min-width: 291px) and (max-width: 375px){
+     @media screen and (min-width: 291px) and (max-width: 376px){
         header h1 {
             font-size: 1.8rem;
-            color: red;
+        }
+        nav button,
+        main article button {
+            font-size: 9px;
+            height:3rem;
+            width: 3rem;
+        }
+        nav #div-input-busqueda #form-busqueda-capitulos,
+        nav #div-input-busqueda #form-busqueda-universos,
+        nav #div-input-busqueda #form-busqueda-personaje {
+            @include flex-centrar();
+            font-size: 20px;
+        }
+        nav #div-input-busqueda #form-busqueda-capitulos input,
+        nav #div-input-busqueda #form-busqueda-universos input,
+        nav #div-input-busqueda #form-busqueda-personaje input {
+            height: 30px;
+            width: 180px;
+        }
+        main #tarjetas-principales {
+            width: 15em;
+        }
+        main article #seccion-tarjeta div img {
+            width: $full;
+        }
+        main section .tarjetas-datos-universo{
+            font-size: 0.7rem;
+            height:  $auto;
+            width: $full;
+            background-color: #FFF;
+        }
+        footer div a h3 {
+            font-size: 25px;
+        }
+        footer div a h5 {
+            font-size: 15px;
         }
      }
  }
