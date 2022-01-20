@@ -120,13 +120,17 @@
              @include flex-centrar($content: center, $direccion: column);
              display: $display-none;
              #form-busqueda-capitulos {
-                 display: none
+                 display: none;
+                 @include flex-centrar($content: center, $direccion: column)
+
              }
              #form-busqueda-personaje {
-                 display: none
+                 display: none;
+                 @include flex-centrar($content: center, $direccion: column)
              }
              #form-busqueda-universos {
-                 display: none
+                 display: none;
+                 @include flex-centrar($content: center, $direccion: column)
              }
          }
      }
@@ -192,7 +196,7 @@
          width: $full;
          @include flex-centrar($content: end);
          img {
-             filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
+             filter: drop-shadow(0 -6mm 4mm rgb(31, 63, 22));
              position: absolute;
              width: $full;
              z-index: 1;

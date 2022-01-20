@@ -81,12 +81,27 @@ body nav #div-input-busqueda {
 }
 body nav #div-input-busqueda #form-busqueda-capitulos {
   display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 body nav #div-input-busqueda #form-busqueda-personaje {
   display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 body nav #div-input-busqueda #form-busqueda-universos {
   display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 body main {
   display: flex;
@@ -175,7 +190,7 @@ body footer {
   flex-wrap: wrap;
 }
 body footer img {
-  filter: drop-shadow(0 -6mm 4mm #a000d2);
+  filter: drop-shadow(0 -6mm 4mm #1f3f16);
   position: absolute;
   width: 100%;
   z-index: 1;
