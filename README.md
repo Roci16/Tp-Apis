@@ -7,8 +7,6 @@ La interface la diseñamos teniendo en cuenta el concepto syfy que propone la se
 - Buscamos generar en el nav la sensación de viaje interdimensional recuperando elementos gráficos de la serie
 ## 🛠 **Funcionalidades**:
 El proyecto cuenta con Diseño **responsivo**.
->También se pueden agregar, editar y eliminar categorías. 
-
 El sitio ofrece, además la posibilidad de acceder a las **API** a través de tres filtros diferentes que pueden ser aplicados desde los botones ubicados en el nav.
 ## Se puede obtener los siguientes datos en el área principal: 
 - 🛠 Filtro por personajes
@@ -16,8 +14,8 @@ El sitio ofrece, además la posibilidad de acceder a las **API** a través de tr
 - 🛠 Filtro por capítulo 
  
 ## Otros datos de interés
-- 🛠 Se pueden realizar busquedas especificas ingresando el nombre del personaje, capitulo o universo en un imput ubicado en el nav.
-- 🛠 Se puede acceder a la información detallada de cada tarjeta dentro de las busquedas.
+- 🛠 Se pueden realizar busquedas específicas ingresando el nombre del personaje, capítulo o universo en un imput ubicado en el nav.
+- 🛠 Se puede acceder a la información detallada de cada tarjeta dentro de las búsquedas.
 - 🛠 Este proyecto se desarrolló teniendo en cuenta los principios fundamentales de **accesibilidad**.
 
 
