@@ -156,6 +156,17 @@
                      width: 90%;
                  }
              }
+             .tarjeta-detalle-individual-universo{
+               
+                    @include flex-centrar();
+                    background-color: white;
+                    height: 500px;
+                   width: 350px;
+                    img {
+                        width: $full;
+                    }
+                
+             }
          }
          .detalles {
              background-color: rgba(46, 46, 46, 0.294);
@@ -240,6 +251,10 @@
              width: $full;
              background-color: #FFF;
          }
+         main #tarjeta-detalles .tarjeta-detalle-individual-universo{
+             height: 350px;
+            width: 200px;
+         }
          footer div h3 {
              font-size: 20px;
          }
@@ -278,6 +293,10 @@
              width: $full;
              background-color: #FFF;
          }
+         main #tarjeta-detalles .tarjeta-detalle-individual-universo{
+            height: 350px;
+           width: 200px;
+        }
          footer div a h3 {
              font-size: 25px;
          }
@@ -310,6 +329,10 @@
              height: $auto;
              width: $full;
          }
+         main #tarjeta-detalles .tarjeta-detalle-individual-universo{
+            height: 400px;
+           width: 250px;
+        }
      }
      @media screen and (min-width: 501px) and (max-width: 611px) {
          header h1 {

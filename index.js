@@ -401,7 +401,7 @@ const tarjetaDetalleUniverso = data => {
 
     seccionDetalles.innerHTML = `
     
-    <article class="tarjeta-detalle-individual">
+    <article class="tarjeta-detalle-individual-universo">
     <div id="menu-times">
         <i class="fas fa-times"></i>
     </div>
