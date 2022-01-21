@@ -149,6 +149,10 @@
          .tarjetas-datos {
              margin: $escala-media-baja;
          }
+         .diseño-card-general {
+             background-color: white;
+             box-shadow: 0px 4px 12px 7px darkslategrey
+         }
          .tarjetas-datos-universo {
              @include flex-centrar();
              background-color: blue;
@@ -198,8 +202,8 @@
          }
      }
      footer {
-         width: $full;
          @include flex-centrar($content: end);
+         width: $full;
          img {
              filter: drop-shadow(0 -6mm 4mm rgb(31, 63, 22));
              position: absolute;
@@ -239,7 +243,11 @@
              width: 100px;
          }
          main #tarjetas-principales {
-             width: 12em;
+             display: flex;
+         }
+         main article #seccion-tarjeta {
+             width: 80%;
+             font-size: 10px;
          }
          main article #seccion-tarjeta div img {
              width: $full;
@@ -279,9 +287,6 @@
              height: 30px;
              width: 180px;
          }
-         main #tarjetas-principales {
-             width: 15em;
-         }
          main article #seccion-tarjeta div img {
              width: $full;
          }
@@ -313,9 +318,6 @@
              font-size: 12px;
              height: 4rem;
              width: 4rem;
-         }
-         main #tarjetas-principales {
-             width: 15em;
          }
          main article #seccion-tarjeta div img {
              width: $full;
@@ -358,7 +360,7 @@
              width: $full;
          }
      }
-     @media screen and (min-width: 769px) and (max-width: 1024px) {
+     @media screen and (min-width: 769px) and (max-width: 1023px) {
          header h1 {
              font-size: 4.8rem;
          }
@@ -367,6 +369,28 @@
          nav #div-input-busqueda #form-busqueda-personaje input {
              height: 60px;
              width: 350px;
+         }
+     }
+     @media screen and (min-width: 1024px) and (max-width: 1439px) {
+         header h1 {
+             font-size: 6rem;
+         }
+         footer img {
+             margin-top: 13rem;
+         }
+         footer {
+             @include flex-centrar($content: flex-end);
+         }
+     }
+     @media screen and (min-width: 1440px) and (max-width: 2560px) {
+         nav {
+             margin-bottom: 8rem;
+         }
+         footer img {
+             margin-top: 15rem;
+         }
+         footer {
+             @include flex-centrar($content: flex-end);
          }
      }
  }
