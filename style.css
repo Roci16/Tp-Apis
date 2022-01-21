@@ -246,7 +246,7 @@ body nav #div-input-busqueda #form-busqueda-personaje input {
     width: 100%;
     background-color: #FFF;
   }
-  body footer div a h3 {
+  body footer div h3 {
     font-size: 20px;
   }
   body footer div a h5 {
@@ -296,6 +296,35 @@ body nav #div-input-busqueda #form-busqueda-personaje input {
   }
   body footer div a h5 {
     font-size: 15px;
+  }
+}
+@media screen and (min-width: 377px) and (max-width: 425px) {
+  body header h1 {
+    font-size: 2.3rem;
+  }
+  body nav #div-input-busqueda #form-busqueda-capitulos input,
+body nav #div-input-busqueda #form-busqueda-universos input,
+body nav #div-input-busqueda #form-busqueda-personaje input {
+    height: 40px;
+    width: 250px;
+  }
+  body nav button,
+body main article button {
+    font-size: 12px;
+    height: 4rem;
+    width: 4rem;
+  }
+  body main #tarjetas-principales {
+    width: 15em;
+  }
+  body main article #seccion-tarjeta div img {
+    width: 100%;
+  }
+  body main section .tarjetas-datos-universo {
+    font-size: 1.2rem;
+    height: auto;
+    width: 100%;
+    background-color: #FFF;
   }
 }
 
