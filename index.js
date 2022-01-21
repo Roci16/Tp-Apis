@@ -55,6 +55,7 @@ const universos = () => {
                 ultimaPagina = data.info.pages
                 mostrarTarjetasUniversos(data.results)
                 clickPorTarjeta()
+                
             })
     }
     // llamado para capitulos
@@ -231,7 +232,7 @@ const mostrarTarjetas = personajes => {
     const html = personajes.reduce((acc, curr) => {
 
         return acc + `
-<div class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
+            <div class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
                 <h2>
                     ${curr.name}
                 </h2>
@@ -248,7 +249,7 @@ const mostrarTarjetasUniversos = universos => {
     const html = universos.reduce((acc, curr) => {
 
         return acc + `
-<div  class="tarjetas-datos-universo diseño-card-general" data-id=${curr.id}>
+            <div class="tarjetas-datos tarjetas-datos-universo diseño-card-general" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
@@ -316,7 +317,6 @@ const clickPorTarjeta = () => {
         tarjetas[i].onclick = () => { //tendra que poner un if else que si esta en display none o flex solamente personajes 
             const idTarjetas = tarjetas[i].dataset.id
             if (formBusquedaPersonaje.style.display === "flex") {
-                console.log("click personaje");
                 buscarPersonaje(idTarjetas)
             }
             if (formBusquedaUniversos.style.display === "flex") {
@@ -324,7 +324,6 @@ const clickPorTarjeta = () => {
                 buscarUniversoId(idTarjetas)
             }
             if (formBusquedaCapitulos.style.display === "flex") {
-                console.log("click capitulos");
                 buscarcapituloId(idTarjetas)
             }
             //dentro de esta funcion esta la funcion mostrar detalles por tarjeta
@@ -402,7 +401,7 @@ const tarjetaDetalleUniverso = data => {
 
     seccionDetalles.innerHTML = `
     
-    <article class="tarjeta-detalle-individual">
+    <article class="tarjeta-detalle-individual-universo">
     <div id="menu-times">
         <i class="fas fa-times"></i>
     </div>
@@ -427,7 +426,6 @@ const tarjetaDetalleUniverso = data => {
 formBusquedaCapitulos.oninput = e => {
     e.preventDefault()
     const valorBusqueda = inputBusquedaCapitulos.value
-    console.log(valorBusqueda);
     buscarInfoCapitulo(valorBusqueda)
 
     seccionTarjetas.style.display = "none"
@@ -439,7 +437,6 @@ formBusquedaCapitulos.oninput = e => {
 formBusquedaUniversos.oninput = e => {
     e.preventDefault()
     const valorBusqueda = inputBusquedaUniversos.value
-    console.log(valorBusqueda);
     buscarInfoUniverso(valorBusqueda)
 
     seccionTarjetas.style.display = "none"
@@ -453,8 +450,6 @@ formBusquedaPersonaje.oninput = e => {
     const valorBusqueda = inputBusquedaPersonaje.value
 
     buscarInfo(valorBusqueda)
-
-    console.log(valorBusqueda);
 
     seccionTarjetas.style.display = "none"
     resultadoBusqueda.style.display = "flex"
@@ -494,7 +489,6 @@ formBusquedaPersonaje.oninput = e => {
     }
 
     botonUltimaPaginaBusqueda.onclick = () => {
-        console.log("ultima pagina")
         paginaActual = ultimaPagina
         paginaUltimaDesabilitado()
         numeroActualizoPaginaBusqueda()
@@ -530,7 +524,7 @@ const mostrarResultadoUniversos = universos => {
     const resultados = universos.reduce((acc, curr) => {
 
         return acc + `
-        <div class="tarjetas-datos-universo diseño-card-general" data-id=${curr.id} >
+        <div class="tarjetas-datos tarjetas-datos-universo diseño-card-general" data-id=${curr.id} >
                  <h2>
                      ${curr.name}
                  </h2>
@@ -574,7 +568,6 @@ const buscarInfo = (nombre) => {
 
             ultimaPagina = data.info.pages
             mostrarResultado(data.results)
-            console.log(data);
             clickPorTarjetaPersonaje();
             resultadoBusqueda.style.display = "flex"
         })
@@ -590,8 +583,7 @@ const buscarInfoUniverso = (valor) => {
 
             ultimaPagina = data.info.pages
             mostrarResultadoUniversos(data.results)
-            console.log(data);
-            // clickPorTarjeta();
+            clickPorTarjeta();
             resultadoBusqueda.style.display = "flex"
         })
 
@@ -606,8 +598,7 @@ const buscarInfoCapitulo = (nombre) => {
 
             ultimaPagina = data.info.pages
             mostrarResultadoCapitulos(data.results)
-            console.log(data);
-            // clickPorTarjeta();
+            clickPorTarjeta();
             resultadoBusqueda.style.display = "flex"
         })
 
