@@ -116,6 +116,9 @@ body main .tarjetas-orden {
   flex-wrap: wrap;
   padding: 2em;
 }
+body main .tarjetas-datos {
+  box-shadow: #49ff18;
+}
 body main .tarjetas-datos-universo {
   display: flex;
   justify-content: center;

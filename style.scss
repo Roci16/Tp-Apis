@@ -150,6 +150,9 @@
              @include flex-centrar($content: space-between, $direccion: row);
              padding: $escala-media-baja;
          }
+         .tarjetas-datos{
+             box-shadow: $color-sombra
+         }
          .tarjetas-datos-universo {
              @include flex-centrar();
              background-color: transparent;
