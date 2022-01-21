@@ -231,7 +231,7 @@ const mostrarTarjetas = personajes => {
     const html = personajes.reduce((acc, curr) => {
 
         return acc + `
-<div class="tarjetas-datos" data-id=${curr.id} >
+<div class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
                 <h2>
                     ${curr.name}
                 </h2>
@@ -248,7 +248,7 @@ const mostrarTarjetasUniversos = universos => {
     const html = universos.reduce((acc, curr) => {
 
         return acc + `
-<div  class="tarjetas-datos-universo tarjetas-datos" data-id=${curr.id}>
+<div  class="tarjetas-datos-universo diseño-card-general" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
@@ -265,7 +265,7 @@ const mostrarTarjetasCapitulos = capitulos => {
         const html = capitulos.reduce((acc, curr) => {
 
             return acc + `
-<div class="tarjetas-datos" data-id=${curr.id}>
+<div class="tarjetas-datos diseño-card-general" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
@@ -509,7 +509,7 @@ const mostrarResultado = personaje => {
         const resultados = personaje.reduce((acc, curr) => {
 
             return acc + `
-        <div class="tarjetas-datos" data-id=${curr.id} >
+        <div class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
                  <h2>
                      ${curr.name}
                  </h2>
@@ -530,7 +530,7 @@ const mostrarResultadoUniversos = universos => {
     const resultados = universos.reduce((acc, curr) => {
 
         return acc + `
-        <div class="tarjetas-datos-universo" data-id=${curr.id} >
+        <div class="tarjetas-datos-universo diseño-card-general" data-id=${curr.id} >
                  <h2>
                      ${curr.name}
                  </h2>
@@ -551,7 +551,7 @@ const mostrarResultadoCapitulos = capitulos => {
         const resultados = capitulos.reduce((acc, curr) => {
 
             return acc + `
-        <div class="tarjetas-datos" data-id=${curr.id} >
+        <div class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
                  <h2>
                      ${curr.name}
                  </h2>

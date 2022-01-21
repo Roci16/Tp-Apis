@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap");
 * {
   margin: 0;
@@ -125,6 +126,10 @@ body main .tarjetas-orden {
 body main .tarjetas-datos {
   margin: 2em;
 }
+body main .diseño-card-general {
+  background-color: white;
+  box-shadow: 0px 4px 12px 7px darkslategrey;
+}
 body main .tarjetas-datos-universo {
   display: flex;
   justify-content: center;
@@ -185,12 +190,12 @@ body main #botones-paginado-busqueda {
   display: none;
 }
 body footer {
-  width: 100%;
   display: flex;
   justify-content: end;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 100%;
 }
 body footer img {
   filter: drop-shadow(0 -6mm 4mm #1f3f16);
@@ -238,7 +243,11 @@ body nav #div-input-busqueda #form-busqueda-personaje input {
     width: 100px;
   }
   body main #tarjetas-principales {
-    width: 12em;
+    display: flex;
+  }
+  body main article #seccion-tarjeta {
+    width: 80%;
+    font-size: 10px;
   }
   body main article #seccion-tarjeta div img {
     width: 100%;
@@ -282,9 +291,6 @@ body nav #div-input-busqueda #form-busqueda-personaje input {
     height: 30px;
     width: 180px;
   }
-  body main #tarjetas-principales {
-    width: 15em;
-  }
   body main article #seccion-tarjeta div img {
     width: 100%;
   }
@@ -316,9 +322,6 @@ body main article button {
     font-size: 12px;
     height: 4rem;
     width: 4rem;
-  }
-  body main #tarjetas-principales {
-    width: 15em;
   }
   body main article #seccion-tarjeta div img {
     width: 100%;
@@ -361,7 +364,7 @@ body nav #div-input-busqueda #form-busqueda-personaje input {
     width: 100%;
   }
 }
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   body header h1 {
     font-size: 4.8rem;
   }
@@ -370,6 +373,36 @@ body nav #div-input-busqueda #form-busqueda-universos input,
 body nav #div-input-busqueda #form-busqueda-personaje input {
     height: 60px;
     width: 350px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  body header h1 {
+    font-size: 6rem;
+  }
+  body footer img {
+    margin-top: 13rem;
+  }
+  body footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: 2560px) {
+  body nav {
+    margin-bottom: 8rem;
+  }
+  body footer img {
+    margin-top: 15rem;
+  }
+  body footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
 
