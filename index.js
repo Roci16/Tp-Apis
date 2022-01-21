@@ -68,17 +68,11 @@ const capitulos = () => {
 
             })
     }
-    //---------------------------------------------------------------------------
-    // funcion buscar personaje (para que sirve) te trae todas las tarjetas y cuando haces click se abre tarjeta detalle donde te muestra toda la info
-const buscarPersonaje = (id) => {
-        fetch(`https://rickandmortyapi.com/api/character/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                tarjetaDetalle(data)
-            })
-    }
-    //------------------------------------------------------------------------
-    // eventos botones nav onclick
+
+    
+//------------------------------------------------------------------------
+// eventos botones nav onclick
+
 botonPersonajes.onclick = () => {
     paginaActual = 1
     numeroActualizoPaginaBusqueda()
@@ -175,7 +169,7 @@ const nextOnclick = () => {
 
 
 //funcion Paginado Personajes en pantalla principal
-//como hago para reutilizar la funcion si repetir codigo pero ejecutando la funcion por fetch para cada
+
 
 prev.onclick = () => {
     prevOnclick()
@@ -254,7 +248,7 @@ const mostrarTarjetasUniversos = universos => {
     const html = universos.reduce((acc, curr) => {
 
         return acc + `
-<div  class="tarjetas-datos-universo" data-id=${curr.id}>
+<div  class="tarjetas-datos-universo tarjetas-datos" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
@@ -283,16 +277,57 @@ const mostrarTarjetasCapitulos = capitulos => {
     }
     //--------------------------------------------------------------------------------------
 
+//---------------------------------------------------------------------------
+    // funcion buscar personaje por id cuando haces click se abre tarjeta detalle donde te muestra toda la info
+    const buscarPersonaje = (id) => {
+        fetch(`https://rickandmortyapi.com/api/character/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                tarjetaDetalle(data)
+            })
+    }
+
+// bucar universo por id
+    const buscarUniversoId = (id) => {
+        fetch(`https://rickandmortyapi.com/api/location/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                tarjetaDetalle(data)
+            })
+    }
+    
+// buscar capitulo por id
+    const buscarcapituloId = (id) => {
+        fetch(`https://rickandmortyapi.com/api/episode/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                tarjetaDetalle(data)
+            })
+    }
+    
+
+
 // click por tajeta que muestra el detalle click y que haga algo falta el de universos y capitulos
 const clickPorTarjetaPersonaje = () => {
     const tarjetas = document.querySelectorAll(".tarjetas-datos")
 
-    for (let i = 0; i < tarjetas.length; i++) {
-        tarjetas[i].onclick = () => { //tendra que poner un if else que si esta en display none o flex solamente personajes 
-            const idPersonaje = tarjetas[i].dataset.id
-                //if()
-            buscarPersonaje(idPersonaje) //dentro de esta funcion esta la funcion mostrar detalles por tarjeta
-            seccionDetalles.classList.add("detalles") //se le agrega el flex
+
+        for (let i = 0; i < tarjetas.length; i++) {
+            tarjetas[i].onclick = () => {//tendra que poner un if else que si esta en display none o flex solamente personajes 
+                const idTarjetas = tarjetas[i].dataset.id
+                if(formBusquedaPersonaje.style.display === "flex"){
+                    buscarPersonaje(idTarjetas)
+                }
+                else if(formBusquedaUniversos.style.display === "flex"){
+                    buscarUniversoId(idTarjetas)
+                }
+
+                else if(formBusquedaCapitulos.style.display === "flex"){
+                    buscarcapituloId(idTarjetas)
+                }
+                 //dentro de esta funcion esta la funcion mostrar detalles por tarjeta
+                seccionDetalles.classList.add("detalles")//se le agrega el flex
+            }
         }
     }
 
