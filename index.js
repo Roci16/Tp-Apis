@@ -80,6 +80,8 @@ const buscarPersonaje = (id) => {
 //------------------------------------------------------------------------
 // eventos botones nav onclick
 botonPersonajes.onclick = () => {
+    paginaActual = 1
+    numeroActualizoPaginaBusqueda()
     personajes()
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "flex"
@@ -92,6 +94,8 @@ botonPersonajes.onclick = () => {
 
 
 botonUniversos.onclick = () => {
+    paginaActual = 1
+    numeroActualizoPaginaBusqueda()
     universos()
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "none"
@@ -103,6 +107,8 @@ botonUniversos.onclick = () => {
 
 
 botonCapitulos.onclick = () => {
+    paginaActual = 1
+    numeroActualizoPaginaBusqueda()
     capitulos()
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "none"
