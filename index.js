@@ -69,7 +69,7 @@ const capitulos = () => {
             })
     }
     //---------------------------------------------------------------------------
-    // funcion buscar personaje (para que sirve)
+    // funcion buscar personaje (para que sirve) te trae todas las tarjetas y cuando haces click se abre tarjeta detalle donde te muestra toda la info
 const buscarPersonaje = (id) => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
         .then(res => res.json())
@@ -98,7 +98,7 @@ botonUniversos.onclick = () => {
     formBusquedaCapitulos.style.display = "none"
     formBusquedaUniversos.style.display = "flex"
     resultadoBusqueda.style.display = "none"
-    conteinerBotonesPrincipales.style.display = "none"
+    conteinerBotonesPrincipales.style.display = "flex"
 }
 
 
@@ -109,10 +109,12 @@ botonCapitulos.onclick = () => {
     formBusquedaCapitulos.style.display = "flex"
     formBusquedaUniversos.style.display = "none"
     resultadoBusqueda.style.display = "none"
-    conteinerBotonesPrincipales.style.display = "none"
+    conteinerBotonesPrincipales.style.display = "flex"
 }
 
 //--------------paginado------------------------------------------------
+
+//funcion para el numerado de página
 let paginaActual = 1
 let ultimaPagina = 0
 
@@ -169,13 +171,13 @@ const nextOnclick = () =>{
 prev.onclick = () => {
     prevOnclick()
     numeroActualizoPagina() 
-    if(formBusquedaUniversos.style.display = "flex"){
+    if(formBusquedaUniversos.style.display === "flex"){
         universos()
         }
-    else if(formBusquedaPersonaje.style.display = "flex"){
+    else if(formBusquedaPersonaje.style.display === "flex"){
      personajes()
     }
-    else if (formBusquedaCapitulos.style.display = "flex")
+    else if (formBusquedaCapitulos.style.display === "flex")
         capitulos()
     }
 
@@ -183,13 +185,13 @@ prev.onclick = () => {
 next.onclick = () => {
     nextOnclick()
     numeroActualizoPagina()
-    if(formBusquedaUniversos.style.display = "flex"){
+    if(formBusquedaUniversos.style.display === "flex"){
         universos()
         }
-    else if(formBusquedaPersonaje.style.display = "flex"){
+    else if(formBusquedaPersonaje.style.display === "flex"){
      personajes()
     }
-    else if (formBusquedaCapitulos.style.display = "flex"){
+    else if (formBusquedaCapitulos.style.display === "flex"){
         capitulos()
     }
 
@@ -280,19 +282,24 @@ const mostrarTarjetasCapitulos = capitulos => {
     }
     //--------------------------------------------------------------------------------------
 
-// click por tajeta que muestra el detalle
+// click por tajeta que muestra el detalle click y que haga algo falta el de universos y capitulos
 const clickPorTarjetaPersonaje = () => {
         const tarjetas = document.querySelectorAll(".tarjetas-datos")
 
         for (let i = 0; i < tarjetas.length; i++) {
-            tarjetas[i].onclick = () => {
+            tarjetas[i].onclick = () => {//tendra que poner un if else que si esta en display none o flex solamente personajes 
                 const idPersonaje = tarjetas[i].dataset.id
-                buscarPersonaje(idPersonaje)
-                seccionDetalles.classList.add("detalles")
+                //if()
+                buscarPersonaje(idPersonaje) //dentro de esta funcion esta la funcion mostrar detalles por tarjeta
+                seccionDetalles.classList.add("detalles")//se le agrega el flex
             }
         }
 
     }
+
+    //hace un for a todas las tarjetas que tiene en la funcion onclick
+    //decirle que 
+    //tarjeta detalle creacion de tarjeta unica
     // TARJETA DETALLE
 const tarjetaDetalle = data => {
 
