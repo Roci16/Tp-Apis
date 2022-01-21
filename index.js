@@ -43,7 +43,7 @@ const personajes = () => {
             .then((data) => {
                 ultimaPagina = data.info.pages
                 mostrarTarjetas(data.results)
-                clickPorTarjetaPersonaje()
+                clickPorTarjeta()
                 seccionTarjetas.style.display = "flex"
             })
     }
@@ -54,22 +54,22 @@ const universos = () => {
             .then((data) => {
                 ultimaPagina = data.info.pages
                 mostrarTarjetasUniversos(data.results)
-                    // clickPorTarjeta()
+                clickPorTarjeta()
             })
     }
     // llamado para capitulos
 const capitulos = () => {
-        fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
-            .then((res) => res.json())
-            .then((data) => {
-                ultimaPagina = data.info.pages
-                mostrarTarjetasCapitulos(data.results)
-                    // clickPorTarjeta()
+    fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
+        .then((res) => res.json())
+        .then((data) => {
+            ultimaPagina = data.info.pages
+            mostrarTarjetasCapitulos(data.results)
+            clickPorTarjeta()
 
-            })
-    }
+        })
+}
 
-    
+
 //------------------------------------------------------------------------
 // eventos botones nav onclick
 
@@ -278,66 +278,68 @@ const mostrarTarjetasCapitulos = capitulos => {
     //--------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------
-    // funcion buscar personaje por id cuando haces click se abre tarjeta detalle donde te muestra toda la info
-    const buscarPersonaje = (id) => {
-        fetch(`https://rickandmortyapi.com/api/character/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                tarjetaDetalle(data)
-            })
-    }
+// funcion buscar personaje por id cuando haces click se abre tarjeta detalle donde te muestra toda la info
+const buscarPersonaje = (id) => {
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            tarjetaDetallePersonaje(data)
+        })
+}
 
 // bucar universo por id
-    const buscarUniversoId = (id) => {
-        fetch(`https://rickandmortyapi.com/api/location/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                tarjetaDetalle(data)
-            })
-    }
-    
+const buscarUniversoId = (id) => {
+    fetch(`https://rickandmortyapi.com/api/location/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            tarjetaDetalleUniverso(data)
+        })
+}
+
 // buscar capitulo por id
-    const buscarcapituloId = (id) => {
-        fetch(`https://rickandmortyapi.com/api/episode/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                tarjetaDetalle(data)
-            })
-    }
-    
+const buscarcapituloId = (id) => {
+    fetch(`https://rickandmortyapi.com/api/episode/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            tarjetaDetalleCapitulos(data)
+        })
+}
+
 
 
 // click por tajeta que muestra el detalle click y que haga algo falta el de universos y capitulos
-const clickPorTarjetaPersonaje = () => {
+const clickPorTarjeta = () => {
     const tarjetas = document.querySelectorAll(".tarjetas-datos")
 
 
-        for (let i = 0; i < tarjetas.length; i++) {
-            tarjetas[i].onclick = () => {//tendra que poner un if else que si esta en display none o flex solamente personajes 
-                const idTarjetas = tarjetas[i].dataset.id
-                if(formBusquedaPersonaje.style.display === "flex"){
-                    buscarPersonaje(idTarjetas)
-                }
-                else if(formBusquedaUniversos.style.display === "flex"){
-                    buscarUniversoId(idTarjetas)
-                }
-
-                else if(formBusquedaCapitulos.style.display === "flex"){
-                    buscarcapituloId(idTarjetas)
-                }
-                 //dentro de esta funcion esta la funcion mostrar detalles por tarjeta
-                seccionDetalles.classList.add("detalles")//se le agrega el flex
+    for (let i = 0; i < tarjetas.length; i++) {
+        tarjetas[i].onclick = () => { //tendra que poner un if else que si esta en display none o flex solamente personajes 
+            const idTarjetas = tarjetas[i].dataset.id
+            if (formBusquedaPersonaje.style.display === "flex") {
+                console.log("click personaje");
+                buscarPersonaje(idTarjetas)
             }
+            if (formBusquedaUniversos.style.display === "flex") {
+                console.log("click universo");
+                buscarUniversoId(idTarjetas)
+            }
+            if (formBusquedaCapitulos.style.display === "flex") {
+                console.log("click capitulos");
+                buscarcapituloId(idTarjetas)
+            }
+            //dentro de esta funcion esta la funcion mostrar detalles por tarjeta
+            seccionDetalles.classList.add("detalles") //se le agrega el flex
         }
     }
-
 }
+
+
 
 //hace un for a todas las tarjetas que tiene en la funcion onclick
 //decirle que 
 //tarjeta detalle creacion de tarjeta unica
 // TARJETA DETALLE
-const tarjetaDetalle = data => {
+const tarjetaDetallePersonaje = data => {
 
     seccionDetalles.style.display = "flex"
 
@@ -355,6 +357,60 @@ const tarjetaDetalle = data => {
     <p>Species: ${data.species}</p>
     <p>Status: ${data.status}</p> 
     <p>Origin: ${data.origin.name}</p> 
+    </article>
+  `
+
+    const menuTimes = document.getElementById("menu-times")
+    menuTimes.style.display = "block"
+
+    menuTimes.onclick = () => {
+        seccionDetalles.style.display = "none"
+        menuTimes.style.display = "none"
+    }
+}
+
+const tarjetaDetalleCapitulos = data => {
+    seccionDetalles.style.display = "flex"
+
+
+    seccionDetalles.innerHTML = `
+    
+    <article class="tarjeta-detalle-individual">
+    <div id="menu-times">
+        <i class="fas fa-times"></i>
+    </div>
+    <img src="imagenes/capitulos.png">
+    <h2>${data.name}</h2>
+    <p>ID: ${data.id}</p>
+    <p>Air: ${data.air_date}</p>
+    <p>Episode: ${data.episode}</p>
+    </article>
+  `
+
+    const menuTimes = document.getElementById("menu-times")
+    menuTimes.style.display = "block"
+
+    menuTimes.onclick = () => {
+        seccionDetalles.style.display = "none"
+        menuTimes.style.display = "none"
+    }
+}
+
+const tarjetaDetalleUniverso = data => {
+    seccionDetalles.style.display = "flex"
+
+
+    seccionDetalles.innerHTML = `
+    
+    <article class="tarjeta-detalle-individual">
+    <div id="menu-times">
+        <i class="fas fa-times"></i>
+    </div>
+    <img src="imagenes/universos.jpg">
+    <h2>${data.name}</h2>
+    <p>ID: ${data.id}</p>
+    <p>Type: ${data.type}</p>
+    <p>Dimension: ${data.dimension}</p>
     </article>
   `
 
