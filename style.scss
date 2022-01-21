@@ -23,24 +23,12 @@
  0 0 40px $color-sombra,
  0 0 55px $color-sombra,
  0 0 75px $color-sombra,
- 2px 2px 2px rgba(206,
- 89,
- 55,
- 0),
- 2px 2px 2px rgba(206,
- 89,
- 55,
- 0);
- $color-boton:rgb(145,
- 200,
- 70,
- 1);
+ 2px 2px 2px rgba(206,89,55,0),
+ 2px 2px 2px rgba(206,89,55,0);
+ $color-boton:rgb(145, 200,70,1);
  $transparente:transparent;
  $color-tipografia-modo-claro: #f7d4bd;
- $color-background:rgb(60,
- 182,
- 64,
- 1);
+ $color-background:rgb(60,182, 64,1);
  $display-none: none;
  $auto: auto;
  // 
@@ -151,7 +139,8 @@
          }
          .diseño-card-general {
              background-color: white;
-             box-shadow: 0px 4px 12px 7px darkslategrey
+             box-shadow: 0px 4px 12px 7px darkslategrey;
+             font-size: 10px;
          }
          .tarjetas-datos-universo {
              @include flex-centrar();
