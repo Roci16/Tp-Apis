@@ -207,13 +207,13 @@ botonPrimeraPagina.onclick = () => {
     paginaActual = 1
     paginaUnoDesabilitado()
     numeroActualizoPagina()
-    if(formBusquedaUniversos.style.display = "flex"){
+    if(formBusquedaUniversos.style.display === "flex"){
         universos()
         }
-    else if(formBusquedaPersonaje.style.display = "flex"){
+    else if(formBusquedaPersonaje.style.display === "flex"){
      personajes()
     }
-    else if (formBusquedaCapitulos.style.display = "flex"){
+    else if (formBusquedaCapitulos.style.display === "flex"){
         capitulos()
     }
 }
@@ -222,13 +222,13 @@ botonUltimaPagina.onclick = () => {
     paginaActual = ultimaPagina
     paginaUltimaDesabilitado()
     numeroActualizoPagina()
-    if(formBusquedaUniversos.style.display = "flex"){
+    if(formBusquedaUniversos.style.display === "flex"){
         universos()
         }
-    else if(formBusquedaPersonaje.style.display = "flex"){
+    else if(formBusquedaPersonaje.style.display === "flex"){
      personajes()
     }
-    else if (formBusquedaCapitulos.style.display = "flex"){
+    else if (formBusquedaCapitulos.style.display === "flex"){
         capitulos()
     }
 }
