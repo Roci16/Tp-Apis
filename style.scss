@@ -60,12 +60,6 @@
              position: absolute;
              text-shadow: $sombra-texto;
              z-index: 1;
-             //  @media (max-width: 200px) {
-             //      header h1 {
-             //          color: blue;
-             //          font-size: 1rem;
-             //      }
-             //  }
          }
          #hero {
              width: $full;
@@ -144,7 +138,6 @@
          }
          .tarjetas-datos-universo {
              @include flex-centrar();
-             background-color: blue;
              height: 250px;
              margin: 10px;
              width: 20%;
