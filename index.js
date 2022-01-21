@@ -59,17 +59,17 @@ const universos = () => {
     }
     // llamado para capitulos
 const capitulos = () => {
-        fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
-            .then((res) => res.json())
-            .then((data) => {
-                ultimaPagina = data.info.pages
-                mostrarTarjetasCapitulos(data.results)
-                    // clickPorTarjeta()
+    fetch(`https://rickandmortyapi.com/api/episode?page=${paginaActual}`)
+        .then((res) => res.json())
+        .then((data) => {
+            ultimaPagina = data.info.pages
+            mostrarTarjetasCapitulos(data.results)
+                // clickPorTarjeta()
 
-            })
-    }
+        })
+}
 
-    
+
 //------------------------------------------------------------------------
 // eventos botones nav onclick
 
@@ -278,33 +278,33 @@ const mostrarTarjetasCapitulos = capitulos => {
     //--------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------
-    // funcion buscar personaje por id cuando haces click se abre tarjeta detalle donde te muestra toda la info
-    const buscarPersonaje = (id) => {
-        fetch(`https://rickandmortyapi.com/api/character/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                tarjetaDetalle(data)
-            })
-    }
+// funcion buscar personaje por id cuando haces click se abre tarjeta detalle donde te muestra toda la info
+const buscarPersonaje = (id) => {
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            tarjetaDetalle(data)
+        })
+}
 
 // bucar universo por id
-    const buscarUniversoId = (id) => {
-        fetch(`https://rickandmortyapi.com/api/location/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                tarjetaDetalle(data)
-            })
-    }
-    
+const buscarUniversoId = (id) => {
+    fetch(`https://rickandmortyapi.com/api/location/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            tarjetaDetalle(data)
+        })
+}
+
 // buscar capitulo por id
-    const buscarcapituloId = (id) => {
-        fetch(`https://rickandmortyapi.com/api/episode/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                tarjetaDetalle(data)
-            })
-    }
-    
+const buscarcapituloId = (id) => {
+    fetch(`https://rickandmortyapi.com/api/episode/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            tarjetaDetalle(data)
+        })
+}
+
 
 
 // click por tajeta que muestra el detalle click y que haga algo falta el de universos y capitulos
@@ -312,26 +312,23 @@ const clickPorTarjetaPersonaje = () => {
     const tarjetas = document.querySelectorAll(".tarjetas-datos")
 
 
-        for (let i = 0; i < tarjetas.length; i++) {
-            tarjetas[i].onclick = () => {//tendra que poner un if else que si esta en display none o flex solamente personajes 
-                const idTarjetas = tarjetas[i].dataset.id
-                if(formBusquedaPersonaje.style.display === "flex"){
-                    buscarPersonaje(idTarjetas)
-                }
-                else if(formBusquedaUniversos.style.display === "flex"){
-                    buscarUniversoId(idTarjetas)
-                }
-
-                else if(formBusquedaCapitulos.style.display === "flex"){
-                    buscarcapituloId(idTarjetas)
-                }
-                 //dentro de esta funcion esta la funcion mostrar detalles por tarjeta
-                seccionDetalles.classList.add("detalles")//se le agrega el flex
+    for (let i = 0; i < tarjetas.length; i++) {
+        tarjetas[i].onclick = () => { //tendra que poner un if else que si esta en display none o flex solamente personajes 
+            const idTarjetas = tarjetas[i].dataset.id
+            if (formBusquedaPersonaje.style.display === "flex") {
+                buscarPersonaje(idTarjetas)
+            } else if (formBusquedaUniversos.style.display === "flex") {
+                buscarUniversoId(idTarjetas)
+            } else if (formBusquedaCapitulos.style.display === "flex") {
+                buscarcapituloId(idTarjetas)
             }
+            //dentro de esta funcion esta la funcion mostrar detalles por tarjeta
+            seccionDetalles.classList.add("detalles") //se le agrega el flex
         }
     }
-
 }
+
+
 
 //hace un for a todas las tarjetas que tiene en la funcion onclick
 //decirle que 
