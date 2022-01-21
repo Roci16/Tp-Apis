@@ -68,13 +68,16 @@ const capitulos = () => {
 
             })
     }
+
     
 //------------------------------------------------------------------------
 // eventos botones nav onclick
+
 botonPersonajes.onclick = () => {
     paginaActual = 1
     numeroActualizoPaginaBusqueda()
     personajes()
+    numeroActualizoPagina(paginaActual = 1)
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "flex"
     conteinerBotonesPrincipales.style.display = "flex"
@@ -89,6 +92,7 @@ botonUniversos.onclick = () => {
     paginaActual = 1
     numeroActualizoPaginaBusqueda()
     universos()
+    numeroActualizoPagina(paginaActual = 1)
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "none"
     formBusquedaCapitulos.style.display = "none"
@@ -102,6 +106,7 @@ botonCapitulos.onclick = () => {
     paginaActual = 1
     numeroActualizoPaginaBusqueda()
     capitulos()
+    numeroActualizoPagina(paginaActual = 1)
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "none"
     formBusquedaCapitulos.style.display = "flex"
@@ -138,8 +143,8 @@ const paginaUltimaDesabilitado = () => {
 
 // FUNCIONES AUXILIARES PARA PAGINADO POR FILTRO
 
-const prevOnclick = () =>{
-  paginaActual--
+const prevOnclick = () => {
+    paginaActual--
 
     if (paginaActual == 1) {
         prev.disabled = true
@@ -150,7 +155,7 @@ const prevOnclick = () =>{
 
 }
 
-const nextOnclick = () =>{
+const nextOnclick = () => {
     paginaActual + 1
 
     if (paginaActual == 41) {
@@ -168,28 +173,24 @@ const nextOnclick = () =>{
 
 prev.onclick = () => {
     prevOnclick()
-    numeroActualizoPagina() 
-    if(formBusquedaUniversos.style.display === "flex"){
+    numeroActualizoPagina()
+    if (formBusquedaUniversos.style.display === "flex") {
         universos()
-        }
-    else if(formBusquedaPersonaje.style.display === "flex"){
-     personajes()
-    }
-    else if (formBusquedaCapitulos.style.display === "flex")
+    } else if (formBusquedaPersonaje.style.display === "flex") {
+        personajes()
+    } else if (formBusquedaCapitulos.style.display === "flex")
         capitulos()
-    }
+}
 
 
 next.onclick = () => {
     nextOnclick()
     numeroActualizoPagina()
-    if(formBusquedaUniversos.style.display === "flex"){
+    if (formBusquedaUniversos.style.display === "flex") {
         universos()
-        }
-    else if(formBusquedaPersonaje.style.display === "flex"){
-     personajes()
-    }
-    else if (formBusquedaCapitulos.style.display === "flex"){
+    } else if (formBusquedaPersonaje.style.display === "flex") {
+        personajes()
+    } else if (formBusquedaCapitulos.style.display === "flex") {
         capitulos()
     }
 
@@ -199,13 +200,11 @@ botonPrimeraPagina.onclick = () => {
     paginaActual = 1
     paginaUnoDesabilitado()
     numeroActualizoPagina()
-    if(formBusquedaUniversos.style.display === "flex"){
+    if (formBusquedaUniversos.style.display === "flex") {
         universos()
-        }
-    else if(formBusquedaPersonaje.style.display === "flex"){
-     personajes()
-    }
-    else if (formBusquedaCapitulos.style.display === "flex"){
+    } else if (formBusquedaPersonaje.style.display === "flex") {
+        personajes()
+    } else if (formBusquedaCapitulos.style.display === "flex") {
         capitulos()
     }
 }
@@ -214,13 +213,11 @@ botonUltimaPagina.onclick = () => {
     paginaActual = ultimaPagina
     paginaUltimaDesabilitado()
     numeroActualizoPagina()
-    if(formBusquedaUniversos.style.display === "flex"){
+    if (formBusquedaUniversos.style.display === "flex") {
         universos()
-        }
-    else if(formBusquedaPersonaje.style.display === "flex"){
-     personajes()
-    }
-    else if (formBusquedaCapitulos.style.display === "flex"){
+    } else if (formBusquedaPersonaje.style.display === "flex") {
+        personajes()
+    } else if (formBusquedaCapitulos.style.display === "flex") {
         capitulos()
     }
 }
@@ -312,7 +309,8 @@ const mostrarTarjetasCapitulos = capitulos => {
 
 // click por tajeta que muestra el detalle click y que haga algo falta el de universos y capitulos
 const clickPorTarjetaPersonaje = () => {
-        const tarjetas = document.querySelectorAll(".tarjetas-datos")
+    const tarjetas = document.querySelectorAll(".tarjetas-datos")
+
 
         for (let i = 0; i < tarjetas.length; i++) {
             tarjetas[i].onclick = () => {//tendra que poner un if else que si esta en display none o flex solamente personajes 
@@ -331,13 +329,14 @@ const clickPorTarjetaPersonaje = () => {
                 seccionDetalles.classList.add("detalles")//se le agrega el flex
             }
         }
-
     }
 
-    //hace un for a todas las tarjetas que tiene en la funcion onclick
-    //decirle que 
-    //tarjeta detalle creacion de tarjeta unica
-    // TARJETA DETALLE
+}
+
+//hace un for a todas las tarjetas que tiene en la funcion onclick
+//decirle que 
+//tarjeta detalle creacion de tarjeta unica
+// TARJETA DETALLE
 const tarjetaDetalle = data => {
 
     seccionDetalles.style.display = "flex"

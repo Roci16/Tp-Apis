@@ -3,15 +3,6 @@
      margin: 0;
  }
  
- //la imagen del hero esta muy grande la tengo que achicar
- //el nav estari bueno que quede fixed arriba cuando vamos recorriendo el main
- //todos los estilos son pruebas de cosas se pueden cambiar
- //  $color-principal-modo-claro: #733f17;
- //  $color-secundario-modo-claro: #c88251;
- //  $color-terciario-modo-claro: #3f0000;
- //  $color-acento-modo-claro: #EDA01A;
- //  $color-cuarto-modo-claro: #d8aa6e;
- // 
  // Variables
  $font-principal:'Titillium Web';
  $full:100%;
@@ -32,14 +23,26 @@
  0 0 40px $color-sombra,
  0 0 55px $color-sombra,
  0 0 75px $color-sombra,
- 2px 2px 2px rgba(206,89,55,0),2px 2px 2px 
- rgba(206,89,55,0);
- $color-boton:rgb(145,200,70,1);
+ 2px 2px 2px rgba(206,
+ 89,
+ 55,
+ 0),
+ 2px 2px 2px rgba(206,
+ 89,
+ 55,
+ 0);
+ $color-boton:rgb(145,
+ 200,
+ 70,
+ 1);
  $transparente:transparent;
  $color-tipografia-modo-claro: #f7d4bd;
- $color-background:rgb(60,182,64,1);
+ $color-background:rgb(60,
+ 182,
+ 64,
+ 1);
  $display-none: none;
- $auto : auto;
+ $auto: auto;
  // 
  //Mixins
  @mixin flex-centrar($content: center,
@@ -92,7 +95,7 @@
          font-style: $grosor-font;
          margin: $escala-baja;
          padding: $escala-baja;
-         width:  $auto;
+         width: $auto;
          input {
              border-radius: 50px;
              box-shadow: $sombra-generica;
@@ -122,7 +125,6 @@
              #form-busqueda-capitulos {
                  display: none;
                  @include flex-centrar($content: center, $direccion: column)
-
              }
              #form-busqueda-personaje {
                  display: none;
@@ -141,8 +143,11 @@
          font-family: $font-principal;
          width: $full;
          .tarjetas-orden {
-             @include flex-centrar($content: space-between, $direccion: row);
+             @include flex-centrar($content: center, $direccion: row);
              padding: $escala-media-baja;
+         }
+         .tarjetas-datos {
+             margin: $escala-media-baja;
          }
          .tarjetas-datos-universo {
              @include flex-centrar();
@@ -155,7 +160,7 @@
              }
          }
          #tarjeta-detalles {
-             @include flex-centrar($direccion: row);
+             @include flex-centrar();
              z-index: 3;
              .tarjeta-detalle-individual {
                  @include flex-centrar();
@@ -239,58 +244,136 @@
          main article #seccion-tarjeta div img {
              width: $full;
          }
-         main section .tarjetas-datos-universo{
+         main section .tarjetas-datos-universo {
              font-size: 0.4rem;
-             height:  $auto;
+             height: $auto;
              width: $full;
              background-color: #FFF;
          }
-         footer div a h3 {
+         footer div h3 {
              font-size: 20px;
          }
          footer div a h5 {
              font-size: 10px;
          }
      }
-     @media screen and (min-width: 291px) and (max-width: 376px){
-        header h1 {
-            font-size: 1.8rem;
-        }
-        nav button,
-        main article button {
-            font-size: 9px;
-            height:3rem;
-            width: 3rem;
-        }
-        nav #div-input-busqueda #form-busqueda-capitulos,
-        nav #div-input-busqueda #form-busqueda-universos,
-        nav #div-input-busqueda #form-busqueda-personaje {
-            @include flex-centrar();
-            font-size: 20px;
-        }
-        nav #div-input-busqueda #form-busqueda-capitulos input,
-        nav #div-input-busqueda #form-busqueda-universos input,
-        nav #div-input-busqueda #form-busqueda-personaje input {
-            height: 30px;
-            width: 180px;
-        }
-        main #tarjetas-principales {
-            width: 15em;
-        }
-        main article #seccion-tarjeta div img {
-            width: $full;
-        }
-        main section .tarjetas-datos-universo{
-            font-size: 0.7rem;
-            height:  $auto;
-            width: $full;
-            background-color: #FFF;
-        }
-        footer div a h3 {
-            font-size: 25px;
-        }
-        footer div a h5 {
-            font-size: 15px;
-        }
+     @media screen and (min-width: 291px) and (max-width: 376px) {
+         header h1 {
+             font-size: 1.8rem;
+         }
+         nav button,
+         main article button {
+             font-size: 9px;
+             height: 3rem;
+             width: 3rem;
+         }
+         nav #div-input-busqueda #form-busqueda-capitulos,
+         nav #div-input-busqueda #form-busqueda-universos,
+         nav #div-input-busqueda #form-busqueda-personaje {
+             @include flex-centrar();
+             font-size: 20px;
+         }
+         nav #div-input-busqueda #form-busqueda-capitulos input,
+         nav #div-input-busqueda #form-busqueda-universos input,
+         nav #div-input-busqueda #form-busqueda-personaje input {
+             height: 30px;
+             width: 180px;
+         }
+         main #tarjetas-principales {
+             width: 15em;
+         }
+         main article #seccion-tarjeta div img {
+             width: $full;
+         }
+         main section .tarjetas-datos-universo {
+             font-size: 0.7rem;
+             height: $auto;
+             width: $full;
+             background-color: #FFF;
+         }
+         footer div a h3 {
+             font-size: 25px;
+         }
+         footer div a h5 {
+             font-size: 15px;
+         }
+     }
+     @media screen and (min-width: 377px) and (max-width: 500px) {
+         header h1 {
+             font-size: 2.3rem;
+         }
+         nav #div-input-busqueda #form-busqueda-capitulos input,
+         nav #div-input-busqueda #form-busqueda-universos input,
+         nav #div-input-busqueda #form-busqueda-personaje input {
+             height: 40px;
+             width: 250px;
+         }
+         nav button,
+         main article button {
+             font-size: 12px;
+             height: 4rem;
+             width: 4rem;
+         }
+         main #tarjetas-principales {
+             width: 15em;
+         }
+         main article #seccion-tarjeta div img {
+             width: $full;
+         }
+         main section .tarjetas-datos-universo {
+             background-color: #FFF;
+             font-size: 1.2rem;
+             height: $auto;
+             width: $full;
+         }
+     }
+     @media screen and (min-width: 501px) and (max-width: 611px) {
+         header h1 {
+             font-size: 3rem;
+         }
+         main article section .tarjetas-datos {
+             width: 70%;
+         }
+         //  main #tarjetas-principales section {
+         //      display: flex;
+         //      justify-content: center;
+         //      flex-direction: column;
+         //      flex-wrap: wrap;
+         //      padding: $escala-media-baja;
+         //  }
+         main section .tarjetas-datos-universo {
+             background-color: #FFF;
+             font-size: 1.2rem;
+             height: $auto;
+             width: $full;
+         }
+     }
+     @media screen and (min-width: 612px) and (max-width: 768px) {
+         header h1 {
+             font-size: 3.7rem;
+         }
+         nav #div-input-busqueda #form-busqueda-capitulos input,
+         nav #div-input-busqueda #form-busqueda-universos input,
+         nav #div-input-busqueda #form-busqueda-personaje input {
+             height: 50px;
+             width: 300px;
+         }
+         main section .tarjetas-datos-universo {
+             background-color: #FFF;
+             font-size: 1.2rem;
+             height: $auto;
+             width: $full;
+         }
+     }
+     @media screen and (min-width: 769px) and (max-width: 1024px) {
+         header h1 {
+             font-size: 4.8rem;
+         }
+         nav #div-input-busqueda #form-busqueda-capitulos input,
+         nav #div-input-busqueda #form-busqueda-universos input,
+         nav #div-input-busqueda #form-busqueda-personaje input {
+             height: 60px;
+             width: 350px;
+         }
      }
  }
