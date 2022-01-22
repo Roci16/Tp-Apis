@@ -568,7 +568,7 @@ const buscarInfo = (nombre) => {
 
             ultimaPagina = data.info.pages
             mostrarResultado(data.results)
-            clickPorTarjetaPersonaje();
+            clickPorTarjeta();
             resultadoBusqueda.style.display = "flex"
         })
 
@@ -603,3 +603,34 @@ const buscarInfoCapitulo = (nombre) => {
         })
 
 }
+
+const select = document.getElementById("select-ordenar")
+
+// select.onchange =(e)=>{
+//     e.preventDefault()
+
+// }
+// const ordenarSelect = (value, data) =>{
+//         if(value=== "a/z"){
+//         console.log("a/z");
+//         const ordenarAZ = data.sort((a,b)=>{
+//             if(a.name < b.name){
+//                 return -1
+//             }
+//             if(a.name > b.name){
+//                 return 1
+//             }
+//             return 0
+//         })
+//         if (formBusquedaPersonaje.style.display === "flex") {
+//             buscarPersonaje(ordenarAZ)
+//         }
+//         else if (formBusquedaUniversos.style.display === "flex") {
+//             console.log("click universo");
+//             buscarUniversoId(ordenarAZ)
+//         }
+//         else if (formBusquedaCapitulos.style.display === "flex") {
+//             buscarcapituloId(ordenarAZ)
+//         }
+//     }
+// }
