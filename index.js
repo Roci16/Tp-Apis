@@ -145,7 +145,7 @@ const paginaUltimaDesabilitado = () => {
 const prevOnclick = () => {
     paginaActual--
 
-    if (paginaActual == 1) {
+    if(paginaActual = 1){
         prev.disabled = true
     }
     if (paginaActual < 42) {
@@ -170,7 +170,7 @@ const nextOnclick = () => {
 const prevBusquedaOnclick = ()=>{
     paginaActual--
 
-    if (paginaActual == 1) {
+    if (paginaActual = 1) {
         prevBusqueda.disabled = true
     }
     if (paginaActual < ultimaPagina) {
