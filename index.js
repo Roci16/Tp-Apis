@@ -46,7 +46,8 @@ const personajes = () => {
                 clickPorTarjeta()
             })
     }
-    // llamado para universos
+
+ // llamado para universos
 const universos = () => {
         fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}`)
             .then((res) => res.json())
@@ -166,6 +167,32 @@ const nextOnclick = () => {
 }
 
 
+const prevBusquedaOnclick = ()=>{
+    paginaActual--
+
+    if (paginaActual == 1) {
+        prevBusqueda.disabled = true
+    }
+    if (paginaActual < ultimaPagina) {
+        nextBusqueda.disabled = false
+    }
+}
+
+
+const nextBusquedaOnclick = ()=>{
+    paginaActual + 1
+
+    if (paginaActual == ultimaPagina) {
+        nextBusqueda.disabled = true
+    }
+
+    if (paginaActual == paginaActual++) {
+        prevBusqueda.disabled = false
+    }
+}
+
+
+
 //funcion Paginado Personajes en pantalla principal
 
 
@@ -229,15 +256,16 @@ const mostrarTarjetas = personajes => {
     const html = personajes.reduce((acc, curr) => {
 
         return acc + `
-            <div  aria-label="card 2"  class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
+            <div aria-label="card character ${curr.name}" class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
                 <h2>
                     ${curr.name}
                 </h2>
-                 <img src="${curr.image}" alt"rick and morty image">
+                 <img src="${curr.image}" alt"">
              </div>
 `
     }, "")
     seccionTarjetas.innerHTML = html
+    
 }
 
 // Muestra de universos en pantalla principal
@@ -246,11 +274,11 @@ const mostrarTarjetasUniversos = universos => {
     const html = universos.reduce((acc, curr) => {
 
         return acc + `
-            <div  aria-label="card 3"  class="tarjetas-datos tarjetas-datos-universo diseño-card-general" data-id=${curr.id}>
+            <div aria-label="card location ${curr.name}" class="tarjetas-datos tarjetas-datos-universo diseño-card-general" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
-                 <img src="imagenes/universos.jpg" alt"rick and morty universe image ">       
+                 <img src="imagenes/universos.jpg" alt"">       
              </div>
 `
     }, "")
@@ -263,11 +291,11 @@ const mostrarTarjetasCapitulos = capitulos => {
         const html = capitulos.reduce((acc, curr) => {
 
             return acc + `
-            <div  aria-label="card 4" class="tarjetas-datos diseño-card-general" data-id=${curr.id}>
+            <div  aria-label="card episode ${curr.name}" class="tarjetas-datos diseño-card-general" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
-                 <img src="imagenes/capitulos.png" alt="rick and morty chapter image">
+                 <img src="imagenes/capitulos.png" alt="">
              </div>
 `
         }, "")
@@ -342,7 +370,7 @@ const tarjetaDetallePersonaje = data => {
 
     seccionDetalles.innerHTML = `
     
-    <article class="tarjeta-detalle-individual">
+    <article aria-label="card" class="tarjeta-detalle-individual">
     <div id="menu-times">
         <i class="fas fa-times"></i>
     </div>
@@ -371,7 +399,7 @@ const tarjetaDetalleCapitulos = data => {
 
     seccionDetalles.innerHTML = `
     
-    <article class="tarjeta-detalle-individual">
+    <article aria-label="card" class="tarjeta-detalle-individual">
     <div id="menu-times">
         <i class="fas fa-times"></i>
     </div>
@@ -398,7 +426,7 @@ const tarjetaDetalleUniverso = data => {
 
     seccionDetalles.innerHTML = `
     
-    <article class="tarjeta-detalle-individual-universo">
+    <article aria-label="card" class="tarjeta-detalle-individual-universo">
     <div id="menu-times">
         <i class="fas fa-times"></i>
     </div>
@@ -428,53 +456,14 @@ formBusquedaCapitulos.oninput = e => {
     seccionTarjetas.style.display = "none"
     resultadoBusqueda.style.display = "flex"
     conteinerBotonesPrincipales.style.display = "none"
-}
 
-// Busqueda de universo
-formBusquedaUniversos.oninput = e => {
-    e.preventDefault()
-    const valorBusqueda = inputBusquedaUniversos.value
-    buscarInfoUniverso(valorBusqueda)
-
-    seccionTarjetas.style.display = "none"
-    resultadoBusqueda.style.display = "flex"
-    conteinerBotonesPrincipales.style.display = "none"
-}
-
-// Busqueda de personajes
-formBusquedaPersonaje.oninput = e => {
-    e.preventDefault()
-    const valorBusqueda = inputBusquedaPersonaje.value
-
-    buscarInfo(valorBusqueda)
-
-    seccionTarjetas.style.display = "none"
-    resultadoBusqueda.style.display = "flex"
-    conteinerBotonesPrincipales.style.display = "none"
-    botonesPaginaBusqueda.style.display = "flex"
-
-    nextBusqueda.onclick = () => {
-        paginaActual + 1
-
-        if (paginaActual == ultimaPagina) {
-            nextBusqueda.disabled = true
-        }
-
-        if (paginaActual == paginaActual++) {
-            prevBusqueda.disabled = false
-        }
+    prevBusqueda.onclick = () => {
+        prevBusquedaOnclick()
         numeroActualizoPaginaBusqueda()
         buscarInfo(valorBusqueda)
-    }
-    prevBusqueda.onclick = () => {
-        paginaActual--
-
-        if (paginaActual == 1) {
-            prevBusqueda.disabled = true
-        }
-        if (paginaActual < ultimaPagina) {
-            nextBusqueda.disabled = false
-        }
+    } 
+    nextBusqueda.onclick = () => {
+        nextBusquedaOnclick()
         numeroActualizoPaginaBusqueda()
         buscarInfo(valorBusqueda)
     }
@@ -489,8 +478,82 @@ formBusquedaPersonaje.oninput = e => {
         paginaActual = ultimaPagina
         paginaUltimaDesabilitado()
         numeroActualizoPaginaBusqueda()
+          buscarInfo(valorBusqueda)
+    } 
+ 
+}
+
+// Busqueda de universo
+formBusquedaUniversos.oninput = e => {
+    e.preventDefault()
+    const valorBusqueda = inputBusquedaUniversos.value
+    buscarInfoUniverso(valorBusqueda)
+
+    seccionTarjetas.style.display = "none"
+    resultadoBusqueda.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "none"
+
+    prevBusqueda.onclick = () => {
+        prevBusquedaOnclick()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    } 
+    nextBusqueda.onclick = () => {
+        nextBusquedaOnclick()
+        numeroActualizoPaginaBusqueda()
         buscarInfo(valorBusqueda)
     }
+    botonPrimeraPaginaBusqueda.onclick = () => {
+        paginaActual = 1
+        paginaUnoDesabilitado()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    }
+
+    botonUltimaPaginaBusqueda.onclick = () => {
+        paginaActual = ultimaPagina
+        paginaUltimaDesabilitado()
+        numeroActualizoPaginaBusqueda()
+          buscarInfo(valorBusqueda)
+    } 
+ 
+}
+
+// Busqueda de personajes
+formBusquedaPersonaje.oninput = e => {
+    e.preventDefault()
+    const valorBusqueda = inputBusquedaPersonaje.value
+
+    buscarInfo(valorBusqueda)
+
+    seccionTarjetas.style.display = "none"
+    resultadoBusqueda.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "none"
+    botonesPaginaBusqueda.style.display = "flex"
+
+    prevBusqueda.onclick = () => {
+        prevBusquedaOnclick()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    } 
+    nextBusqueda.onclick = () => {
+        nextBusquedaOnclick()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    }
+    botonPrimeraPaginaBusqueda.onclick = () => {
+        paginaActual = 1
+        paginaUnoDesabilitado()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    }
+
+    botonUltimaPaginaBusqueda.onclick = () => {
+        paginaActual = ultimaPagina
+        paginaUltimaDesabilitado()
+        numeroActualizoPaginaBusqueda()
+          buscarInfo(valorBusqueda)
+    } 
 }
 
 //-----------------MOSTRAR RESULTADOS DE BUSQUEDA ------------------------------------------------------
@@ -516,7 +579,7 @@ const mostrarResultado = personaje => {
     }
     //Mostrar resultado de busqueda universos
 const mostrarResultadoUniversos = universos => {
-    seccionTarjetas.style.display = "none"
+
     conteinerBotonesPrincipales.style.display = "none"
     const resultados = universos.reduce((acc, curr) => {
 
