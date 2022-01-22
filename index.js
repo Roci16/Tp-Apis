@@ -44,7 +44,6 @@ const personajes = () => {
                 ultimaPagina = data.info.pages
                 mostrarTarjetas(data.results)
                 clickPorTarjeta()
-                seccionTarjetas.style.display = "flex"
             })
     }
     // llamado para universos
@@ -55,7 +54,6 @@ const universos = () => {
                 ultimaPagina = data.info.pages
                 mostrarTarjetasUniversos(data.results)
                 clickPorTarjeta()
-                
             })
     }
     // llamado para capitulos
@@ -66,7 +64,6 @@ const capitulos = () => {
             ultimaPagina = data.info.pages
             mostrarTarjetasCapitulos(data.results)
             clickPorTarjeta()
-
         })
 }
 
@@ -232,11 +229,11 @@ const mostrarTarjetas = personajes => {
     const html = personajes.reduce((acc, curr) => {
 
         return acc + `
-            <div class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
+            <div  aria-label="card 2"  class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
                 <h2>
                     ${curr.name}
                 </h2>
-                 <img src="${curr.image}">
+                 <img src="${curr.image}" alt"rick and morty image">
              </div>
 `
     }, "")
@@ -249,11 +246,11 @@ const mostrarTarjetasUniversos = universos => {
     const html = universos.reduce((acc, curr) => {
 
         return acc + `
-            <div class="tarjetas-datos tarjetas-datos-universo diseño-card-general" data-id=${curr.id}>
+            <div  aria-label="card 3"  class="tarjetas-datos tarjetas-datos-universo diseño-card-general" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
-                 <img src="imagenes/universos.jpg">
+                 <img src="imagenes/universos.jpg" alt"rick and morty universe image ">       
              </div>
 `
     }, "")
@@ -266,11 +263,11 @@ const mostrarTarjetasCapitulos = capitulos => {
         const html = capitulos.reduce((acc, curr) => {
 
             return acc + `
-<div class="tarjetas-datos diseño-card-general" data-id=${curr.id}>
+            <div  aria-label="card 4" class="tarjetas-datos diseño-card-general" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
-                 <img src="imagenes/capitulos.png">
+                 <img src="imagenes/capitulos.png" alt="rick and morty chapter image">
              </div>
 `
         }, "")

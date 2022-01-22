@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rick y Morty</title>
+    <title>Rick and Morty</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/55efe9bfd6.js" crossorigin="anonymous"></script>
     <link rel="icon" href="imagenes/favicon-verde.png" type="image/png" />
@@ -16,7 +16,7 @@
 
 
     <header>
-        <h1>Buscador Rick y Morty</h1>
+        <h1>Rick and Morty</h1>
         <img src="imagenes/rick-and-morty-en-nave-4518.jpg" alt="" id="hero">
 
     </header>
@@ -25,29 +25,29 @@
 
 
         <button id="boton-capitulos">
-            Capítulos
+            Episode
         </button>
 
         <button id="boton-personajes">
-            Personajes
+            Character
         </button>
 
         <button id="boton-universos">
-            Universos
+            Location
         </button>
 
         <div id="div-input-busqueda">
-            <label id="form-busqueda-capitulos"> ¿Que buscamos Rick?
-                <input id="input-busqueda-capitulos" type="text" placeholder="Buscar capitulos" >
+            <label id="form-busqueda-capitulos"> Rick, what do we look for?
+                <input id="input-busqueda-capitulos" type="text" placeholder="Search episodes" >
             </label>
-            <label id="form-busqueda-personaje"> ¿A quien buscamos Rick?
-                <input id="input-busqueda-personaje" type="text" placeholder="Buscar personaje" >
+            <label id="form-busqueda-personaje"> Who are we looking for Rick?
+                <input id="input-busqueda-personaje" type="text" placeholder="Search character" >
             </label>
-            <label id="form-busqueda-universos"> ¿A donde vamos Rick?
-                <input id="input-busqueda-universos" type="text" placeholder="Buscar universo" >
+            <label id="form-busqueda-universos"> Where are we going, Rick?
+                <input id="input-busqueda-universos" type="text" placeholder="Search location" >
             </label>
             <label>
-                Ordenar por:
+                Sort:
                 <select id="select-ordenar">
                     <option value="a/z">A/Z</option>
                     <option value="z/a">Z/A</option>
@@ -58,37 +58,37 @@
     </nav>
     <main>
         <article id="tarjetas-principales">
-            <section id="seccion-tarjeta" class="tarjetas-orden"></section>
+            <section aria-label="card 1"  id="seccion-tarjeta" class="tarjetas-orden"></section>
         </article>
         <section id="tarjeta-detalles"></section>
 
         <!-- Paginado personajes pag principal -->
         <article id="botones-paginado-principal">
-            <button id="primera-pagina">Primera</button>
-            <button id="prev">Anterior</button>
+            <button id="primera-pagina">First page</button>
+            <button id="prev">Prev</button>
             <span id="numero-pagina">1</span>
-            <button id="next">Siguiente</button>
-            <button id="ultima-pagina">Última</button>
+            <button id="next">Next</button>
+            <button id="ultima-pagina">Last page</button>
         </article>
 
         <!-- Páginado personaje en busqueda -->
         <section id="resultado-tarjetas" class="tarjetas-orden"></section>
         <article id="botones-paginado-busqueda">
-            <button id="primera-pagina-busqueda">Primera</button>
-            <button id="prev-busqueda">Página anterior</button>
+            <button id="primera-pagina-busqueda">First page</button>
+            <button id="prev-busqueda">Prev</button>
             <span id="numero-pagina-busqueda">1</span>
-            <button id="next-busqueda">Página siguiente</button>
-            <button id="ultima-pagina-busqueda">Última</button>
+            <button id="next-busqueda">Next</button>
+            <button id="ultima-pagina-busqueda">Last page</button>
         </article>
 
 
     </main>
     <footer>
 
-        <img src="imagenes/footer-png.png" alt="" id="">
+        <img src="imagenes/footer-png.png" alt="">
 
         <div id="redes-footer">
-            <h3>Hecho con amor♥</h3>
+            <h3>Made with lover♥</h3>
             <a href="https://github.com/florencialarreategui">
                 <h5>Github Flor</h5>
             </a>
