@@ -74,8 +74,6 @@ const capitulos = () => {
 
 botonPersonajes.onclick = () => {
     paginaActual = 1
-    numeroActualizoPaginaBusqueda()
-    personajes()
     numeroActualizoPagina(paginaActual = 1)
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "flex"
@@ -83,14 +81,13 @@ botonPersonajes.onclick = () => {
     formBusquedaCapitulos.style.display = "none"
     formBusquedaUniversos.style.display = "none"
     resultadoBusqueda.style.display = "none"
-
+    botonesPaginaBusqueda.style.display = "none"
+    personajes()
 }
 
 
 botonUniversos.onclick = () => {
     paginaActual = 1
-    numeroActualizoPaginaBusqueda()
-    universos()
     numeroActualizoPagina(paginaActual = 1)
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "none"
@@ -98,13 +95,14 @@ botonUniversos.onclick = () => {
     formBusquedaUniversos.style.display = "flex"
     resultadoBusqueda.style.display = "none"
     conteinerBotonesPrincipales.style.display = "flex"
+    botonesPaginaBusqueda.style.display = "none"
+    universos()
 }
 
 
 botonCapitulos.onclick = () => {
     paginaActual = 1
-    numeroActualizoPaginaBusqueda()
-    capitulos()
+
     numeroActualizoPagina(paginaActual = 1)
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "none"
@@ -112,6 +110,8 @@ botonCapitulos.onclick = () => {
     formBusquedaUniversos.style.display = "none"
     resultadoBusqueda.style.display = "none"
     conteinerBotonesPrincipales.style.display = "flex"
+    botonesPaginaBusqueda.style.display = "none"
+    capitulos()
 }
 
 //--------------paginado------------------------------------------------
@@ -145,7 +145,7 @@ const paginaUltimaDesabilitado = () => {
 const prevOnclick = () => {
     paginaActual--
 
-    if (paginaActual == 1) {
+    if(paginaActual = 1){
         prev.disabled = true
     }
     if (paginaActual < 42) {
@@ -170,7 +170,7 @@ const nextOnclick = () => {
 const prevBusquedaOnclick = ()=>{
     paginaActual--
 
-    if (paginaActual == 1) {
+    if (paginaActual = 1) {
         prevBusqueda.disabled = true
     }
     if (paginaActual < ultimaPagina) {
@@ -456,6 +456,7 @@ formBusquedaCapitulos.oninput = e => {
     seccionTarjetas.style.display = "none"
     resultadoBusqueda.style.display = "flex"
     conteinerBotonesPrincipales.style.display = "none"
+    botonesPaginaBusqueda.style.display = "flex"
 
     prevBusqueda.onclick = () => {
         prevBusquedaOnclick()
@@ -492,6 +493,7 @@ formBusquedaUniversos.oninput = e => {
     seccionTarjetas.style.display = "none"
     resultadoBusqueda.style.display = "flex"
     conteinerBotonesPrincipales.style.display = "none"
+    botonesPaginaBusqueda.style.display = "flex"
 
     prevBusqueda.onclick = () => {
         prevBusquedaOnclick()
