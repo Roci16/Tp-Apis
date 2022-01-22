@@ -166,6 +166,32 @@ const nextOnclick = () => {
 }
 
 
+const prevBusquedaOnclick = ()=>{
+    paginaActual--
+
+    if (paginaActual == 1) {
+        prevBusqueda.disabled = true
+    }
+    if (paginaActual < ultimaPagina) {
+        nextBusqueda.disabled = false
+    }
+}
+
+
+const nextBusquedaOnclick = ()=>{
+    paginaActual + 1
+
+    if (paginaActual == ultimaPagina) {
+        nextBusqueda.disabled = true
+    }
+
+    if (paginaActual == paginaActual++) {
+        prevBusqueda.disabled = false
+    }
+}
+
+
+
 //funcion Paginado Personajes en pantalla principal
 
 
@@ -428,53 +454,14 @@ formBusquedaCapitulos.oninput = e => {
     seccionTarjetas.style.display = "none"
     resultadoBusqueda.style.display = "flex"
     conteinerBotonesPrincipales.style.display = "none"
-}
 
-// Busqueda de universo
-formBusquedaUniversos.oninput = e => {
-    e.preventDefault()
-    const valorBusqueda = inputBusquedaUniversos.value
-    buscarInfoUniverso(valorBusqueda)
-
-    seccionTarjetas.style.display = "none"
-    resultadoBusqueda.style.display = "flex"
-    conteinerBotonesPrincipales.style.display = "none"
-}
-
-// Busqueda de personajes
-formBusquedaPersonaje.oninput = e => {
-    e.preventDefault()
-    const valorBusqueda = inputBusquedaPersonaje.value
-
-    buscarInfo(valorBusqueda)
-
-    seccionTarjetas.style.display = "none"
-    resultadoBusqueda.style.display = "flex"
-    conteinerBotonesPrincipales.style.display = "none"
-    botonesPaginaBusqueda.style.display = "flex"
-
-    nextBusqueda.onclick = () => {
-        paginaActual + 1
-
-        if (paginaActual == ultimaPagina) {
-            nextBusqueda.disabled = true
-        }
-
-        if (paginaActual == paginaActual++) {
-            prevBusqueda.disabled = false
-        }
+    prevBusqueda.onclick = () => {
+        prevBusquedaOnclick()
         numeroActualizoPaginaBusqueda()
         buscarInfo(valorBusqueda)
-    }
-    prevBusqueda.onclick = () => {
-        paginaActual--
-
-        if (paginaActual == 1) {
-            prevBusqueda.disabled = true
-        }
-        if (paginaActual < ultimaPagina) {
-            nextBusqueda.disabled = false
-        }
+    } 
+    nextBusqueda.onclick = () => {
+        nextBusquedaOnclick()
         numeroActualizoPaginaBusqueda()
         buscarInfo(valorBusqueda)
     }
@@ -489,8 +476,82 @@ formBusquedaPersonaje.oninput = e => {
         paginaActual = ultimaPagina
         paginaUltimaDesabilitado()
         numeroActualizoPaginaBusqueda()
+          buscarInfo(valorBusqueda)
+    } 
+ 
+}
+
+// Busqueda de universo
+formBusquedaUniversos.oninput = e => {
+    e.preventDefault()
+    const valorBusqueda = inputBusquedaUniversos.value
+    buscarInfoUniverso(valorBusqueda)
+
+    seccionTarjetas.style.display = "none"
+    resultadoBusqueda.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "none"
+
+    prevBusqueda.onclick = () => {
+        prevBusquedaOnclick()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    } 
+    nextBusqueda.onclick = () => {
+        nextBusquedaOnclick()
+        numeroActualizoPaginaBusqueda()
         buscarInfo(valorBusqueda)
     }
+    botonPrimeraPaginaBusqueda.onclick = () => {
+        paginaActual = 1
+        paginaUnoDesabilitado()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    }
+
+    botonUltimaPaginaBusqueda.onclick = () => {
+        paginaActual = ultimaPagina
+        paginaUltimaDesabilitado()
+        numeroActualizoPaginaBusqueda()
+          buscarInfo(valorBusqueda)
+    } 
+ 
+}
+
+// Busqueda de personajes
+formBusquedaPersonaje.oninput = e => {
+    e.preventDefault()
+    const valorBusqueda = inputBusquedaPersonaje.value
+
+    buscarInfo(valorBusqueda)
+
+    seccionTarjetas.style.display = "none"
+    resultadoBusqueda.style.display = "flex"
+    conteinerBotonesPrincipales.style.display = "none"
+    botonesPaginaBusqueda.style.display = "flex"
+
+    prevBusqueda.onclick = () => {
+        prevBusquedaOnclick()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    } 
+    nextBusqueda.onclick = () => {
+        nextBusquedaOnclick()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    }
+    botonPrimeraPaginaBusqueda.onclick = () => {
+        paginaActual = 1
+        paginaUnoDesabilitado()
+        numeroActualizoPaginaBusqueda()
+        buscarInfo(valorBusqueda)
+    }
+
+    botonUltimaPaginaBusqueda.onclick = () => {
+        paginaActual = ultimaPagina
+        paginaUltimaDesabilitado()
+        numeroActualizoPaginaBusqueda()
+          buscarInfo(valorBusqueda)
+    } 
 }
 
 //-----------------MOSTRAR RESULTADOS DE BUSQUEDA ------------------------------------------------------
