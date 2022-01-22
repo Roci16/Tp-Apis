@@ -46,7 +46,8 @@ const personajes = () => {
                 clickPorTarjeta()
             })
     }
-    // llamado para universos
+
+ // llamado para universos
 const universos = () => {
         fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}`)
             .then((res) => res.json())
@@ -255,15 +256,16 @@ const mostrarTarjetas = personajes => {
     const html = personajes.reduce((acc, curr) => {
 
         return acc + `
-            <div  aria-label="card 2"  class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
+            <div aria-label="card character ${curr.name}" class="tarjetas-datos diseño-card-general" data-id=${curr.id} >
                 <h2>
                     ${curr.name}
                 </h2>
-                 <img src="${curr.image}" alt"rick and morty image">
+                 <img src="${curr.image}" alt"">
              </div>
 `
     }, "")
     seccionTarjetas.innerHTML = html
+    
 }
 
 // Muestra de universos en pantalla principal
@@ -272,11 +274,11 @@ const mostrarTarjetasUniversos = universos => {
     const html = universos.reduce((acc, curr) => {
 
         return acc + `
-            <div  aria-label="card 3"  class="tarjetas-datos tarjetas-datos-universo diseño-card-general" data-id=${curr.id}>
+            <div aria-label="card location ${curr.name}" class="tarjetas-datos tarjetas-datos-universo diseño-card-general" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
-                 <img src="imagenes/universos.jpg" alt"rick and morty universe image ">       
+                 <img src="imagenes/universos.jpg" alt"">       
              </div>
 `
     }, "")
@@ -289,11 +291,11 @@ const mostrarTarjetasCapitulos = capitulos => {
         const html = capitulos.reduce((acc, curr) => {
 
             return acc + `
-            <div  aria-label="card 4" class="tarjetas-datos diseño-card-general" data-id=${curr.id}>
+            <div  aria-label="card episode ${curr.name}" class="tarjetas-datos diseño-card-general" data-id=${curr.id}>
                 <h2>
                     ${curr.name}
                 </h2>
-                 <img src="imagenes/capitulos.png" alt="rick and morty chapter image">
+                 <img src="imagenes/capitulos.png" alt="">
              </div>
 `
         }, "")
@@ -368,7 +370,7 @@ const tarjetaDetallePersonaje = data => {
 
     seccionDetalles.innerHTML = `
     
-    <article class="tarjeta-detalle-individual">
+    <article aria-label="card" class="tarjeta-detalle-individual">
     <div id="menu-times">
         <i class="fas fa-times"></i>
     </div>
@@ -397,7 +399,7 @@ const tarjetaDetalleCapitulos = data => {
 
     seccionDetalles.innerHTML = `
     
-    <article class="tarjeta-detalle-individual">
+    <article aria-label="card" class="tarjeta-detalle-individual">
     <div id="menu-times">
         <i class="fas fa-times"></i>
     </div>
@@ -424,7 +426,7 @@ const tarjetaDetalleUniverso = data => {
 
     seccionDetalles.innerHTML = `
     
-    <article class="tarjeta-detalle-individual-universo">
+    <article aria-label="card" class="tarjeta-detalle-individual-universo">
     <div id="menu-times">
         <i class="fas fa-times"></i>
     </div>
@@ -577,7 +579,7 @@ const mostrarResultado = personaje => {
     }
     //Mostrar resultado de busqueda universos
 const mostrarResultadoUniversos = universos => {
-    seccionTarjetas.style.display = "none"
+
     conteinerBotonesPrincipales.style.display = "none"
     const resultados = universos.reduce((acc, curr) => {
 

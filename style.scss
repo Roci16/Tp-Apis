@@ -42,11 +42,7 @@
      flex-wrap: wrap;
  }
  
- .oculto {
-     display: $display-none;
- }
- 
- //  
+  
  body {
      background: $color-background;
      background: linear-gradient(90deg, $color-background 0%, $color-boton 35%, rgba(242, 236, 32, 1) $full);
@@ -104,15 +100,15 @@
              @include flex-centrar($content: center, $direccion: column);
              display: $display-none;
              #form-busqueda-capitulos {
-                 display: none;
+                 display:  $display-none;
                  @include flex-centrar($content: center, $direccion: column)
              }
              #form-busqueda-personaje {
-                 display: none;
+                 display:  $display-none;
                  @include flex-centrar($content: center, $direccion: column)
              }
              #form-busqueda-universos {
-                 display: none;
+                 display:  $display-none;
                  @include flex-centrar($content: center, $direccion: column)
              }
          }
@@ -123,6 +119,7 @@
          background-image: url(imagenes/fondo-rick-morty.svg);
          font-family: $font-principal;
          width: $full;
+
          .tarjetas-orden { 
              @include flex-centrar($content: center, $direccion: row);
              padding: $escala-media-baja;
@@ -186,7 +183,7 @@
              z-index: 2;
          }
          #botones-paginado-principal {
-             display: none;
+             display:  $display-none;
          }
          #botones-paginado-busqueda {
              display: $display-none

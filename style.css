@@ -4,10 +4,6 @@
   margin: 0;
 }
 
-.oculto {
-  display: none;
-}
-
 body {
   background: #3cb640;
   background: linear-gradient(90deg, #3cb640 0%, #91c846 35%, #f2ec20 100%);
