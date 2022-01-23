@@ -31,10 +31,10 @@ const nextBusqueda = document.getElementById("next-busqueda")
 const botonPrimeraPaginaBusqueda = document.getElementById("primera-pagina-busqueda")
 const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqueda")
 
+// Sort
+const select = document.getElementById("select-ordenar")
 
 //---------------------FETCH--------------------------------
-//comunicacion con la api
-
 // llamado para personajes
 
 const personajes = () => {
@@ -307,7 +307,7 @@ const mostrarTarjetasCapitulos = capitulos => {
     //--------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------
-// funcion buscar personaje por id cuando haces click se abre tarjeta detalle donde te muestra toda la info
+// funcion buscar personaje por id 
 const buscarPersonaje = (id) => {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
         .then(res => res.json())
@@ -336,35 +336,30 @@ const buscarcapituloId = (id) => {
 
 
 
-// click por tajeta que muestra el detalle click y que haga algo falta el de universos y capitulos
+// click por tajeta que muestra el detalle 
 const clickPorTarjeta = () => {
     const tarjetas = document.querySelectorAll(".tarjetas-datos")
 
 
     for (let i = 0; i < tarjetas.length; i++) {
-        tarjetas[i].onclick = () => { //tendra que poner un if else que si esta en display none o flex solamente personajes 
+        tarjetas[i].onclick = () => { 
             const idTarjetas = tarjetas[i].dataset.id
             if (formBusquedaPersonaje.style.display === "flex") {
                 buscarPersonaje(idTarjetas)
             }
             if (formBusquedaUniversos.style.display === "flex") {
-                console.log("click universo");
                 buscarUniversoId(idTarjetas)
             }
             if (formBusquedaCapitulos.style.display === "flex") {
                 buscarcapituloId(idTarjetas)
             }
-            //dentro de esta funcion esta la funcion mostrar detalles por tarjeta
-            seccionDetalles.classList.add("detalles") //se le agrega el flex
+            seccionDetalles.classList.add("detalles") 
         }
     }
 }
 
 
 
-//hace un for a todas las tarjetas que tiene en la funcion onclick
-//decirle que 
-//tarjeta detalle creacion de tarjeta unica
 // TARJETA DETALLE
 const tarjetaDetallePersonaje = data => {
 
@@ -561,8 +556,7 @@ formBusquedaPersonaje.oninput = e => {
 }
 
 //-----------------MOSTRAR RESULTADOS DE BUSQUEDA ------------------------------------------------------
-//aca hay que modficar que sea mostrarResultadoPersonaje 
-const mostrarResultado = personaje => {
+const mostrarResultadoPersonaje = personaje => {
 
         const resultados = personaje.reduce((acc, curr) => {
 
@@ -631,7 +625,7 @@ const buscarInfo = (nombre) => {
         .then(data => {
 
             ultimaPagina = data.info.pages
-            mostrarResultado(data.results)
+            mostrarResultadoPersonaje(data.results)
             clickPorTarjeta();
             resultadoBusqueda.style.display = "flex"
         })
@@ -669,7 +663,7 @@ const buscarInfoCapitulo = (nombre) => {
 
 }
 
-const select = document.getElementById("select-ordenar")
+// Sort
 
 select.onchange =(e)=>{
     e.preventDefault()
@@ -683,8 +677,19 @@ select.onchange =(e)=>{
 }
 const ordenarSelect = (data,value) =>{
 
+        if(value === "sort"){
+             if (formBusquedaPersonaje.style.display === "flex") {
+                 mostrarTarjetas(ordenarAZ)
+                 }
+             else if (formBusquedaUniversos.style.display === "flex") {
+                       mostrarTarjetasUniversos(ordenarAZ)
+                     }
+            else if (formBusquedaCapitulos.style.display === "flex") {
+                         mostrarTarjetasCapitulos(ordenarAZ)
+                     }
+        }
+
         if(value === "a/z"){
-        console.log("a/z");
         const ordenarAZ =data.sort((a,b)=>{
             if(a.name < b.name){
                 return -1
@@ -698,17 +703,14 @@ const ordenarSelect = (data,value) =>{
             mostrarTarjetas(ordenarAZ)
         }
         else if (formBusquedaUniversos.style.display === "flex") {
-            console.log("click universo");
             mostrarTarjetasUniversos(ordenarAZ)
         }
         else if (formBusquedaCapitulos.style.display === "flex") {
             mostrarTarjetasCapitulos(ordenarAZ)
         }
-        console.log(ordenarAZ);
     }
 
     if(value === "z/a"){
-        console.log("z/a");
         const ordenarZA = data.sort((a,b) =>{
                  if(a.name > b.name){
             return -1
@@ -722,13 +724,11 @@ const ordenarSelect = (data,value) =>{
             mostrarTarjetas(ordenarZA)
         }
         else if (formBusquedaUniversos.style.display === "flex") {
-            console.log("click universo");
             mostrarTarjetasUniversos(ordenarZA)
         }
         else if (formBusquedaCapitulos.style.display === "flex") {
             mostrarTarjetasCapitulos(ordenarZA)
         }
-          console.log(ordenarZA);
     }
   
 }
