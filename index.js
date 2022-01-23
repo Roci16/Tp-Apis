@@ -44,6 +44,7 @@ const personajes = () => {
                 ultimaPagina = data.info.pages
                 mostrarTarjetas(data.results)
                 clickPorTarjeta()
+                ordenarSelect (data.results, select.value)
             })
     }
 
@@ -55,6 +56,7 @@ const universos = () => {
                 ultimaPagina = data.info.pages
                 mostrarTarjetasUniversos(data.results)
                 clickPorTarjeta()
+                ordenarSelect (data.results, select.value)
             })
     }
     // llamado para capitulos
@@ -65,6 +67,7 @@ const capitulos = () => {
             ultimaPagina = data.info.pages
             mostrarTarjetasCapitulos(data.results)
             clickPorTarjeta()
+            ordenarSelect (data.results, select.value)
         })
 }
 
@@ -631,7 +634,6 @@ const buscarInfo = (nombre) => {
             mostrarResultado(data.results)
             clickPorTarjeta();
             resultadoBusqueda.style.display = "flex"
-            // ordenarSelect (data.results)
         })
 
 }
@@ -647,7 +649,6 @@ const buscarInfoUniverso = (valor) => {
             mostrarResultadoUniversos(data.results)
             clickPorTarjeta();
             resultadoBusqueda.style.display = "flex"
-            // ordenarSelect (data.count)
         })
 
 }
@@ -663,71 +664,71 @@ const buscarInfoCapitulo = (nombre) => {
             mostrarResultadoCapitulos(data.results)
             clickPorTarjeta();
             resultadoBusqueda.style.display = "flex"
-            // ordenarSelect (data.results)
+            
         })
 
 }
 
-// const select = document.getElementById("select-ordenar")
+const select = document.getElementById("select-ordenar")
 
-// select.onchange =(e)=>{
-//     e.preventDefault()
-//     if (formBusquedaUniversos.style.display === "flex") {
-//         universos()
-//     } else if (formBusquedaPersonaje.style.display === "flex") {
-//         personajes()
-//     } else if (formBusquedaCapitulos.style.display === "flex") {
-//         capitulos()
-//     }
-// }
-// const ordenarSelect = (data) =>{
-//    const value = select.value
-//         if(value=== "a/z"){
-//         console.log("a/z");
-//         const ordenarAZ =data.sort((a,b)=>{
-//             if(a.name < b.name){
-//                 return -1
-//             }
-//             if(a.name > b.name){
-//                 return 1
-//             }
-//             return 0
-//         })
-//         if (formBusquedaPersonaje.style.display === "flex") {
-//             mostrarTarjetas(ordenarAZ)
-//         }
-//         else if (formBusquedaUniversos.style.display === "flex") {
-//             console.log("click universo");
-//             mostrarTarjetasUniversos(ordenarAZ)
-//         }
-//         else if (formBusquedaCapitulos.style.display === "flex") {
-//             mostrarTarjetasCapitulos(ordenarAZ)
-//         }
-//         console.log(ordenarAZ);
-//     }
+select.onchange =(e)=>{
+    e.preventDefault()
+    if (formBusquedaUniversos.style.display === "flex") {
+        universos()
+    } else if (formBusquedaPersonaje.style.display === "flex") {
+        personajes()
+    } else if (formBusquedaCapitulos.style.display === "flex") {
+        capitulos()
+    }
+}
+const ordenarSelect = (data,value) =>{
 
-//     if(value === "z/a"){
-//         console.log("z/a");
-//         const ordenarZA = data.sort((a,b) =>{
-//                  if(a.name > b.name){
-//             return -1
-//         }
-//         if(a.name < b.name){
-//             return 1
-//         }
-//         return 0   
-//         })
-//         if (formBusquedaPersonaje.style.display === "flex") {
-//             mostrarTarjetas(ordenarZA)
-//         }
-//         else if (formBusquedaUniversos.style.display === "flex") {
-//             console.log("click universo");
-//             mostrarTarjetasUniversos(ordenarZA)
-//         }
-//         else if (formBusquedaCapitulos.style.display === "flex") {
-//             mostrarTarjetasCapitulos(ordenarZA)
-//         }
-//           console.log(ordenarZA);
-//     }
+        if(value === "a/z"){
+        console.log("a/z");
+        const ordenarAZ =data.sort((a,b)=>{
+            if(a.name < b.name){
+                return -1
+            }
+            if(a.name > b.name){
+                return 1
+            }
+            return 0
+        })
+        if (formBusquedaPersonaje.style.display === "flex") {
+            mostrarTarjetas(ordenarAZ)
+        }
+        else if (formBusquedaUniversos.style.display === "flex") {
+            console.log("click universo");
+            mostrarTarjetasUniversos(ordenarAZ)
+        }
+        else if (formBusquedaCapitulos.style.display === "flex") {
+            mostrarTarjetasCapitulos(ordenarAZ)
+        }
+        console.log(ordenarAZ);
+    }
+
+    if(value === "z/a"){
+        console.log("z/a");
+        const ordenarZA = data.sort((a,b) =>{
+                 if(a.name > b.name){
+            return -1
+        }
+        if(a.name < b.name){
+            return 1
+        }
+        return 0   
+        })
+        if (formBusquedaPersonaje.style.display === "flex") {
+            mostrarTarjetas(ordenarZA)
+        }
+        else if (formBusquedaUniversos.style.display === "flex") {
+            console.log("click universo");
+            mostrarTarjetasUniversos(ordenarZA)
+        }
+        else if (formBusquedaCapitulos.style.display === "flex") {
+            mostrarTarjetasCapitulos(ordenarZA)
+        }
+          console.log(ordenarZA);
+    }
   
-// }
+}
