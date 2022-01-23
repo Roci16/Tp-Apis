@@ -1,8 +1,10 @@
  @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap');
+ 
+ 
  * {
      margin: 0;
  }
- 
+
  // Variables
  $font-principal:'Titillium Web';
  $full:100%;
@@ -87,6 +89,7 @@
              border-radius: $medium;
              box-shadow: $sombra-generica;
              font-family: $font-principal;
+             font-style: black 900;
              height: $escala-media;
              text-align: center;
              width: $escala-media;
