@@ -677,6 +677,18 @@ select.onchange =(e)=>{
 }
 const ordenarSelect = (data,value) =>{
 
+        if(value === "sort"){
+             if (formBusquedaPersonaje.style.display === "flex") {
+                 mostrarTarjetas(ordenarAZ)
+                 }
+             else if (formBusquedaUniversos.style.display === "flex") {
+                       mostrarTarjetasUniversos(ordenarAZ)
+                     }
+            else if (formBusquedaCapitulos.style.display === "flex") {
+                         mostrarTarjetasCapitulos(ordenarAZ)
+                     }
+        }
+
         if(value === "a/z"){
         const ordenarAZ =data.sort((a,b)=>{
             if(a.name < b.name){
