@@ -58,6 +58,7 @@ body nav button {
   border-radius: 50%;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   font-family: "Titillium Web";
+  font-style: black 900;
   height: 7em;
   text-align: center;
   width: 7em;
