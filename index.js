@@ -33,7 +33,7 @@ const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqued
 
 //modo oscuro
 const modoOscuroBoton = document.getElementById("div-modos")
-const main = document.querySelector("main")
+const body = document.querySelector("body")
 const nav = document.querySelector("nav")
  const tarjetas = document.querySelector(".diseño-card-general")
 const footer = document.querySelector("footer")
@@ -746,5 +746,6 @@ modoOscuroBoton.onclick = () =>{
     modoOscuroBoton.classList.toggle("iconos-oscuro") 
     nav.classList.toggle("modo-oscuro") 
     footer.classList.toggle("footer-oscuro") 
+    body.classList.toggle("modo-oscuro")
     tarjetas.classList.toggle("modo-oscuro")
 }
