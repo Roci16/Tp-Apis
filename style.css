@@ -191,6 +191,12 @@ body main .detalles {
   top: 0;
   width: 100%;
 }
+body main #not-found {
+  display: none;
+}
+body main #not-found img {
+  width: 50%;
+}
 body main button {
   background-color: #91c846;
   background-image: url("imagenes/fondo-botones.png");
