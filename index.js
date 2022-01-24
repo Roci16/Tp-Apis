@@ -31,6 +31,14 @@ const nextBusqueda = document.getElementById("next-busqueda")
 const botonPrimeraPaginaBusqueda = document.getElementById("primera-pagina-busqueda")
 const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqueda")
 
+//modo oscuro
+const modoOscuroBoton = document.getElementById("div-modos")
+const main = document.querySelector("main")
+const nav = document.querySelector("nav")
+ const tarjetas = document.querySelector(".diseño-card-general")
+const footer = document.querySelector("footer")
+
+
 // Sort
 const select = document.getElementById("select-ordenar")
 
@@ -731,4 +739,12 @@ const ordenarSelect = (data,value) =>{
         }
     }
   
+}
+
+//--------------funcion modo oscuro
+modoOscuroBoton.onclick = () =>{
+    modoOscuroBoton.classList.toggle("iconos-oscuro") 
+    nav.classList.toggle("modo-oscuro") 
+    footer.classList.toggle("footer-oscuro") 
+    tarjetas.classList.toggle("modo-oscuro")
 }

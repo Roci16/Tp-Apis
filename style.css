@@ -28,6 +28,16 @@ body header #hero {
   box-shadow: 0 0 15px 14px #031112;
   width: 100%;
 }
+body header #div-modos {
+  margin-top: 1rem;
+  background-color: transparent;
+  font-size: 2rem;
+  border: 5px outset #12b0c9;
+  border-radius: 50px;
+}
+body header .fa-sun {
+  display: none;
+}
 body nav {
   display: flex;
   justify-content: space-evenly;
@@ -226,6 +236,22 @@ body footer #redes-footer {
   font-style: bold 700;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
   z-index: 2;
+}
+body .modo-oscuro {
+  background-color: #1f3f16;
+  box-shadow: 6px 6px 6px 6px #49ff18, inset 10px 10px 10px 0px #49ff18;
+  color: #f7d4bd;
+}
+body .iconos-oscuro .fa-sun {
+  display: flex;
+  color: #49ff18;
+  font-size: 2.1rem;
+}
+body .iconos-oscuro .fa-moon {
+  display: none;
+}
+body .footer-oscuro {
+  filter: drop-shadow(0 -6mm 4mm #49ff18);
 }
 @media screen and (min-width: 200px) and (max-width: 290px) {
   body header h1 {

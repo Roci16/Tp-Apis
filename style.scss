@@ -29,10 +29,11 @@
  2px 2px 2px rgba(206,89,55,0);
  $color-boton:rgb(145, 200,70,1);
  $transparente:transparent;
- $color-tipografia-modo-claro: #f7d4bd;
+ $color-tipografia: #f7d4bd;
  $color-background:rgb(60,182, 64,1);
  $display-none: none;
  $auto: auto;
+ $background-color-modo-oscuro: rgb(31, 63, 22);
  // 
  //Mixins
  @mixin flex-centrar($content: center,
@@ -43,11 +44,22 @@
      flex-direction: $direccion;
      flex-wrap: wrap;
  }
+
+ 
+@mixin modoOscuro {
+    background-color:$background-color-modo-oscuro ;
+    box-shadow: 6px 6px 6px 6px $color-sombra, inset 10px 10px 10px 0px $color-sombra;
+    color: $color-tipografia ;
+    
+}
+
  
   
  body {
      background: $color-background;
      background: linear-gradient(90deg, $color-background 0%, $color-boton 35%, rgba(242, 236, 32, 1) $full);
+     
+     //-----------------------header------------------------------
      header {
          @include flex-centrar($content: start);
          h1 {
@@ -63,14 +75,28 @@
              box-shadow: 0 0 15px 14px #031112;
              width: $full;
          }
+         #div-modos{
+             margin-top: 1rem;
+             background-color:transparent;
+             font-size: 2rem;
+             border: 5px outset $color-relleno-font;
+             border-radius: 50px;
+         }
+
+         
+         .fa-sun{
+             display: $display-none;
+         }
      }
+
+     //------------------------nav---------------------------
      nav {
          @include flex-centrar($content: space-evenly, $direccion: row);
          background: rgb(31, 63, 22);
          background: radial-gradient(circle, rgb(28, 122, 104) 0%, rgb(25, 46, 5) $full);
          border-radius: 20px;
          box-shadow: 6px 6px 6px 6px #000000, inset 10px 10px 10px 0px #000000;
-         color: $color-tipografia-modo-claro;
+         color: $color-tipografia;
          font-family: $font-principal;
          font-size: 1.3em;
          font-style: $grosor-font;
@@ -117,6 +143,8 @@
              }
          }
      }
+
+     // ----------------main-----------------
      main {
          @include flex-centrar();
          background: $transparente;
@@ -193,6 +221,8 @@
              display: $display-none
          }
      }
+
+     //-------------------footer-----------------------
      footer {
          @include flex-centrar($content: end);
          width: $full;
@@ -212,6 +242,32 @@
              z-index: 2;
          }
      }
+     //---------------------modo oscuro---------------
+
+     .modo-oscuro{
+        @include modoOscuro()
+     }
+     
+     .iconos-oscuro{
+         .fa-sun{
+            display: flex;
+            color: $color-sombra;
+            font-size: 2.1rem;
+         }
+         .fa-moon{
+             display: none;
+         }
+     }
+
+    .footer-oscuro{
+    filter:drop-shadow(0 -6mm 4mm $color-sombra)
+    }
+
+
+
+
+
+     //----------------responsive---------------------
      @media screen and (min-width: 200px) and (max-width: 290px) {
          header h1 {
              font-size: 1rem;
