@@ -678,15 +678,17 @@ select.onchange =(e)=>{
 const ordenarSelect = (data,value) =>{
 
         if(value === "sort"){
-             if (formBusquedaPersonaje.style.display === "flex") {
-                 mostrarTarjetas(ordenarAZ)
+            const sinOrden = ()=>{
+                             if (formBusquedaPersonaje.style.display === "flex") {
+                 mostrarTarjetas(sinOrden)
                  }
              else if (formBusquedaUniversos.style.display === "flex") {
-                       mostrarTarjetasUniversos(ordenarAZ)
+                       mostrarTarjetasUniversos(sinOrden)
                      }
             else if (formBusquedaCapitulos.style.display === "flex") {
-                         mostrarTarjetasCapitulos(ordenarAZ)
+                         mostrarTarjetasCapitulos(sinOrden)
                      }
+            }
         }
 
         if(value === "a/z"){
