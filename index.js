@@ -34,6 +34,9 @@ const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqued
 // Sort
 const select = document.getElementById("select-ordenar")
 
+// Not Found 
+const notFound = document.getElementById("not-found")
+
 //---------------------FETCH--------------------------------
 // llamado para personajes
 
@@ -41,12 +44,12 @@ const personajes = () => {
         fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
             .then((res) => res.json())
             .then((data) => {
-                ultimaPagina = data.info.pages
-                mostrarTarjetas(data.results)
+                mostrarTarjetas(data.results)                  
                 clickPorTarjeta()
-                ordenarSelect (data.results, select.value)
-            })
-    }
+                ordenarSelect (data.results, select.value) 
+                ultimaPagina = data.info.pages  
+            }) 
+    }      
 
  // llamado para universos
 const universos = () => {
@@ -623,13 +626,20 @@ const buscarInfo = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${paginaActual}&name=${nombre}`)
         .then(res => res.json())
         .then(data => {
-
-            ultimaPagina = data.info.pages
-            mostrarResultadoPersonaje(data.results)
-            clickPorTarjeta();
-            resultadoBusqueda.style.display = "flex"
+            if(data. results === undefined){
+                resultadoBusqueda.style.display = "none"
+                notFound.style.display ="flex"
+                notFound.style.justifyContent = "center";
+                botonesPaginaBusqueda.style.display="none"
+                }
+            else{
+                ultimaPagina = data.info.pages
+                mostrarResultadoPersonaje(data.results)
+                clickPorTarjeta();
+                resultadoBusqueda.style.display = "flex"
+                notFound.style.display ="none"
+                }
         })
-
 }
 
 
@@ -638,13 +648,20 @@ const buscarInfoUniverso = (valor) => {
     fetch(`https://rickandmortyapi.com/api/location?page=${paginaActual}&name=${valor}`)
         .then(res => res.json())
         .then(data => {
-
-            ultimaPagina = data.info.pages
-            mostrarResultadoUniversos(data.results)
-            clickPorTarjeta();
-            resultadoBusqueda.style.display = "flex"
+            if(data. results === undefined){
+                resultadoBusqueda.style.display = "none"
+                notFound.style.display ="flex"
+                notFound.style.justifyContent = "center";
+                botonesPaginaBusqueda.style.display="none"
+                }
+            else{
+                ultimaPagina = data.info.pages
+                mostrarResultadoPersonaje(data.results)
+                clickPorTarjeta();
+                resultadoBusqueda.style.display = "flex"
+                notFound.style.display ="none"
+                }
         })
-
 }
 
 
@@ -653,12 +670,19 @@ const buscarInfoCapitulo = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/episode/?page=${paginaActual}&name=${nombre}`)
         .then(res => res.json())
         .then(data => {
-
-            ultimaPagina = data.info.pages
-            mostrarResultadoCapitulos(data.results)
-            clickPorTarjeta();
-            resultadoBusqueda.style.display = "flex"
-            
+            if(data. results === undefined){
+                resultadoBusqueda.style.display = "none"
+                notFound.style.display ="flex"
+                notFound.style.justifyContent = "center";
+                botonesPaginaBusqueda.style.display="none"
+                }
+            else{
+                ultimaPagina = data.info.pages
+                mostrarResultadoPersonaje(data.results)
+                clickPorTarjeta();
+                resultadoBusqueda.style.display = "flex"
+                notFound.style.display ="none"
+                }
         })
 
 }
