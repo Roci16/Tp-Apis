@@ -37,9 +37,9 @@ El proyecto puede visitarse [aqui](https://roci16.github.io/Tp-Apis/index.html)
 [Link GitHub](https://github.com/Roci16)
 
 ## Aquí se pueden apreciar el screen  del proyecto:
-![vista para celular](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/celular-modo-claro.png)
+![vista para celular](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/celular-modo-claro.png)![vista para celular modo oscuro](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/celular-modo-oscuro.png)
 
-![vista para celular modo oscuro](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/celular-modo-oscuro.png)
+
 
 ![vista escritorio](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/foto-portada.jpeg)
 
