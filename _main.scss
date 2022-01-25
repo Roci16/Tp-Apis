@@ -88,8 +88,8 @@ main {
     #botones-paginado-principal {
         display:  $display-none;
 
-        #numero-pagina-busqueda{
-           align-items: center;
+        .numero-paginado{
+           justify-content: center;
            font-family: $font-secundaria;
            
        }
