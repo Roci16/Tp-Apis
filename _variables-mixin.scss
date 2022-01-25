@@ -1,0 +1,48 @@
+// Variables
+$font-principal:'Titillium Web';
+$font-secundaria:'Rubik Beastly', cursive;
+
+$full:100%;
+$medium:50%;
+$escala-media:7em;
+$escala-media-baja:2em;
+$escala-baja:1em;
+$grosor-font: bold 700;
+$color-relleno-font:#12b0c9;
+$sombra-generica: 1px 1px 1px 1px #000000,
+inset 4px 4px 5px 0px #000000;
+$color-sombra:#49ff18;
+$sombra-texto:0 0 5px #FFF,
+0 0 10px #FFF,
+0 0 15px #FFF,
+0 0 20px $color-sombra,
+0 0 30px $color-sombra,
+0 0 40px $color-sombra,
+0 0 55px $color-sombra,
+0 0 75px $color-sombra,
+2px 2px 2px rgba(206,89,55,0),
+2px 2px 2px rgba(206,89,55,0);
+$color-boton:rgb(145, 200,70,1);
+$transparente:transparent;
+$color-tipografia: #f7d4bd;
+$color-background:rgb(60,182, 64,1);
+$display-none: none;
+$auto: auto;
+$background-color-modo-oscuro: rgb(31, 63, 22);
+// 
+//Mixins
+@mixin flex-centrar($content: center,
+$direccion: column) {
+    display: flex;
+    justify-content: $content;
+    align-items: center;
+    flex-direction: $direccion;
+    flex-wrap: wrap;
+}
+
+
+@mixin modoOscuro {
+   background-color:$background-color-modo-oscuro ;
+   box-shadow: 6px 6px 6px 6px $color-sombra, inset 10px 10px 10px 0px $color-sombra;
+   
+}

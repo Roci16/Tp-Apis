@@ -1,0 +1,29 @@
+//---------------------modo oscuro---------------
+
+body.modo-oscuro-body{
+    background-color:$background-color-modo-oscuro ;
+    background: linear-gradient(90deg, $background-color-modo-oscuro 0%, $background-color-modo-oscuro 35%, $background-color-modo-oscuro $full);
+ }
+
+.modo-oscuro{
+    @include modoOscuro()
+ }
+ 
+ 
+ .iconos-oscuro{
+     .fa-sun{
+        display: flex;
+        color: $color-sombra;
+        font-size: 2.1rem;
+     }
+     .fa-moon{
+         display: none;
+     }
+ }
+
+.footer-oscuro{
+filter:drop-shadow(0 -6mm 4mm $color-sombra)
+}
+
+
+

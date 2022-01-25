@@ -1,27 +1,37 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap");
-* {
-  margin: 0;
-}
-
 body.modo-oscuro-body {
   background-color: #1f3f16;
   background: linear-gradient(90deg, #1f3f16 0%, #1f3f16 35%, #1f3f16 100%);
 }
 
-body {
-  background: #3cb640;
-  background: linear-gradient(90deg, #3cb640 0%, #91c846 35%, #f2ec20 100%);
+.modo-oscuro {
+  background-color: #1f3f16;
+  box-shadow: 6px 6px 6px 6px #49ff18, inset 10px 10px 10px 0px #49ff18;
 }
-body header {
+
+.iconos-oscuro .fa-sun {
+  display: flex;
+  color: #49ff18;
+  font-size: 2.1rem;
+}
+.iconos-oscuro .fa-moon {
+  display: none;
+}
+
+.footer-oscuro {
+  filter: drop-shadow(0 -6mm 4mm #49ff18);
+}
+
+header {
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
 }
-body header h1 {
+header h1 {
   color: #12b0c9;
   font-family: "Titillium Web";
   font-size: 7em;
@@ -30,21 +40,22 @@ body header h1 {
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
   z-index: 1;
 }
-body header #hero {
+header #hero {
   box-shadow: 0 0 15px 14px #031112;
   width: 100%;
 }
-body header #div-modos {
+header #div-modos {
   margin-top: 1rem;
   background-color: transparent;
   font-size: 2rem;
   border: 5px outset #12b0c9;
   border-radius: 50px;
 }
-body header .fa-sun {
+header .fa-sun {
   display: none;
 }
-body nav {
+
+nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -62,13 +73,13 @@ body nav {
   padding: 1em;
   width: auto;
 }
-body nav input {
+nav input {
   border-radius: 50px;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   height: 2.5rem;
   width: 18em;
 }
-body nav button {
+nav button {
   background-color: #91c846;
   background-image: url("imagenes/fondo-botones.png");
   background-size: cover;
@@ -80,13 +91,13 @@ body nav button {
   text-align: center;
   width: 7em;
 }
-body nav select {
+nav select {
   border-radius: 20px;
   box-shadow: 1px 1px 1px 1px #000000, inset 4px 4px 5px 0px #000000;
   height: 2.1rem;
   width: 6rem;
 }
-body nav #div-input-busqueda {
+nav #div-input-busqueda {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,7 +105,7 @@ body nav #div-input-busqueda {
   flex-wrap: wrap;
   display: none;
 }
-body nav #div-input-busqueda #form-busqueda-capitulos {
+nav #div-input-busqueda #form-busqueda-capitulos {
   display: none;
   display: flex;
   justify-content: center;
@@ -102,7 +113,7 @@ body nav #div-input-busqueda #form-busqueda-capitulos {
   flex-direction: column;
   flex-wrap: wrap;
 }
-body nav #div-input-busqueda #form-busqueda-personaje {
+nav #div-input-busqueda #form-busqueda-personaje {
   display: none;
   display: flex;
   justify-content: center;
@@ -110,7 +121,7 @@ body nav #div-input-busqueda #form-busqueda-personaje {
   flex-direction: column;
   flex-wrap: wrap;
 }
-body nav #div-input-busqueda #form-busqueda-universos {
+nav #div-input-busqueda #form-busqueda-universos {
   display: none;
   display: flex;
   justify-content: center;
@@ -118,7 +129,8 @@ body nav #div-input-busqueda #form-busqueda-universos {
   flex-direction: column;
   flex-wrap: wrap;
 }
-body main {
+
+main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,7 +141,7 @@ body main {
   font-family: "Titillium Web";
   width: 100%;
 }
-body main .tarjetas-orden {
+main .tarjetas-orden {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,10 +149,10 @@ body main .tarjetas-orden {
   flex-wrap: wrap;
   padding: 2em;
 }
-body main .tarjetas-datos {
+main .tarjetas-datos {
   margin: 2em;
 }
-body main .diseño-card-general {
+main .diseño-card-general {
   background-color: #bcc7b9bf;
   border-radius: 10px;
   box-shadow: 0px 4px 12px 7px darkslategrey;
@@ -148,10 +160,10 @@ body main .diseño-card-general {
   text-align: center;
   padding: 5px;
 }
-body main .diseño-card-general img {
+main .diseño-card-general img {
   width: 90%;
 }
-body main .tarjetas-datos-universo {
+main .tarjetas-datos-universo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,10 +173,10 @@ body main .tarjetas-datos-universo {
   margin: 10px;
   width: 20%;
 }
-body main .tarjetas-datos-universo img {
+main .tarjetas-datos-universo img {
   width: 50%;
 }
-body main #tarjeta-detalles {
+main #tarjeta-detalles {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,7 +184,7 @@ body main #tarjeta-detalles {
   flex-wrap: wrap;
   z-index: 3;
 }
-body main #tarjeta-detalles .tarjeta-detalle-individual {
+main #tarjeta-detalles .tarjeta-detalle-individual {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,10 +195,10 @@ body main #tarjeta-detalles .tarjeta-detalle-individual {
   border-radius: 50px;
   height: 500px;
 }
-body main #tarjeta-detalles .tarjeta-detalle-individual img {
+main #tarjeta-detalles .tarjeta-detalle-individual img {
   width: 90%;
 }
-body main #tarjeta-detalles .tarjeta-detalle-individual-universo {
+main #tarjeta-detalles .tarjeta-detalle-individual-universo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,23 +210,23 @@ body main #tarjeta-detalles .tarjeta-detalle-individual-universo {
   height: 500px;
   width: 350px;
 }
-body main #tarjeta-detalles .tarjeta-detalle-individual-universo img {
+main #tarjeta-detalles .tarjeta-detalle-individual-universo img {
   width: 100%;
 }
-body main .detalles {
+main .detalles {
   background-color: rgba(46, 46, 46, 0.294);
   height: 100%;
   position: fixed;
   top: 0;
   width: 100%;
 }
-body main #not-found {
+main #not-found {
   display: none;
 }
-body main #not-found img {
+main #not-found img {
   width: 50%;
 }
-body main button {
+main button {
   background-color: #91c846;
   background-image: url("imagenes/fondo-botones.png");
   background-size: cover;
@@ -227,13 +239,18 @@ body main button {
   width: 7em;
   z-index: 2;
 }
-body main #botones-paginado-principal {
+main #botones-paginado-principal {
   display: none;
 }
-body main #botones-paginado-busqueda {
+main #botones-paginado-principal #numero-pagina-busqueda {
+  align-items: center;
+  font-family: "Rubik Beastly", cursive;
+}
+main #botones-paginado-busqueda {
   display: none;
 }
-body footer {
+
+footer {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -241,13 +258,13 @@ body footer {
   flex-wrap: wrap;
   width: 100%;
 }
-body footer img {
+footer img {
   filter: drop-shadow(0 -6mm 4mm #1f3f16);
   position: absolute;
   width: 100%;
   z-index: 1;
 }
-body footer #redes-footer {
+footer #redes-footer {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -260,34 +277,22 @@ body footer #redes-footer {
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18, 2px 2px 2px rgba(206, 89, 55, 0), 2px 2px 2px rgba(206, 89, 55, 0);
   z-index: 2;
 }
-body .modo-oscuro {
-  background-color: #1f3f16;
-  box-shadow: 6px 6px 6px 6px #49ff18, inset 10px 10px 10px 0px #49ff18;
-}
-body .iconos-oscuro .fa-sun {
-  display: flex;
-  color: #49ff18;
-  font-size: 2.1rem;
-}
-body .iconos-oscuro .fa-moon {
-  display: none;
-}
-body .footer-oscuro {
-  filter: drop-shadow(0 -6mm 4mm #49ff18);
-}
+
 @media screen and (min-width: 200px) and (max-width: 290px) {
-  body header h1 {
+  header h1 {
     font-size: 1rem;
   }
-  body nav button,
-body main article button {
+
+  nav button,
+main article button {
     font-size: 6px;
     height: 2rem;
     width: 2rem;
   }
-  body nav #div-input-busqueda #form-busqueda-capitulos,
-body nav #div-input-busqueda #form-busqueda-universos,
-body nav #div-input-busqueda #form-busqueda-personaje {
+
+  nav #div-input-busqueda #form-busqueda-capitulos,
+nav #div-input-busqueda #form-busqueda-universos,
+nav #div-input-busqueda #form-busqueda-personaje {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -295,52 +300,62 @@ body nav #div-input-busqueda #form-busqueda-personaje {
     flex-wrap: wrap;
     font-size: 15px;
   }
-  body nav #div-input-busqueda #form-busqueda-capitulos input,
-body nav #div-input-busqueda #form-busqueda-universos input,
-body nav #div-input-busqueda #form-busqueda-personaje input {
+
+  nav #div-input-busqueda #form-busqueda-capitulos input,
+nav #div-input-busqueda #form-busqueda-universos input,
+nav #div-input-busqueda #form-busqueda-personaje input {
     height: 25px;
     width: 100px;
   }
-  body main #tarjetas-principales {
+
+  main #tarjetas-principales {
     display: flex;
   }
-  body main article #seccion-tarjeta {
+
+  main article #seccion-tarjeta {
     width: 80%;
     font-size: 10px;
   }
-  body main article #seccion-tarjeta div img {
+
+  main article #seccion-tarjeta div img {
     width: 100%;
   }
-  body main section .tarjetas-datos-universo {
+
+  main section .tarjetas-datos-universo {
     font-size: 0.4rem;
     height: auto;
     width: 100%;
     background-color: #FFF;
   }
-  body main #tarjeta-detalles .tarjeta-detalle-individual-universo {
+
+  main #tarjeta-detalles .tarjeta-detalle-individual-universo {
     height: 350px;
     width: 200px;
   }
-  body footer div h3 {
+
+  footer div h3 {
     font-size: 20px;
   }
-  body footer div a h5 {
+
+  footer div a h5 {
     font-size: 10px;
   }
 }
 @media screen and (min-width: 291px) and (max-width: 376px) {
-  body header h1 {
+  header h1 {
     font-size: 1.8rem;
   }
-  body nav button,
-body main article button {
+
+  nav button,
+main article button {
     font-size: 9px;
     height: 3rem;
     width: 3rem;
   }
-  body nav #div-input-busqueda #form-busqueda-capitulos,
-body nav #div-input-busqueda #form-busqueda-universos,
-body nav #div-input-busqueda #form-busqueda-personaje {
+
+  nav #div-input-busqueda #form-busqueda-capitulos,
+nav #div-input-busqueda #form-busqueda-universos,
+nav #div-input-busqueda #form-busqueda-personaje {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -348,70 +363,83 @@ body nav #div-input-busqueda #form-busqueda-personaje {
     flex-wrap: wrap;
     font-size: 20px;
   }
-  body nav #div-input-busqueda #form-busqueda-capitulos input,
-body nav #div-input-busqueda #form-busqueda-universos input,
-body nav #div-input-busqueda #form-busqueda-personaje input {
+
+  nav #div-input-busqueda #form-busqueda-capitulos input,
+nav #div-input-busqueda #form-busqueda-universos input,
+nav #div-input-busqueda #form-busqueda-personaje input {
     height: 30px;
     width: 180px;
   }
-  body main article #seccion-tarjeta div img {
+
+  main article #seccion-tarjeta div img {
     width: 100%;
   }
-  body main section .tarjetas-datos-universo {
+
+  main section .tarjetas-datos-universo {
     font-size: 0.7rem;
     height: auto;
     width: 100%;
     background-color: #FFF;
   }
-  body main #tarjeta-detalles .tarjeta-detalle-individual-universo {
+
+  main #tarjeta-detalles .tarjeta-detalle-individual-universo {
     height: 350px;
     width: 200px;
   }
-  body footer div a h3 {
+
+  footer div a h3 {
     font-size: 25px;
   }
-  body footer div a h5 {
+
+  footer div a h5 {
     font-size: 15px;
   }
 }
 @media screen and (min-width: 377px) and (max-width: 500px) {
-  body header h1 {
+  header h1 {
     font-size: 2.3rem;
   }
-  body nav #div-input-busqueda #form-busqueda-capitulos input,
-body nav #div-input-busqueda #form-busqueda-universos input,
-body nav #div-input-busqueda #form-busqueda-personaje input {
+
+  nav #div-input-busqueda #form-busqueda-capitulos input,
+nav #div-input-busqueda #form-busqueda-universos input,
+nav #div-input-busqueda #form-busqueda-personaje input {
     height: 40px;
     width: 250px;
   }
-  body nav button,
-body main article button {
+
+  nav button,
+main article button {
     font-size: 12px;
     height: 4rem;
     width: 4rem;
   }
-  body main article #seccion-tarjeta div img {
+
+  main article #seccion-tarjeta div img {
     width: 100%;
   }
-  body main section .tarjetas-datos-universo {
+
+  main section .tarjetas-datos-universo {
     background-color: #FFF;
     font-size: 1.2rem;
     height: auto;
     width: 100%;
   }
-  body main #tarjeta-detalles .tarjeta-detalle-individual-universo {
+
+  main #tarjeta-detalles .tarjeta-detalle-individual-universo {
     height: 400px;
     width: 250px;
   }
 }
 @media screen and (min-width: 501px) and (max-width: 611px) {
-  body header h1 {
+  header h1 {
     font-size: 3rem;
   }
-  body main article section .tarjetas-datos {
+
+  main article section .tarjetas-datos {
     width: 70%;
   }
-  body main section .tarjetas-datos-universo {
+
+  main section .tarjetas-datos-universo {
     background-color: #FFF;
     font-size: 1.2rem;
     height: auto;
@@ -419,16 +447,18 @@ body main article button {
   }
 }
 @media screen and (min-width: 612px) and (max-width: 768px) {
-  body header h1 {
+  header h1 {
     font-size: 3.7rem;
   }
-  body nav #div-input-busqueda #form-busqueda-capitulos input,
-body nav #div-input-busqueda #form-busqueda-universos input,
-body nav #div-input-busqueda #form-busqueda-personaje input {
+
+  nav #div-input-busqueda #form-busqueda-capitulos input,
+nav #div-input-busqueda #form-busqueda-universos input,
+nav #div-input-busqueda #form-busqueda-personaje input {
     height: 50px;
     width: 300px;
   }
-  body main section .tarjetas-datos-universo {
+
+  main section .tarjetas-datos-universo {
     background-color: #FFF;
     font-size: 1.2rem;
     height: auto;
@@ -436,24 +466,27 @@ body nav #div-input-busqueda #form-busqueda-personaje input {
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
-  body header h1 {
+  header h1 {
     font-size: 4.8rem;
   }
-  body nav #div-input-busqueda #form-busqueda-capitulos input,
-body nav #div-input-busqueda #form-busqueda-universos input,
-body nav #div-input-busqueda #form-busqueda-personaje input {
+
+  nav #div-input-busqueda #form-busqueda-capitulos input,
+nav #div-input-busqueda #form-busqueda-universos input,
+nav #div-input-busqueda #form-busqueda-personaje input {
     height: 60px;
     width: 350px;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
-  body header h1 {
+  header h1 {
     font-size: 6rem;
   }
-  body footer img {
+
+  footer img {
     margin-top: 13rem;
   }
-  body footer {
+
+  footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -462,19 +495,29 @@ body nav #div-input-busqueda #form-busqueda-personaje input {
   }
 }
 @media screen and (min-width: 1440px) and (max-width: 2560px) {
-  body nav {
+  nav {
     margin-bottom: 8rem;
   }
-  body footer img {
+
+  footer img {
     margin-top: 15rem;
   }
-  body footer {
+
+  footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
   }
+}
+* {
+  margin: 0;
+}
+
+body {
+  background: #3cb640;
+  background: linear-gradient(90deg, #3cb640 0%, #91c846 35%, #f2ec20 100%);
 }
 
 /*# sourceMappingURL=style.css.map */

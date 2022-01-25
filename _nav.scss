@@ -1,0 +1,56 @@
+//------------------------nav---------------------------
+nav {
+    @include flex-centrar($content: space-evenly, $direccion: row);
+    background: rgb(31, 63, 22);
+    background: radial-gradient(circle, rgb(28, 122, 104) 0%, rgb(25, 46, 5) $full);
+    border-radius: 20px;
+    box-shadow: 6px 6px 6px 6px #000000, inset 10px 10px 10px 0px #000000;
+    color: $color-tipografia;
+    font-family: $font-principal;
+    font-size: 1.3em;
+    font-style: $grosor-font;
+    margin: $escala-baja;
+    padding: $escala-baja;
+    width: $auto;
+    input {
+        border-radius: 50px;
+        box-shadow: $sombra-generica;
+        height: 2.5rem;
+        width: 18em;
+    }
+    button {
+        background-color: $color-boton;
+        background-image: url("imagenes/fondo-botones.png");
+         background-size: cover;
+        border-radius: $medium;
+        box-shadow: $sombra-generica;
+        font-family: $font-secundaria;
+        font-style: $grosor-font;
+       height: $escala-media;
+        text-align: center;
+        width: $escala-media;
+    }
+    select {
+        border-radius: 20px;
+        box-shadow: $sombra-generica;
+        height: 2.1rem;
+        width: 6rem;
+    }
+    #div-input-busqueda {
+        @include flex-centrar($content: center, $direccion: column);
+        display: $display-none;
+        #form-busqueda-capitulos {
+            display:  $display-none;
+            @include flex-centrar($content: center, $direccion: column)
+        }
+        #form-busqueda-personaje {
+            display:  $display-none;
+            @include flex-centrar($content: center, $direccion: column)
+        }
+        #form-busqueda-universos {
+            display:  $display-none;
+            @include flex-centrar($content: center, $direccion: column)
+        }
+    }
+}
+
