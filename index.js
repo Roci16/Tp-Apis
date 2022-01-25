@@ -771,7 +771,7 @@ modoOscuroBoton.onclick = () =>{
     modoOscuroBoton.classList.toggle("iconos-oscuro") 
     nav.classList.toggle("modo-oscuro") 
     footer.classList.toggle("footer-oscuro") 
-    body.classList.toggle("modo-oscuro")
+    body.classList.toggle("modo-oscuro-body")
     const tarjetas = document.querySelectorAll(".diseño-card-general");
   for (let i = 0; i < tarjetas.length; i++) {
     const element = tarjetas[i];

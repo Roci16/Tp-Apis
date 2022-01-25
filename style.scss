@@ -54,6 +54,11 @@
     
 }
 
+body.modo-oscuro-body{
+    background-color:$background-color-modo-oscuro ;
+    background: linear-gradient(90deg, $background-color-modo-oscuro 0%, $background-color-modo-oscuro 35%, $background-color-modo-oscuro $full);
+ }
+
 
   
  body {
@@ -262,10 +267,6 @@
          }
      }
      //---------------------modo oscuro---------------
-
-     body.modo-oscuro{
-        @include modoOscuro()
-     }
 
      .modo-oscuro{
         @include modoOscuro()
