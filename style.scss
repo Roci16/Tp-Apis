@@ -1,5 +1,5 @@
  @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap');
- 
+ @import url('https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap');
  
  * {
      margin: 0;
@@ -7,6 +7,8 @@
 
  // Variables
  $font-principal:'Titillium Web';
+ $font-secundaria:'Rubik Beastly', cursive;
+ 
  $full:100%;
  $medium:50%;
  $escala-media:7em;
@@ -53,7 +55,9 @@
     
 }
 
- 
+.modo-oscuro{
+    @include modoOscuro()
+ }
   
  body {
      background: $color-background;
@@ -112,11 +116,12 @@
          button {
              background-color: $color-boton;
              background-image: url("imagenes/fondo-botones.png");
+              background-size: cover;
              border-radius: $medium;
              box-shadow: $sombra-generica;
-             font-family: $font-principal;
-             font-style: black 900;
-             height: $escala-media;
+             font-family: $font-secundaria;
+             font-style: $grosor-font;
+            height: $escala-media;
              text-align: center;
              width: $escala-media;
          }
@@ -205,9 +210,11 @@
          button {
              background-color: $color-boton;
              background-image: url("imagenes/fondo-botones.png");
+             background-size: cover;
              border-radius: $medium;
              box-shadow: $sombra-generica;
-             font-family: $font-principal;
+             font-family: $font-secundaria;
+
              height: $escala-media;
              margin: $escala-baja;
              text-align: center;
@@ -244,9 +251,14 @@
      }
      //---------------------modo oscuro---------------
 
+     body.modo-oscuro{
+        @include modoOscuro()
+     }
+
      .modo-oscuro{
         @include modoOscuro()
      }
+     
      
      .iconos-oscuro{
          .fa-sun{
