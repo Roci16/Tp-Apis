@@ -31,6 +31,13 @@ const nextBusqueda = document.getElementById("next-busqueda")
 const botonPrimeraPaginaBusqueda = document.getElementById("primera-pagina-busqueda")
 const botonUltimaPaginaBusqueda = document.getElementById("ultima-pagina-busqueda")
 
+//modo oscuro
+const modoOscuroBoton = document.getElementById("div-modos")
+const body = document.querySelector("body")
+const nav = document.querySelector("nav")
+const footer = document.querySelector("footer")
+
+
 // Sort
 const select = document.getElementById("select-ordenar")
 
@@ -757,4 +764,17 @@ const ordenarSelect = (data,value) =>{
         }
     }
   
+}
+
+//--------------funcion modo oscuro
+modoOscuroBoton.onclick = () =>{
+    modoOscuroBoton.classList.toggle("iconos-oscuro") 
+    nav.classList.toggle("modo-oscuro") 
+    footer.classList.toggle("footer-oscuro") 
+    body.classList.toggle("modo-oscuro")
+    const tarjetas = document.querySelectorAll(".diseño-card-general");
+  for (let i = 0; i < tarjetas.length; i++) {
+    const element = tarjetas[i];
+    element.classList.toggle("modo-oscuro");
+  }
 }
