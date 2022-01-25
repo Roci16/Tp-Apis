@@ -51,9 +51,13 @@
 @mixin modoOscuro {
     background-color:$background-color-modo-oscuro ;
     box-shadow: 6px 6px 6px 6px $color-sombra, inset 10px 10px 10px 0px $color-sombra;
-    color: $color-tipografia ;
     
 }
+
+body.modo-oscuro-body{
+    background-color:$background-color-modo-oscuro ;
+    background: linear-gradient(90deg, $background-color-modo-oscuro 0%, $background-color-modo-oscuro 35%, $background-color-modo-oscuro $full);
+ }
 
 
   
@@ -263,10 +267,6 @@
          }
      }
      //---------------------modo oscuro---------------
-
-     body.modo-oscuro{
-        @include modoOscuro()
-     }
 
      .modo-oscuro{
         @include modoOscuro()
