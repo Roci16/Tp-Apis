@@ -5,12 +5,6 @@
   margin: 0;
 }
 
-.modo-oscuro {
-  background-color: #1f3f16;
-  box-shadow: 6px 6px 6px 6px #49ff18, inset 10px 10px 10px 0px #49ff18;
-  color: #f7d4bd;
-}
-
 body {
   background: #3cb640;
   background: linear-gradient(90deg, #3cb640 0%, #91c846 35%, #f2ec20 100%);
@@ -264,12 +258,10 @@ body footer #redes-footer {
 body body.modo-oscuro {
   background-color: #1f3f16;
   box-shadow: 6px 6px 6px 6px #49ff18, inset 10px 10px 10px 0px #49ff18;
-  color: #f7d4bd;
 }
 body .modo-oscuro {
   background-color: #1f3f16;
   box-shadow: 6px 6px 6px 6px #49ff18, inset 10px 10px 10px 0px #49ff18;
-  color: #f7d4bd;
 }
 body .iconos-oscuro .fa-sun {
   display: flex;
