@@ -55,9 +55,7 @@
     
 }
 
-.modo-oscuro{
-    @include modoOscuro()
- }
+
   
  body {
      background: $color-background;
