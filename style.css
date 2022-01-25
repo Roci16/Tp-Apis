@@ -242,8 +242,8 @@ main button {
 main #botones-paginado-principal {
   display: none;
 }
-main #botones-paginado-principal #numero-pagina-busqueda {
-  align-items: center;
+main #botones-paginado-principal .numero-paginado {
+  justify-content: center;
   font-family: "Rubik Beastly", cursive;
 }
 main #botones-paginado-busqueda {
