@@ -6,8 +6,10 @@ La interface la diseñamos teniendo en cuenta el concepto syfy que propone la se
 - Las imágenes fueron sacadas de distintos sitios y adaptadas en tamaño y formato para el diseño de la web.
 - Buscamos generar en el nav la sensación de viaje interdimensional recuperando elementos gráficos de la serie.
 ## 🛠 **Funcionalidades**:
-El proyecto cuenta con Diseño **responsivo**.
-El sitio ofrece, además la posibilidad de acceder a la **API** a través de tres filtros diferentes que pueden ser aplicados desde los botones ubicados en el nav.
+- El proyecto cuenta con Diseño **responsivo**.
+- Además el sitio cuenta con **modo oscuro** para adaptarse a las preferencias de visualizacion de los diferentes usuarios.
+- El sitio ofrece, además la posibilidad de acceder a la **API** a través de tres filtros diferentes que pueden ser aplicados desde los botones ubicados en el nav.
+
 ## Se puede obtener los siguientes datos en el área principal: 
 - 🛠 Filtro por personajes
 - 🛠 Filtro por universo
@@ -35,3 +37,20 @@ El proyecto puede visitarse [aqui](https://roci16.github.io/Tp-Apis/index.html)
 [Link GitHub](https://github.com/Roci16)
 
 ## Aquí se pueden apreciar el screen  del proyecto:
+![vista para celular](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/celular-modo-claro.png)
+
+![vista para celular modo oscuro](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/celular-modo-oscuro.png)
+
+![vista escritorio](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/foto-portada.jpeg)
+
+![Vista del navbar con input](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/foto-1.jpeg)
+
+![Búsqueda de personajes](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/personajes-modo-claro.jpeg)
+
+![Búsqueda de personajes modo oscuro](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/personajes-modo-oscuro.jpeg)
+
+![Búsqueda de universos](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/universos.jpeg)
+
+![Búsqueda de capítulos](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/capitulos.jpeg)
+
+
