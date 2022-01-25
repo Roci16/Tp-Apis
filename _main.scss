@@ -1,0 +1,101 @@
+// ----------------main-----------------
+main {
+    @include flex-centrar();
+    background: $transparente;
+    background-image: url(imagenes/fondo-rick-morty.svg);
+    font-family: $font-principal;
+    width: $full;
+
+    .tarjetas-orden { 
+        @include flex-centrar($content: center, $direccion: row);
+        padding: $escala-media-baja;
+    }
+    .tarjetas-datos {
+        margin: $escala-media-baja;
+    }
+    .diseño-card-general {
+        background-color: #bcc7b9bf;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px 7px darkslategrey;
+        font-size: 10px;
+        text-align: center;
+        padding: 5px;
+        img{
+            width: 90%;
+        }
+    }
+    .tarjetas-datos-universo {
+        @include flex-centrar();
+        height: 250px;
+        margin: 10px;
+        width: 20%;
+        img {
+            width: 50%;
+        }
+    }
+    #tarjeta-detalles {
+        @include flex-centrar();
+        z-index: 3;
+        .tarjeta-detalle-individual {
+            @include flex-centrar();
+            background-color: #d5d5d5;
+            border: 6px solid #232323;
+            border-radius: 50px;
+            height: 500px;
+            img {
+                width: 90%;
+            }
+        }
+        .tarjeta-detalle-individual-universo{
+               @include flex-centrar();
+               background-color: #d5d5d5;
+               border: 6px solid #232323;
+               border-radius: 50px;
+               height: 500px;
+              width: 350px;
+               img {
+                   width: $full;
+               }
+        }
+    }
+    .detalles {
+        background-color: rgba(46, 46, 46, 0.294);
+        height: $full;
+        position: fixed;
+        top: 0;
+        width: $full;
+    }
+    #not-found{
+        display: $display-none;
+          img{
+            width: 50%;
+        }
+    }
+    button {
+        background-color: $color-boton;
+        background-image: url("imagenes/fondo-botones.png");
+        background-size: cover;
+        border-radius: $medium;
+        box-shadow: $sombra-generica;
+        font-family: $font-secundaria;
+
+        height: $escala-media;
+        margin: $escala-baja;
+        text-align: center;
+        width: $escala-media;
+        z-index: 2;
+    }
+    #botones-paginado-principal {
+        display:  $display-none;
+
+        #numero-pagina-busqueda{
+           align-items: center;
+           font-family: $font-secundaria;
+           
+       }
+    }
+    #botones-paginado-busqueda {
+        display: $display-none           
+    }
+   
+}

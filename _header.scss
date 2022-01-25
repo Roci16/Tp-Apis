@@ -1,0 +1,30 @@
+
+     //-----------------------header------------------------------
+     header {
+        @include flex-centrar($content: start);
+        h1 {
+            color: $color-relleno-font;
+            font-family: $font-principal;
+            font-size: $escala-media;
+            font-style: $grosor-font;
+            position: absolute;
+            text-shadow: $sombra-texto;
+            z-index: 1;
+        }
+        #hero {
+            box-shadow: 0 0 15px 14px #031112;
+            width: $full;
+        }
+        #div-modos{
+            margin-top: 1rem;
+            background-color:transparent;
+            font-size: 2rem;
+            border: 5px outset $color-relleno-font;
+            border-radius: 50px;
+        }
+
+        
+        .fa-sun{
+            display: $display-none;
+        }
+    }
