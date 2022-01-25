@@ -36,20 +36,33 @@ El proyecto puede visitarse [aqui](https://roci16.github.io/Tp-Apis/index.html)
 -	👧 Rocio Ibañez
 [Link GitHub](https://github.com/Roci16)
 
-## Aquí se pueden apreciar el screen  del proyecto:
-![vista para celular](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/celular-modo-claro.png)![vista para celular modo oscuro](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/celular-modo-oscuro.png)
+## Aquí se pueden apreciar las vistas del proyecto:
+### Vista para celulares modo claro/oscuro:
+
+![vista para celular](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/celular-modo-claro.png)      ![vista para celular modo oscuro](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/celular-modo-oscuro.png)
 
 
+### Vista escritorio:
 
 ![vista escritorio](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/foto-portada.jpeg)
 
+### Vista del navbar con input:
+
 ![Vista del navbar con input](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/foto-1.jpeg)
+
+### Vista búsqueda de personajes:
 
 ![Búsqueda de personajes](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/personajes-modo-claro.jpeg)
 
+### Vista búsqueda de personajes modo oscuro:
+
 ![Búsqueda de personajes modo oscuro](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/personajes-modo-oscuro.jpeg)
 
+### Vista búsqueda de universos:
+
 ![Búsqueda de universos](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/universos.jpeg)
+
+### Vista búsqueda de capítulos:
 
 ![Búsqueda de capítulos](https://raw.githubusercontent.com/Roci16/Tp-Apis/main/img-readme/capitulos.jpeg)
 
