@@ -96,6 +96,7 @@ botonPersonajes.onclick = () => {
     resultadoBusqueda.style.display = "none"
     botonesPaginaBusqueda.style.display = "none"
     seccionTarjetas.style.display = "flex"
+    notFound.style.display = "none"
     personajes()
 }
 
@@ -111,6 +112,7 @@ botonUniversos.onclick = () => {
     conteinerBotonesPrincipales.style.display = "flex"
     botonesPaginaBusqueda.style.display = "none"
     seccionTarjetas.style.display = "flex"
+    notFound.style.display = "none"
     universos()
 }
 
@@ -127,6 +129,7 @@ botonCapitulos.onclick = () => {
     conteinerBotonesPrincipales.style.display = "flex"
     botonesPaginaBusqueda.style.display = "none"
     seccionTarjetas.style.display = "flex"
+    notFound.style.display = "none"
     capitulos()
 }
 
