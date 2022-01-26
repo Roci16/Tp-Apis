@@ -241,13 +241,15 @@ main button {
 }
 main #botones-paginado-principal {
   display: none;
+  align-items: center;
 }
 main #botones-paginado-principal .numero-paginado {
-  justify-content: center;
   font-family: "Rubik Beastly", cursive;
 }
 main #botones-paginado-busqueda {
   display: none;
+  align-items: center;
+  font-family: "Rubik Beastly", cursive;
 }
 
 footer {
@@ -262,7 +264,7 @@ footer img {
   filter: drop-shadow(0 -6mm 4mm #1f3f16);
   position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: -1;
 }
 footer #redes-footer {
   display: flex;
@@ -285,7 +287,7 @@ footer #redes-footer {
 
   nav button,
 main article button {
-    font-size: 6px;
+    font-size: 4px;
     height: 2rem;
     width: 2rem;
   }
@@ -348,7 +350,7 @@ nav #div-input-busqueda #form-busqueda-personaje input {
 
   nav button,
 main article button {
-    font-size: 9px;
+    font-size: 7px;
     height: 3rem;
     width: 3rem;
   }
@@ -409,7 +411,7 @@ nav #div-input-busqueda #form-busqueda-personaje input {
 
   nav button,
 main article button {
-    font-size: 12px;
+    font-size: 10px;
     height: 4rem;
     width: 4rem;
   }

@@ -6,7 +6,7 @@ footer {
         filter: drop-shadow(0 -6mm 4mm rgb(31, 63, 22));
         position: absolute;
         width: $full;
-        z-index: 1;
+        z-index: -1;
     }
     #redes-footer {
         @include flex-centrar($content: start);
