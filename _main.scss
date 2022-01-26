@@ -87,15 +87,15 @@ main {
     }
     #botones-paginado-principal {
         display:  $display-none;
-
+        align-items: center;
         .numero-paginado{
-           justify-content: center;
-           font-family: $font-secundaria;
-           
+           font-family: $font-secundaria;     
        }
     }
     #botones-paginado-busqueda {
-        display: $display-none           
+        display: $display-none; 
+        align-items: center;      
+        font-family: $font-secundaria;    
     }
    
 }
