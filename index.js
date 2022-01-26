@@ -95,6 +95,7 @@ botonPersonajes.onclick = () => {
     formBusquedaUniversos.style.display = "none"
     resultadoBusqueda.style.display = "none"
     botonesPaginaBusqueda.style.display = "none"
+    seccionTarjetas.style.display = "flex"
     personajes()
 }
 
@@ -109,6 +110,7 @@ botonUniversos.onclick = () => {
     resultadoBusqueda.style.display = "none"
     conteinerBotonesPrincipales.style.display = "flex"
     botonesPaginaBusqueda.style.display = "none"
+    seccionTarjetas.style.display = "flex"
     universos()
 }
 
@@ -124,6 +126,7 @@ botonCapitulos.onclick = () => {
     resultadoBusqueda.style.display = "none"
     conteinerBotonesPrincipales.style.display = "flex"
     botonesPaginaBusqueda.style.display = "none"
+    seccionTarjetas.style.display = "flex"
     capitulos()
 }
 

@@ -26,7 +26,7 @@ main {
     }
     .tarjetas-datos-universo {
         @include flex-centrar();
-        height: 250px;
+        height: $un-cuarto;
         margin: 10px;
         width: 20%;
         img {
