@@ -8,6 +8,8 @@
     <title>Rick and Morty</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/55efe9bfd6.js" crossorigin="anonymous"></script>
+    <!-- Siempre usen una imagen que se llame favicon de tipo .ico. Debe estar en la carpeta principal, no 
+    dentro de imagenes.  -->
     <link rel="icon" href="imagenes/favicon-verde.png" type="image/png" />
 
 </head>
@@ -17,7 +19,11 @@
 
     <header>
         <h1>Rick and Morty</h1>
+        <!-- Siempre usen alt en las imagenes.  -->
         <img src="imagenes/rick-and-morty-en-nave-4518.jpg" alt="" id="hero">
+        <!-- Aca hace falta un aria label para que el usuario de lector de pantalla
+        sepa lo que pasa aca. 
+        Semanticamente, corresponde que sea un botón, no un div, ya que es una accion en la web.  -->
         <div id="div-modos"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></div>
 
     </header>
@@ -55,6 +61,8 @@
     </nav>
     <main>
         <article id="tarjetas-principales">
+            <!-- no se necesita aria label en section, es solo para elementos con los que el usuario
+            puede interactuar.  -->
             <section aria-label="card 1"  id="seccion-tarjeta" class="tarjetas-orden"></section>
         </article>
         <section id="tarjeta-detalles"></section>

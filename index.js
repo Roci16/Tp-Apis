@@ -46,7 +46,9 @@ const notFound = document.getElementById("not-found")
 
 //---------------------FETCH--------------------------------
 // llamado para personajes
-
+// Los nombres de estas funciones no son lo suficientemente descriptivos. 
+// En general, los nombres de funcion siempre deben comenzar con un verbo. 
+// obtenerPersonajes seria mejor.
 const personajes = () => {
         fetch(`https://rickandmortyapi.com/api/character?page=${paginaActual}`)
             .then((res) => res.json())
@@ -87,6 +89,8 @@ const capitulos = () => {
 
 botonPersonajes.onclick = () => {
     paginaActual = 1
+    // numeroActualizoPagina no recibe params, y aunque lo hiciera, paginaActual = 1 es una asignacion, no 
+    // es un parametro apropiado
     numeroActualizoPagina(paginaActual = 1)
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "flex"
@@ -103,6 +107,7 @@ botonPersonajes.onclick = () => {
 
 botonUniversos.onclick = () => {
     paginaActual = 1
+    // mismo comentario aca
     numeroActualizoPagina(paginaActual = 1)
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "none"
@@ -119,7 +124,7 @@ botonUniversos.onclick = () => {
 
 botonCapitulos.onclick = () => {
     paginaActual = 1
-
+// mismo comentario aca
     numeroActualizoPagina(paginaActual = 1)
     divInputBusqueda.style.display = "flex"
     formBusquedaPersonaje.style.display = "none"
@@ -140,11 +145,14 @@ let paginaActual = 1
 let ultimaPagina = 0
 
 const numeroActualizoPagina = () => {
+    // innecesaria la interpolacion, y tambien la nueva variable. podria ser asi:
+    // numeroDePagina.innerHTML = paginaActual
     const numeroPagina = `${paginaActual}`
     numeroDePagina.innerHTML = numeroPagina
 
 }
 const numeroActualizoPaginaBusqueda = () => {
+    // mismo comentario
     const numeroPaginaBusqueda = `${paginaActual}`
     numeroDePaginaBusqueda.innerHTML = numeroPaginaBusqueda
 
@@ -167,6 +175,7 @@ const prevOnclick = () => {
     if(paginaActual = 1){
         prev.disabled = true
     }
+    // por que 42? la api de rick y morty les dice cuantas paginas hay, deberian usar esa info
     if (paginaActual < 42) {
         next.disabled = false
     }
@@ -184,8 +193,8 @@ const nextOnclick = () => {
         prev.disabled = false
     }
 }
-
-
+// sean prolijas al declarar funciones!! dejen los espacios apropiados 
+// const prevBusquedaOnclick = () => {
 const prevBusquedaOnclick = ()=>{
     paginaActual--
 
@@ -359,6 +368,11 @@ const clickPorTarjeta = () => {
 
     for (let i = 0; i < tarjetas.length; i++) {
         tarjetas[i].onclick = () => { 
+            // Entiendo la idea de esta logica, pero no funciona. De hecho 
+            // la vista de detalle no es accesible porque las tarjetas no tienen display flex
+            // en el render (el display flex de css no alcanza para que se cumpla la condicion de este if)
+            // Cada tarjeta deberia tener su propia clase, no deberiamos agruparlas en una sola funcion. 
+            // Con esa clase podemos seleccionarlas y mostrar la vista de detalle en el click. 
             const idTarjetas = tarjetas[i].dataset.id
             if (formBusquedaPersonaje.style.display === "flex") {
                 buscarPersonaje(idTarjetas)
@@ -639,6 +653,7 @@ const buscarInfo = (nombre) => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${paginaActual}&name=${nombre}`)
         .then(res => res.json())
         .then(data => {
+            // esta muy desprolijo el codigo aca, por favor mas atencion al tabulado y los espacios
             if(data. results === undefined){
                 resultadoBusqueda.style.display = "none"
                 notFound.style.display ="flex"
@@ -750,6 +765,7 @@ const ordenarSelect = (data,value) =>{
     }
 
     if(value === "z/a"){
+        // incomprensible el tabulado en este sort
         const ordenarZA = data.sort((a,b) =>{
                  if(a.name > b.name){
             return -1

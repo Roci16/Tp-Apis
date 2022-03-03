@@ -1,4 +1,7 @@
 // Variables
+
+// dejen espacio entre los dos puntos y el valor que sigue 
+// $font-principal: 'Titillium Web';
 $font-principal:'Titillium Web';
 $font-secundaria:'Rubik Beastly', cursive;
 
@@ -41,7 +44,7 @@ $direccion: column) {
     flex-wrap: wrap;
 }
 
-
+// usen guiones en css, no camelCase
 @mixin modoOscuro {
    background-color:$background-color-modo-oscuro ;
    box-shadow: 6px 6px 6px 6px $color-sombra, inset 10px 10px 10px 0px $color-sombra;
